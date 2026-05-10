@@ -540,8 +540,8 @@
     font-size: 4.5rem;
     color: var(--gold);
     float: left;
-    line-height: 0.85;
-    margin: 0.4rem 0.6rem 0 0;
+    line-height: 0.75;
+    margin: -0.35rem 0.55rem 0 0;
     font-weight: 500;
   }
   .manifest-text strong { color: var(--fg); font-weight: 600; }
@@ -788,7 +788,111 @@
     letter-spacing: 0.04em;
   }
 
-  /* Publication */
+  /* Focus */
+  .focus-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+    margin-top: 1rem;
+  }
+  .focus-item {
+    padding: 1.85rem 1.85rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.4s;
+    position: relative;
+  }
+  .focus-item:nth-child(2n) { border-right: none; }
+  .focus-item:nth-last-child(-n+1) { border-bottom: none; }
+  .focus-item:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+  .focus-item:nth-last-child(odd):first-child + * + * + * + * { border-bottom: none; }
+  .focus-item:hover { background: var(--surface); }
+  .focus-item:hover .focus-num { color: var(--gold-bright); }
+  .focus-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+    transition: color 0.3s;
+    line-height: 1;
+    display: block;
+  }
+  .focus-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem;
+    font-weight: 500;
+    color: var(--fg);
+    margin-bottom: 0.45rem;
+    letter-spacing: -0.005em;
+  }
+  .focus-item p {
+    color: var(--fg-soft);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin: 0;
+  }
+  .focus-item .focus-anchor {
+    color: var(--muted);
+    font-size: 0.74rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 0.85rem;
+    display: block;
+    font-weight: 500;
+  }
+  .focus-item .focus-anchor strong { color: var(--gold); font-weight: 500; }
+  .focus-item.full-row { grid-column: span 2; }
+
+  /* Publication — citation style */
+  .pub-cite {
+    border-left: 2px solid var(--gold);
+    padding: 1.75rem 0 1.5rem 2rem;
+    margin-top: 1rem;
+    max-width: 820px;
+    transition: padding-left 0.4s;
+  }
+  .pub-cite:hover { padding-left: 2.5rem; }
+  .pub-cite-tag {
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  .pub-cite-author {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--fg-soft);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    letter-spacing: 0.02em;
+  }
+  .pub-cite-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+    line-height: 1.35;
+    color: var(--fg);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.005em;
+  }
+  .pub-cite-meta {
+    color: var(--muted);
+    font-size: 0.74rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .pub-cite-meta strong {
+    color: var(--gold);
+    font-weight: 500;
+    margin-right: 0.4rem;
+  }
+
+  /* Publication (legacy, kept for fallback) */
   .pub-feature {
     display: grid;
     grid-template-columns: 1fr 1.6fr;
@@ -1236,9 +1340,10 @@
     nav.links { gap: 1rem; font-size: 0.65rem; }
   }
   @media (max-width: 900px) {
-    .hero { padding: 3rem 0 4rem; }
-    .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .portrait-frame { margin: 0 auto; max-width: 320px; }
+    .hero { padding: 2rem 0 3rem; }
+    .hero-grid { grid-template-columns: 1fr; gap: 2.25rem; }
+    .portrait-frame { margin: 0 auto; max-width: 280px; order: -1; }
+    .hero-meta { margin-bottom: 1.75rem; padding-bottom: 1.25rem; }
     .manifest-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .manifest-side { position: static; }
     .cv-row { grid-template-columns: 1fr; gap: 0.5rem; padding: 1.5rem 0; }
@@ -1305,10 +1410,10 @@
     <div class="nav-cluster">
       <nav class="links">
         <a href="#profile" data-en="<sup>i</sup>Profile" data-de="<sup>i</sup>Profil" data-fr="<sup>i</sup>Profil"><sup>i</sup>Profile</a>
-        <a href="#education" data-en="<sup>ii</sup>Education" data-de="<sup>ii</sup>Ausbildung" data-fr="<sup>ii</sup>Formation"><sup>ii</sup>Education</a>
-        <a href="#experience" data-en="<sup>iii</sup>Experience" data-de="<sup>iii</sup>Erfahrung" data-fr="<sup>iii</sup>Expérience"><sup>iii</sup>Experience</a>
-        <a href="#projects" data-en="<sup>iv</sup>Projects" data-de="<sup>iv</sup>Projekte" data-fr="<sup>iv</sup>Projets"><sup>iv</sup>Projects</a>
-        <a href="#publication" data-en="<sup>v</sup>Publication" data-de="<sup>v</sup>Publikation" data-fr="<sup>v</sup>Publication"><sup>v</sup>Publication</a>
+        <a href="#focus" data-en="<sup>ii</sup>Focus" data-de="<sup>ii</sup>Schwerpunkt" data-fr="<sup>ii</sup>Focus"><sup>ii</sup>Focus</a>
+        <a href="#education" data-en="<sup>iii</sup>Education" data-de="<sup>iii</sup>Ausbildung" data-fr="<sup>iii</sup>Formation"><sup>iii</sup>Education</a>
+        <a href="#experience" data-en="<sup>iv</sup>Experience" data-de="<sup>iv</sup>Erfahrung" data-fr="<sup>iv</sup>Expérience"><sup>iv</sup>Experience</a>
+        <a href="#projects" data-en="<sup>v</sup>Projects" data-de="<sup>v</sup>Projekte" data-fr="<sup>v</sup>Projets"><sup>v</sup>Projects</a>
         <a href="#code" data-en="<sup>vi</sup>Code" data-de="<sup>vi</sup>Kodex" data-fr="<sup>vi</sup>Code"><sup>vi</sup>Code</a>
         <a href="#contact" data-en="<sup>vii</sup>Contact" data-de="<sup>vii</sup>Kontakt" data-fr="<sup>vii</sup>Contact"><sup>vii</sup>Contact</a>
       </nav>
@@ -1339,12 +1444,6 @@
         <span>MLaw</span>
         <span class="ln ln-r"></span>
       </div>
-      <p class="hero-tagline stage stage-4"
-         data-en="Trainee Lawyer at Burkhalter. Building toward Corporate Finance and International Law."
-         data-de="Substitut bei Burkhalter. Auf dem Weg in Corporate Finance und Internationales Recht."
-         data-fr="Avocat-stagiaire chez Burkhalter. En route vers la Corporate Finance et le droit international.">
-        Trainee Lawyer at Burkhalter. Building toward Corporate Finance and International Law.
-      </p>
       <div class="hero-now stage stage-4">
         <span class="hero-now-label">Currently</span>
         <span class="hero-now-text"
@@ -1382,10 +1481,10 @@
 <section class="maxim">
   <div class="wrap">
     <div class="maxim-latin reveal"
-         data-en="«Consistency compounds.»"
-         data-de="«Beständigkeit potenziert sich.»"
-         data-fr="«La constance se compose.»">
-      «Consistency compounds.»
+         data-en="Consistency compounds."
+         data-de="Beständigkeit potenziert sich."
+         data-fr="La constance se compose.">
+      Consistency compounds.
     </div>
     <div class="maxim-de reveal"
          data-en="Small advantages, repeated, become decisive."
@@ -1441,8 +1540,67 @@
 </div>
 
 <div class="wrap">
+<section id="focus">
+  <div class="section-num reveal" data-en="02 · Focus" data-de="02 · Schwerpunkt" data-fr="02 · Focus">02 · Focus</div>
+  <h2 class="section-h reveal"
+      data-en="Built <em>for</em>."
+      data-de="Geschaffen <em>für</em>."
+      data-fr="Construit <em>pour</em>.">
+    Built <em>for</em>.
+  </h2>
+  <div class="focus-grid">
+    <div class="focus-item reveal">
+      <span class="focus-num">i.</span>
+      <h3 data-en="Banking &amp; Finance" data-de="Banking &amp; Finance" data-fr="Banking &amp; Finance">Banking &amp; Finance</h3>
+      <p data-en="FINMA practice, regulatory advice, transaction structuring."
+         data-de="FINMA-Praxis, Aufsichtsrecht, Transaktionsstrukturierung."
+         data-fr="Pratique FINMA, conseil réglementaire, structuration de transactions.">
+        FINMA practice, regulatory advice, transaction structuring.
+      </p>
+    </div>
+    <div class="focus-item reveal">
+      <span class="focus-num">ii.</span>
+      <h3 data-en="Corporate &amp; M&amp;A" data-de="Gesellschaftsrecht &amp; M&amp;A" data-fr="Sociétés &amp; M&amp;A">Corporate &amp; M&amp;A</h3>
+      <p data-en="Transactional support, due diligence, deal documentation."
+         data-de="Transaktionsbegleitung, Due Diligence, Vertragsdokumentation."
+         data-fr="Accompagnement transactionnel, due diligence, documentation contractuelle.">
+        Transactional support, due diligence, deal documentation.
+      </p>
+    </div>
+    <div class="focus-item reveal">
+      <span class="focus-num">iii.</span>
+      <h3 data-en="Capital Markets" data-de="Kapitalmärkte" data-fr="Marchés de capitaux">Capital Markets</h3>
+      <p data-en="Equity research, valuation, investment thesis."
+         data-de="Equity Research, Bewertung, Investment-These."
+         data-fr="Recherche action, évaluation, thèse d'investissement.">
+        Equity research, valuation, investment thesis.
+      </p>
+    </div>
+    <div class="focus-item reveal">
+      <span class="focus-num">iv.</span>
+      <h3 data-en="Corporate Tax" data-de="Steuerrecht" data-fr="Fiscalité d'entreprise">Corporate Tax</h3>
+      <p data-en="Cross-border structures, transactional advisory."
+         data-de="Grenzüberschreitende Strukturen, transaktionale Beratung."
+         data-fr="Structures transfrontalières, conseil transactionnel.">
+        Cross-border structures, transactional advisory.
+      </p>
+    </div>
+    <div class="focus-item full-row reveal">
+      <span class="focus-num">v.</span>
+      <h3 data-en="DLT &amp; Digital Assets" data-de="DLT &amp; Digitale Vermögenswerte" data-fr="DLT &amp; Actifs numériques">DLT &amp; Digital Assets</h3>
+      <p data-en="Stablecoins, AML, FINMA supervisory practice — own master's research."
+         data-de="Stablecoins, Geldwäschereirecht, FINMA-Aufsichtspraxis — eigene Masterarbeit."
+         data-fr="Stablecoins, anti-blanchiment, pratique de surveillance FINMA — recherche de master personnelle.">
+        Stablecoins, AML, FINMA supervisory practice — own master's research.
+      </p>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="wrap">
 <section id="education">
-  <div class="section-num reveal" data-en="02 · Education" data-de="02 · Ausbildung" data-fr="02 · Formation">02 · Education</div>
+  <div class="section-num reveal" data-en="03 · Education" data-de="03 · Ausbildung" data-fr="03 · Formation">03 · Education</div>
   <h2 class="section-h reveal"
       data-en="Where I have <em>read</em>."
       data-de="Wo ich <em>studiert</em> habe."
@@ -1535,7 +1693,7 @@
 
 <div class="wrap">
 <section id="experience">
-  <div class="section-num reveal" data-en="03 · Experience" data-de="03 · Erfahrung" data-fr="03 · Expérience">03 · Experience</div>
+  <div class="section-num reveal" data-en="04 · Experience" data-de="04 · Erfahrung" data-fr="04 · Expérience">04 · Experience</div>
   <h2 class="section-h reveal"
       data-en="Where I have <em>worked</em>."
       data-de="Wo ich <em>gearbeitet</em> habe."
@@ -1569,7 +1727,7 @@
           <span class="cv-tag" data-en="Annual Financial Reporting" data-de="Jahresabschluss" data-fr="Rapport financier annuel">Annual Financial Reporting</span>
         </div>
       </div>
-      <div class="cv-side" data-en="Board" data-de="Vorstand" data-fr="Comité">Board</div>
+      <div class="cv-side" data-en="Current" data-de="Aktuell" data-fr="Actuel">Current</div>
     </div>
     <div class="cv-row reveal">
       <div class="cv-main">
@@ -1582,7 +1740,7 @@
         </div>
         <div class="cv-tags">
           <span class="cv-tag" data-en="Litigation" data-de="Prozessführung" data-fr="Contentieux">Litigation</span>
-          <span class="cv-tag" data-en="Criminal Procedure" data-de="Strafverfahren" data-fr="Procédure pénale">Criminal Procedure</span>
+          <span class="cv-tag" data-en="Procedural Law" data-de="Verfahrensrecht" data-fr="Droit procédural">Procedural Law</span>
         </div>
       </div>
       <div class="cv-side" data-en="Public" data-de="Öffentlich" data-fr="Public">Public</div>
@@ -1625,7 +1783,7 @@
 
 <div class="wrap">
 <section id="projects">
-  <div class="section-num reveal" data-en="04 · Projects" data-de="04 · Projekte" data-fr="04 · Projets">04 · Projects</div>
+  <div class="section-num reveal" data-en="05 · Projects" data-de="05 · Projekte" data-fr="05 · Projets">05 · Projects</div>
   <h2 class="section-h reveal"
       data-en="Selected <em>work</em>."
       data-de="Ausgewählte <em>Projekte</em>."
@@ -1685,32 +1843,22 @@
 
 <div class="wrap">
 <section id="publication">
-  <div class="section-num reveal" data-en="05 · Publication" data-de="05 · Publikation" data-fr="05 · Publication">05 · Publication</div>
+  <div class="section-num reveal" data-en="06 · Publication" data-de="06 · Publikation" data-fr="06 · Publication">06 · Publication</div>
   <h2 class="section-h reveal"
       data-en="Written <em>work</em>."
       data-de="Schriftliches <em>Werk</em>."
       data-fr="<em>Œuvre</em> écrite.">
     Written <em>work</em>.
   </h2>
-  <div class="pub-feature reveal">
-    <div class="pub-cover">
-      <div class="pub-cover-top">Tscheraghsepehr</div>
-      <div class="pub-cover-num">DT</div>
-      <div class="pub-cover-bot" data-en="Conference Volume" data-de="Tagungsband" data-fr="Actes de Conférence">Conference Volume</div>
-    </div>
-    <div class="pub-body">
-      <div class="pub-tag" data-en="Publication" data-de="Publikation" data-fr="Publication">Publication</div>
-      <h3 class="pub-title">Sprache der Gerechtigkeit: Die Rolle der DolmetscherInnen und zentrale Stolpersteine im Nürnberger Prozess sowie ein Blick auf die Schweizer Praxis.</h3>
-      <p class="pub-subtitle"
-         data-en="“The Language of Justice. The role of interpreters and central pitfalls in the Nuremberg Trial, with a view to Swiss practice.”"
-         data-de="„Sprache der Gerechtigkeit. Die Rolle der Dolmetscher und zentrale Stolpersteine im Nürnberger Prozess, mit einem Blick auf die Schweizer Praxis.“"
-         data-fr="« Le langage de la justice. Le rôle des interprètes et les écueils centraux du procès de Nuremberg, avec un regard sur la pratique suisse. »">
-        “The Language of Justice. The role of interpreters and central pitfalls in the Nuremberg Trial, with a view to Swiss practice.”
-      </p>
-      <div class="pub-meta">
-        <span><strong data-en="Author" data-de="Autor" data-fr="Auteur">Author</strong> Daniel Tscheraghsepehr</span>
-        <span><strong data-en="Field" data-de="Bereich" data-fr="Domaine">Field</strong> <span data-en="Criminal Procedure &amp; Court Interpreting" data-de="Strafprozess &amp; Gerichtsdolmetschen" data-fr="Procédure pénale &amp; interprétation judiciaire">Criminal Procedure &amp; Court Interpreting</span></span>
-      </div>
+  <div class="pub-cite reveal">
+    <div class="pub-cite-tag" data-en="Publication" data-de="Publikation" data-fr="Publication">Publication</div>
+    <div class="pub-cite-author">Tscheraghsepehr, D.</div>
+    <div class="pub-cite-title">Sprache der Gerechtigkeit: Die Rolle der DolmetscherInnen und zentrale Stolpersteine im Nürnberger Prozess sowie ein Blick auf die Schweizer Praxis.</div>
+    <div class="pub-cite-meta"
+         data-en="<strong>Conference Volume</strong> Court Interpreting &amp; Legal Linguistics"
+         data-de="<strong>Tagungsband</strong> Gerichtsdolmetschen &amp; Rechtslinguistik"
+         data-fr="<strong>Actes de Conférence</strong> Interprétation judiciaire &amp; linguistique juridique">
+      <strong>Conference Volume</strong> Court Interpreting &amp; Legal Linguistics
     </div>
   </div>
 </section>
@@ -1718,33 +1866,13 @@
 
 <div class="wrap">
 <section id="talks">
-  <div class="section-num reveal" data-en="06 · Selected Speaking" data-de="06 · Ausgewählte Vorträge" data-fr="06 · Conférences sélectionnées">06 · Selected Speaking</div>
+  <div class="section-num reveal" data-en="07 · Selected Speaking" data-de="07 · Ausgewählte Vorträge" data-fr="07 · Conférences sélectionnées">07 · Selected Speaking</div>
   <h2 class="section-h reveal"
       data-en="Spoken in <em>public</em>."
       data-de="In der <em>Öffentlichkeit</em> gesprochen."
       data-fr="Pris la <em>parole</em> en public.">
     Spoken in <em>public</em>.
   </h2>
-  <div class="speaking-feature reveal">
-    <div class="speaking-feature-img">
-      <img src="nuremberg.jpg" alt="Daniel Tscheraghsepehr at the Trilateral Forum on Criminal Defence, Nuremberg" loading="lazy" />
-    </div>
-    <div class="speaking-feature-text">
-      <div class="speaking-feature-tag" data-en="Featured Engagement" data-de="Hervorgehobener Auftritt" data-fr="Intervention à la une">Featured Engagement</div>
-      <p class="speaking-feature-quote"
-         data-en="Trilateral Forum on <em>Criminal Defence</em>,<br>Nuremberg."
-         data-de="Dreiländerforum für <em>Strafverteidigung</em>,<br>Nürnberg."
-         data-fr="Forum trilatéral de la <em>défense pénale</em>,<br>Nuremberg.">
-        Trilateral Forum on <em>Criminal Defence</em>,<br>Nuremberg.
-      </p>
-      <div class="speaking-feature-meta"
-           data-en="<strong>Panel 2</strong> Interpreting · Swiss Perspective"
-           data-de="<strong>Panel 2</strong> Dolmetschen · Schweizer Perspektive"
-           data-fr="<strong>Panel 2</strong> Interprétation · Perspective suisse">
-        <strong>Panel 2</strong> Interpreting · Swiss Perspective
-      </div>
-    </div>
-  </div>
   <div class="talks-list">
     <div class="talk-row reveal">
       <div class="talk-date">Panel</div>
@@ -1780,7 +1908,7 @@
 
 <div class="wrap">
 <section id="code">
-  <div class="section-num reveal" data-en="07 · Code" data-de="07 · Kodex" data-fr="07 · Code">07 · Code</div>
+  <div class="section-num reveal" data-en="08 · Code" data-de="08 · Kodex" data-fr="08 · Code">08 · Code</div>
   <h2 class="section-h reveal"
       data-en="What I <em>stand by</em>."
       data-de="Wofür ich <em>stehe</em>."
@@ -1834,7 +1962,7 @@
 
 <div class="wrap">
 <section id="contact">
-  <div class="section-num reveal" data-en="08 · Contact" data-de="08 · Kontakt" data-fr="08 · Contact">08 · Contact</div>
+  <div class="section-num reveal" data-en="09 · Contact" data-de="09 · Kontakt" data-fr="09 · Contact">09 · Contact</div>
   <h2 class="section-h reveal"
       data-en="Reach me <em>directly</em>."
       data-de="Direkt <em>erreichbar</em>."
