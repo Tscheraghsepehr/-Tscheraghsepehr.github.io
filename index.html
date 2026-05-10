@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Daniel Tscheraghsepehr — Trainee Lawyer · MSc Candidate</title>
-<meta name="description" content="Daniel Tscheraghsepehr. Trainee Lawyer at Burkhalter Rechtsanwälte (Bern/Zurich). MSc in Business Administration & CAS in International Law and Economics. Bern, Switzerland.">
+<title>Daniel Tscheraghsepehr</title>
+<meta name="description" content="Daniel Tscheraghsepehr. Trainee Lawyer at Burkhalter Rechtsanwälte. Reading Corporate Finance at the University of Bern, and International Law & Economics at the World Trade Institute.">
 <meta property="og:title" content="Daniel Tscheraghsepehr">
-<meta property="og:description" content="Trainee Lawyer · MSc Candidate · Switzerland">
+<meta property="og:description" content="Trainee Lawyer · Corporate Finance · International Law &amp; Economics">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tscheraghsepehr.ch/">
 <meta property="og:image" content="https://tscheraghsepehr.ch/portrait.jpg">
 <meta property="og:locale" content="en_GB">
 <meta name="theme-color" content="#0a0b0d">
-<link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="%230a0b0d"/><text x="32" y="44" font-family="Georgia,serif" font-style="italic" font-size="34" font-weight="700" fill="%23c9a063" text-anchor="middle">DT</text></svg>'>
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 68"><rect width="64" height="68" fill="%230a0b0d"/><path d="M 8 6 L 56 6 L 56 36 C 56 47 42 56 32 60 C 22 56 8 47 8 36 Z" fill="none" stroke="%23c9a063" stroke-width="1.5"/><path d="M 12 9 L 52 9 L 52 35 C 52 44 40 52 32 55 C 24 52 12 44 12 35 Z" fill="none" stroke="%23c9a063" stroke-width="0.8" opacity="0.5"/><text x="32" y="36" font-family="Georgia,serif" font-style="italic" font-size="22" font-weight="700" fill="%23c9a063" text-anchor="middle">DT</text></svg>'>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -45,12 +45,15 @@
   body::before {
     content: "";
     position: fixed;
-    inset: 0;
+    inset: -10%;
     background:
-      radial-gradient(ellipse 900px 700px at 15% -5%, rgba(201, 160, 99, 0.08), transparent 65%),
-      radial-gradient(ellipse 800px 600px at 95% 105%, rgba(201, 160, 99, 0.05), transparent 65%);
+      radial-gradient(ellipse 900px 700px at 15% 10%, rgba(201, 160, 99, 0.10), transparent 65%),
+      radial-gradient(ellipse 800px 600px at 95% 90%, rgba(201, 160, 99, 0.07), transparent 65%),
+      radial-gradient(ellipse 700px 500px at 50% 50%, rgba(201, 160, 99, 0.04), transparent 70%);
     pointer-events: none;
     z-index: 0;
+    animation: drift 28s ease-in-out infinite;
+    will-change: transform;
   }
   body::after {
     content: "";
@@ -61,6 +64,11 @@
     mix-blend-mode: overlay;
     pointer-events: none;
     z-index: 1;
+  }
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -20px) scale(1.04); }
+    66% { transform: translate(-20px, 30px) scale(0.98); }
   }
   a { color: inherit; text-decoration: none; }
   ::selection { background: var(--gold); color: var(--bg); }
@@ -95,13 +103,7 @@
     align-items: center;
     gap: 1.2rem;
   }
-  .side-rail::after {
-    content: "";
-    width: 60px;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.4;
-  }
+  .side-rail::after { content: ""; width: 60px; height: 1px; background: var(--gold); opacity: 0.4; }
   @media (max-width: 1100px) { .side-rail { display: none; } }
 
   /* Top bar */
@@ -119,6 +121,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.1rem 0;
+    gap: 1.5rem;
   }
   .brand {
     display: flex;
@@ -127,21 +130,17 @@
     font-family: 'Cormorant Garamond', serif;
   }
   .brand-mono {
-    width: 38px; height: 38px;
-    border: 1px solid var(--gold);
+    width: 42px; height: 42px;
     display: flex; align-items: center; justify-content: center;
     color: var(--gold);
-    font-style: italic;
-    font-size: 1.05rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
     background: var(--bg);
-    transition: all 0.3s;
+    transition: color 0.3s, filter 0.3s, transform 0.3s;
   }
+  .brand-mono svg { width: 100%; height: 100%; display: block; }
   .brand:hover .brand-mono {
-    background: var(--gold);
-    color: var(--bg);
-    box-shadow: 0 0 24px var(--gold-glow);
+    color: var(--gold-bright);
+    filter: drop-shadow(0 0 14px var(--gold-glow));
+    transform: rotate(-2deg);
   }
   .brand-name {
     font-size: 1.18rem;
@@ -149,9 +148,15 @@
     color: var(--fg);
   }
   .brand-name em { font-style: italic; color: var(--gold); }
+
+  .nav-cluster {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+  }
   nav.links {
     display: flex;
-    gap: 1.7rem;
+    gap: 1.6rem;
     align-items: center;
     font-size: 0.7rem;
     letter-spacing: 0.2em;
@@ -183,11 +188,36 @@
   nav.links a:hover { color: var(--gold); }
   nav.links a:hover::after { width: 100%; }
 
-  /* Hero */
-  .hero {
-    padding: 5rem 0 6rem;
-    position: relative;
+  /* Lang switch */
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1px solid var(--border);
+    background: var(--bg-2);
   }
+  .lang-btn {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    padding: 0.45rem 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-right: 1px solid var(--border);
+  }
+  .lang-btn:last-child { border-right: none; }
+  .lang-btn:hover { color: var(--fg); background: rgba(201, 160, 99, 0.05); }
+  .lang-btn.active {
+    color: var(--bg);
+    background: var(--gold);
+  }
+
+  /* Hero */
+  .hero { padding: 5rem 0 6rem; position: relative; }
   .hero-meta {
     display: flex;
     justify-content: space-between;
@@ -195,14 +225,12 @@
     padding-bottom: 2rem;
     border-bottom: 1px solid var(--border);
     margin-bottom: 3rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
     color: var(--muted);
     font-size: 0.92rem;
     letter-spacing: 0.04em;
   }
-  .hero-meta .lt { color: var(--gold); font-style: normal; font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 500; }
-  .hero-meta .rt { font-size: 0.85rem; }
+  .hero-meta .lt { color: var(--gold); font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 500; }
+  .hero-meta .rt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--fg-soft); }
 
   .hero-grid {
     display: grid;
@@ -218,17 +246,37 @@
     letter-spacing: -0.025em;
     color: var(--fg);
   }
-  .hero-name .first {
-    display: block;
-    font-size: clamp(3.5rem, 9vw, 8rem);
-  }
+  .hero-name .first { display: block; font-size: clamp(3.5rem, 9vw, 8rem); }
   .hero-name .last {
     display: block;
     font-style: italic;
-    color: var(--gold);
     font-size: clamp(2.5rem, 7vw, 6.2rem);
-    margin-top: -0.05em;
+    margin-top: 0;
     margin-left: 0.05em;
+    line-height: 1.05;
+    padding-bottom: 0.18em;
+    overflow: visible;
+    background: linear-gradient(
+      100deg,
+      var(--gold-deep) 0%,
+      var(--gold) 25%,
+      #f5d999 45%,
+      #ffeec2 50%,
+      #f5d999 55%,
+      var(--gold) 75%,
+      var(--gold-deep) 100%
+    );
+    background-size: 250% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: shimmer 7s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0%, 100% { background-position: 100% 0; }
+    50% { background-position: 0% 0; }
   }
 
   .hero-decor {
@@ -241,7 +289,9 @@
     font-style: italic;
     font-size: 1.05rem;
   }
-  .hero-decor .ln { flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); max-width: 120px; }
+  .hero-decor .ln { flex: 1; height: 1px; max-width: 120px; }
+  .hero-decor .ln-l { background: linear-gradient(90deg, transparent, var(--gold)); }
+  .hero-decor .ln-r { background: linear-gradient(90deg, var(--gold), transparent); }
 
   .hero-tagline {
     font-family: 'Cormorant Garamond', serif;
@@ -250,7 +300,49 @@
     color: var(--fg-soft);
     line-height: 1.45;
     max-width: 540px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-now {
+    display: flex;
+    align-items: baseline;
+    gap: 0.85rem;
     margin-bottom: 2rem;
+    padding: 0.6rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    max-width: 540px;
+  }
+  .hero-now-label {
+    color: var(--gold);
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 500;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .hero-now-label::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 0 var(--gold);
+    animation: nowPulse 2.4s ease-out infinite;
+  }
+  @keyframes nowPulse {
+    0% { box-shadow: 0 0 0 0 rgba(201, 160, 99, 0.5); }
+    70% { box-shadow: 0 0 0 8px rgba(201, 160, 99, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(201, 160, 99, 0); }
+  }
+  .hero-now-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--fg-soft);
+    font-size: 0.98rem;
+    line-height: 1.4;
   }
 
   .hero-roles {
@@ -278,16 +370,9 @@
     background: var(--gold);
     border-radius: 50%;
   }
-  .role-pill:hover {
-    color: var(--gold);
-    border-color: var(--gold);
-  }
+  .role-pill:hover { color: var(--gold); border-color: var(--gold); }
 
-  .hero-actions {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
+  .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
   /* Portrait */
   .portrait-frame {
@@ -298,17 +383,17 @@
     margin-left: auto;
   }
   .portrait-frame img {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
     display: block;
-    filter: grayscale(40%) contrast(1.08) brightness(0.95) sepia(0.08);
-    transition: filter 0.6s;
+    filter: contrast(1.04) brightness(0.98);
+    transition: filter 0.4s, transform 0.5s;
     position: relative;
     z-index: 2;
   }
   .portrait-frame:hover img {
-    filter: grayscale(0%) contrast(1.05) brightness(1) sepia(0);
+    filter: contrast(1.08) brightness(1.02);
+    transform: scale(1.01);
   }
   .portrait-frame::before {
     content: "";
@@ -327,22 +412,6 @@
     border-top: 2px solid var(--gold);
     border-left: 2px solid var(--gold);
     z-index: 3;
-  }
-  .portrait-cap {
-    position: absolute;
-    bottom: -28px;
-    left: 4px;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    color: var(--gold);
-    font-size: 0.95rem;
-    letter-spacing: 0.05em;
-    z-index: 3;
-  }
-  .portrait-cap::before {
-    content: "—";
-    margin-right: 0.5rem;
-    color: var(--muted);
   }
 
   /* Buttons */
@@ -369,17 +438,14 @@
     background: var(--gold-bright);
     border-color: var(--gold-bright);
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(201, 160, 99, 0.28);
+    box-shadow: 0 12px 28px rgba(201, 160, 99, 0.32);
   }
   .btn-ghost {
     background: transparent;
     color: var(--fg);
     border-color: var(--border);
   }
-  .btn-ghost:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
   .btn .arrow { transition: transform 0.3s; }
   .btn:hover .arrow { transform: translateX(4px); }
 
@@ -410,12 +476,8 @@
   }
   .section-h em { font-style: italic; color: var(--gold); }
 
-  /* Latin maxim */
-  .maxim {
-    text-align: center;
-    padding: 5rem 0;
-    position: relative;
-  }
+  /* Maxim */
+  .maxim { text-align: center; padding: 5rem 0; position: relative; }
   .maxim::before, .maxim::after {
     content: "";
     position: absolute;
@@ -483,8 +545,18 @@
     font-weight: 500;
   }
   .manifest-text strong { color: var(--fg); font-weight: 600; }
+  .manifest-langs {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--muted);
+    padding-top: 1rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .manifest-langs strong { color: var(--gold); font-weight: 500; }
 
-  /* CV / Timeline rows */
+  /* CV rows */
   .cv-list { display: flex; flex-direction: column; }
   .cv-row {
     display: grid;
@@ -508,7 +580,7 @@
   .cv-main .org {
     color: var(--fg-soft);
     font-size: 0.92rem;
-    margin-bottom: 0.65rem;
+    margin-bottom: 0.5rem;
     letter-spacing: 0.02em;
   }
   .cv-main .org .loc {
@@ -524,14 +596,9 @@
     line-height: 1.65;
     max-width: 640px;
   }
-  .cv-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 0.75rem;
-  }
+  .cv-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.65rem; }
   .cv-tag {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     padding: 0.22rem 0.65rem;
     border: 1px solid var(--border);
     color: var(--muted);
@@ -546,48 +613,6 @@
     text-align: right;
     font-weight: 500;
   }
-
-  /* Languages */
-  .lang-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-  }
-  .lang-cell {
-    background: var(--bg-2);
-    padding: 1.5rem 1.5rem;
-    transition: background 0.3s;
-    position: relative;
-  }
-  .lang-cell:hover { background: var(--surface); }
-  .lang-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--fg);
-    margin-bottom: 0.4rem;
-    letter-spacing: -0.005em;
-  }
-  .lang-level {
-    color: var(--fg-soft);
-    font-size: 0.82rem;
-    letter-spacing: 0.04em;
-    margin-bottom: 0.85rem;
-  }
-  .lang-bar {
-    height: 2px;
-    background: var(--border);
-    overflow: hidden;
-  }
-  .lang-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--gold-deep), var(--gold));
-    transition: width 1.2s ease;
-  }
-  .lang-cell.native { background: linear-gradient(135deg, rgba(201,160,99,0.06), var(--bg-2)); }
-  .lang-cell.native .lang-name { color: var(--gold); font-style: italic; }
 
   /* Pull quote */
   .pull {
@@ -640,7 +665,130 @@
     position: relative;
   }
 
-  /* Publication feature */
+  /* Projects */
+  .project-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0;
+    border: 1px solid var(--border);
+    background: var(--bg-2);
+    margin-top: 1.5rem;
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .project-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+  .project-mark {
+    background: linear-gradient(135deg, var(--bg), var(--bg-2));
+    padding: 2.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+  .project-mark::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid var(--gold);
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  .project-mark svg { width: 110px; height: auto; position: relative; }
+  .project-body { padding: 2.5rem 2.5rem; }
+  .project-tag {
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  .project-h {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--fg);
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.005em;
+  }
+  .project-h em { font-style: italic; color: var(--gold); }
+  .project-org {
+    color: var(--fg-soft);
+    font-size: 0.92rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+  }
+  .project-org .loc {
+    color: var(--muted);
+    margin-left: 0.4rem;
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+  }
+  .project-body p {
+    color: var(--fg-soft);
+    font-size: 0.96rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    max-width: 620px;
+  }
+  .project-team {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+  .project-team-label {
+    color: var(--gold);
+    font-size: 0.66rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.65rem;
+  }
+  .project-team-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--fg-soft);
+    font-size: 1.05rem;
+    align-items: baseline;
+  }
+  .project-team-list a, .project-team-list .name {
+    color: var(--fg-soft);
+    transition: color 0.2s;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+  .project-team-list a {
+    border-bottom: 1px dashed var(--border);
+    padding-bottom: 1px;
+  }
+  .project-team-list a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+  .project-team-list .sep {
+    color: var(--muted);
+    font-style: normal;
+    user-select: none;
+  }
+  .project-team-list .role {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  /* Publication */
   .pub-feature {
     display: grid;
     grid-template-columns: 1fr 1.6fr;
@@ -667,31 +815,10 @@
     border: 1px solid rgba(10, 11, 13, 0.3);
     pointer-events: none;
   }
-  .pub-cover-top {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.05rem;
-    letter-spacing: 0.04em;
-    position: relative;
-  }
-  .pub-cover-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 7rem;
-    line-height: 0.85;
-    font-weight: 500;
-    letter-spacing: -0.04em;
-    position: relative;
-  }
-  .pub-cover-bot {
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    font-weight: 600;
-    position: relative;
-  }
-  .pub-body {
-    padding: 3.5rem 3rem;
-  }
+  .pub-cover-top { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; letter-spacing: 0.04em; position: relative; }
+  .pub-cover-num { font-family: 'Cormorant Garamond', serif; font-size: 7rem; line-height: 0.85; font-weight: 500; letter-spacing: -0.04em; position: relative; }
+  .pub-cover-bot { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 600; position: relative; }
+  .pub-body { padding: 3.5rem 3rem; }
   .pub-tag {
     color: var(--gold);
     font-size: 0.7rem;
@@ -731,7 +858,110 @@
   }
   .pub-meta strong { color: var(--gold); font-weight: 500; letter-spacing: 0.08em; }
 
-  /* Talks list */
+  /* Speaking feature image */
+  .speaking-feature {
+    display: grid;
+    grid-template-columns: 0.85fr 1fr;
+    gap: 0;
+    border: 1px solid var(--border);
+    background: var(--bg-2);
+    margin: 2rem 0 4rem;
+    overflow: hidden;
+  }
+  .speaking-feature-img {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: var(--bg);
+  }
+  .speaking-feature-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: contrast(1.06) saturate(0.92);
+    transition: transform 0.7s, filter 0.7s;
+  }
+  .speaking-feature:hover .speaking-feature-img img {
+    transform: scale(1.02);
+    filter: contrast(1.08) saturate(1);
+  }
+  .speaking-feature-img::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 36px; height: 36px;
+    border-top: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+    z-index: 3;
+    pointer-events: none;
+  }
+  .speaking-feature-img::after {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid var(--gold);
+    opacity: 0.35;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .speaking-feature-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.5rem 3rem;
+    position: relative;
+  }
+  .speaking-feature-tag {
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .speaking-feature-tag::before {
+    content: "";
+    width: 28px; height: 1px;
+    background: var(--gold);
+  }
+  .speaking-feature-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+    line-height: 1.25;
+    color: var(--fg);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.005em;
+  }
+  .speaking-feature-quote em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .speaking-feature-meta {
+    color: var(--fg-soft);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+  .speaking-feature-meta strong {
+    color: var(--gold);
+    font-weight: 500;
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  /* Talks */
   .talks-list { display: flex; flex-direction: column; }
   .talk-row {
     display: grid;
@@ -767,48 +997,53 @@
   }
 
   /* Code */
-  .code-list { display: flex; flex-direction: column; }
-  .code-row {
+  .code-list {
     display: grid;
-    grid-template-columns: 80px 1fr auto;
-    gap: 2.5rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--border);
-    align-items: baseline;
-    transition: padding-left 0.4s;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+    margin-top: 1rem;
   }
-  .code-row:hover { padding-left: 1.25rem; }
-  .code-row:hover .code-num { color: var(--gold-bright); transform: scale(1.05); }
+  .code-item {
+    padding: 2.25rem 2rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.4s;
+    position: relative;
+  }
+  .code-item:nth-child(2n) { border-right: none; }
+  .code-item:nth-last-child(-n+2) { border-bottom: none; }
+  .code-item:hover { background: var(--surface); }
+  .code-item:hover .code-num { color: var(--gold-bright); }
   .code-num {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
-    font-size: 1.9rem;
+    font-size: 1.5rem;
     color: var(--gold);
-    transition: all 0.3s;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
     line-height: 1;
   }
-  .code-content h3 {
+  .code-item h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.65rem;
     font-weight: 500;
     color: var(--fg);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
     letter-spacing: -0.005em;
   }
-  .code-content p {
+  .code-item p {
     color: var(--fg-soft);
-    font-size: 0.97rem;
+    font-size: 0.94rem;
     line-height: 1.7;
-    max-width: 700px;
   }
   .code-latin {
+    position: absolute;
+    top: 1.25rem; right: 1.5rem;
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     color: var(--muted);
-    font-size: 0.9rem;
-    text-align: right;
-    white-space: nowrap;
-    align-self: center;
+    font-size: 0.85rem;
   }
 
   /* Contact */
@@ -852,32 +1087,51 @@
     font-size: 1.15rem;
     line-height: 1.6;
   }
-  .contact-mail-row {
+  .contact-channels {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    margin-top: 0.5rem;
+    gap: 1.5rem;
   }
-  .contact-label {
+  .contact-channel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    background: rgba(10, 11, 13, 0.4);
+    transition: all 0.3s;
+    color: var(--fg);
+  }
+  .contact-channel:hover {
+    border-color: var(--gold);
+    background: rgba(201, 160, 99, 0.06);
+    transform: translateX(4px);
+  }
+  .contact-channel:hover .contact-channel-icon { color: var(--gold-bright); transform: scale(1.05); }
+  .contact-channel-icon {
+    width: 32px; height: 32px;
+    flex-shrink: 0;
     color: var(--gold);
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
+    transition: all 0.3s;
+  }
+  .contact-channel-icon svg { width: 100%; height: 100%; }
+  .contact-channel-body { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+  .contact-channel-label {
+    color: var(--muted);
+    font-size: 0.66rem;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     font-weight: 500;
+    margin-bottom: 0.2rem;
   }
-  .contact-mail {
+  .contact-channel-value {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.3rem, 2.5vw, 1.85rem);
+    font-size: 1.2rem;
     color: var(--fg);
-    border-bottom: 1px solid var(--gold);
-    padding-bottom: 0.45rem;
-    transition: all 0.3s;
-    align-self: flex-start;
-    letter-spacing: 0.005em;
-  }
-  .contact-mail:hover {
-    color: var(--gold);
-    padding-bottom: 0.65rem;
+    letter-spacing: 0.01em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   /* Footer */
@@ -905,14 +1159,12 @@
     color: var(--fg);
   }
   .footer-mono .fmark {
-    width: 26px; height: 26px;
-    border: 1px solid var(--gold);
+    width: 28px; height: 28px;
     display: flex; align-items: center; justify-content: center;
-    font-style: italic;
     color: var(--gold);
-    font-size: 0.85rem;
-    font-weight: 600;
+    flex-shrink: 0;
   }
+  .footer-mono .fmark svg { width: 100%; height: 100%; display: block; }
   .footer-tagline {
     text-align: center;
     color: var(--gold);
@@ -928,9 +1180,61 @@
     color: var(--muted);
   }
 
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 1s ease, transform 1s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+  /* ELSA mark */
+  .org-with-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+  }
+  .elsa-mark {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: inline-flex;
+    transition: transform 0.3s, filter 0.3s;
+  }
+  .elsa-mark svg { width: 100%; height: 100%; }
+  .cv-row:hover .elsa-mark {
+    transform: rotate(-3deg) scale(1.05);
+    filter: drop-shadow(0 0 8px var(--gold-glow));
+  }
 
+  /* Reveal */
+  .reveal {
+    opacity: 0;
+    filter: blur(14px);
+    transform: translateY(50px) scale(0.97);
+    transition:
+      opacity 1.4s cubic-bezier(0.2, 0.65, 0.2, 1),
+      filter 1.4s cubic-bezier(0.2, 0.65, 0.2, 1),
+      transform 1.4s cubic-bezier(0.2, 0.65, 0.2, 1);
+    will-change: opacity, filter, transform;
+  }
+  .reveal.visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+
+  .stage {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(30px);
+    animation: stageIn 1.6s cubic-bezier(0.2, 0.65, 0.2, 1) forwards;
+  }
+  @keyframes stageIn {
+    to { opacity: 1; filter: blur(0); transform: translateY(0); }
+  }
+  .stage-1 { animation-delay: 0.05s; }
+  .stage-2 { animation-delay: 0.25s; }
+  .stage-3 { animation-delay: 0.45s; }
+  .stage-4 { animation-delay: 0.65s; }
+  .stage-5 { animation-delay: 0.85s; }
+  .stage-6 { animation-delay: 1.05s; }
+
+  @media (max-width: 1100px) {
+    nav.links { gap: 1rem; font-size: 0.65rem; }
+  }
   @media (max-width: 900px) {
     .hero { padding: 3rem 0 4rem; }
     .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -944,8 +1248,16 @@
     .pub-cover { min-height: 220px; padding: 2.5rem 2rem; }
     .pub-body { padding: 2.5rem 2rem; }
     .pub-cover-num { font-size: 5rem; }
-    .code-row { grid-template-columns: 50px 1fr; gap: 1.25rem; }
-    .code-latin { display: none; }
+    .speaking-feature { grid-template-columns: 1fr; }
+    .speaking-feature-img { aspect-ratio: 4 / 5; }
+    .speaking-feature-text { padding: 2.5rem 2rem; }
+    .project-card { grid-template-columns: 1fr; }
+    .project-mark { padding: 2rem; border-right: none; border-bottom: 1px solid var(--border); }
+    .project-mark svg { width: 90px; }
+    .project-body { padding: 2rem; }
+    .code-list { grid-template-columns: 1fr; }
+    .code-item { border-right: none !important; }
+    .code-item:last-child { border-bottom: none !important; }
     .contact-stage { grid-template-columns: 1fr; }
     .contact-left { border-right: none; border-bottom: 1px solid var(--border); }
     .contact-left, .contact-right { padding: 2.5rem 1.75rem; }
@@ -957,6 +1269,8 @@
     .pull { padding: 4.5rem 1.5rem; }
     .maxim { padding: 4rem 0; }
     .wrap { padding: 0 1.5rem; }
+    .top-inner { padding: 0.85rem 0; }
+    .lang-btn { padding: 0.4rem 0.6rem; font-size: 0.65rem; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -964,73 +1278,101 @@
       animation-duration: 0.01ms !important;
       transition-duration: 0.01ms !important;
     }
-    .reveal { opacity: 1; transform: none; }
+    .reveal { opacity: 1; filter: none; transform: none; }
+    .stage { opacity: 1; filter: none; transform: none; animation: none; }
   }
 </style>
 </head>
 <body>
 
 <div id="progress"></div>
-<div class="side-rail">Daniel Tscheraghsepehr · Bern</div>
+<div class="side-rail">Daniel Tscheraghsepehr · Bern / Zurich</div>
 
 <header class="top">
   <div class="wrap top-inner">
     <a href="#" class="brand">
-      <span class="brand-mono">DT</span>
+      <span class="brand-mono">
+        <svg viewBox="0 0 42 44" xmlns="http://www.w3.org/2000/svg" aria-label="DT Crest">
+          <path d="M 5 4 Q 5 3 6 3 L 36 3 Q 37 3 37 4 L 37 24 C 37 32 28 38 21 41 C 14 38 5 32 5 24 Z"
+                fill="none" stroke="currentColor" stroke-width="0.8"/>
+          <path d="M 7.5 5.5 L 34.5 5.5 L 34.5 23.5 C 34.5 30 27 35 21 37 C 15 35 7.5 30 7.5 23.5 Z"
+                fill="none" stroke="currentColor" stroke-width="0.4" opacity="0.5"/>
+          <text x="21" y="23" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-size="13" font-weight="600" fill="currentColor" text-anchor="middle" letter-spacing="-0.3">DT</text>
+        </svg>
+      </span>
       <span class="brand-name">Daniel <em>Tscheraghsepehr</em></span>
     </a>
-    <nav class="links">
-      <a href="#profile"><sup>i</sup>Profile</a>
-      <a href="#education"><sup>ii</sup>Education</a>
-      <a href="#experience"><sup>iii</sup>Experience</a>
-      <a href="#languages"><sup>iv</sup>Languages</a>
-      <a href="#publication"><sup>v</sup>Publication</a>
-      <a href="#contact"><sup>vi</sup>Contact</a>
-    </nav>
+    <div class="nav-cluster">
+      <nav class="links">
+        <a href="#profile" data-en="<sup>i</sup>Profile" data-de="<sup>i</sup>Profil" data-fr="<sup>i</sup>Profil"><sup>i</sup>Profile</a>
+        <a href="#education" data-en="<sup>ii</sup>Education" data-de="<sup>ii</sup>Ausbildung" data-fr="<sup>ii</sup>Formation"><sup>ii</sup>Education</a>
+        <a href="#experience" data-en="<sup>iii</sup>Experience" data-de="<sup>iii</sup>Erfahrung" data-fr="<sup>iii</sup>Expérience"><sup>iii</sup>Experience</a>
+        <a href="#projects" data-en="<sup>iv</sup>Projects" data-de="<sup>iv</sup>Projekte" data-fr="<sup>iv</sup>Projets"><sup>iv</sup>Projects</a>
+        <a href="#publication" data-en="<sup>v</sup>Publication" data-de="<sup>v</sup>Publikation" data-fr="<sup>v</sup>Publication"><sup>v</sup>Publication</a>
+        <a href="#code" data-en="<sup>vi</sup>Code" data-de="<sup>vi</sup>Kodex" data-fr="<sup>vi</sup>Code"><sup>vi</sup>Code</a>
+        <a href="#contact" data-en="<sup>vii</sup>Contact" data-de="<sup>vii</sup>Kontakt" data-fr="<sup>vii</sup>Contact"><sup>vii</sup>Contact</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="en" type="button">EN</button>
+        <button class="lang-btn" data-lang="de" type="button">DE</button>
+        <button class="lang-btn" data-lang="fr" type="button">FR</button>
+      </div>
+    </div>
   </div>
 </header>
 
 <div class="wrap">
 
 <section class="hero">
-  <div class="hero-meta">
-    <span class="lt">Personal</span>
-    <span class="rt">Bern, Helvetia</span>
+  <div class="hero-meta stage stage-1">
+    <span class="lt" data-en="Personal" data-de="Persönlich" data-fr="Personnel">Personal</span>
+    <span class="rt">Bern / Zurich</span>
   </div>
   <div class="hero-grid">
     <div>
-      <h1 class="hero-name">
+      <h1 class="hero-name stage stage-2">
         <span class="first">Daniel</span>
         <span class="last">Tscheraghsepehr</span>
       </h1>
-      <div class="hero-decor">
-        <span class="ln"></span>
-        <span>Iuris &amp; Negotii</span>
-        <span class="ln"></span>
+      <div class="hero-decor stage stage-3">
+        <span class="ln ln-l"></span>
+        <span>MLaw</span>
+        <span class="ln ln-r"></span>
       </div>
-      <p class="hero-tagline">
-        Trainee Lawyer in Bern and Zurich. <br>
-        Master of Law, MSc Candidate — at home in several languages and across two disciplines.
+      <p class="hero-tagline stage stage-4"
+         data-en="Trainee Lawyer at Burkhalter. Building toward Corporate Finance and International Law."
+         data-de="Substitut bei Burkhalter. Auf dem Weg in Corporate Finance und Internationales Recht."
+         data-fr="Avocat-stagiaire chez Burkhalter. En route vers la Corporate Finance et le droit international.">
+        Trainee Lawyer at Burkhalter. Building toward Corporate Finance and International Law.
       </p>
-      <div class="hero-roles">
-        <span class="role-pill">Trainee Lawyer</span>
-        <span class="role-pill">MSc · Corporate Finance</span>
-        <span class="role-pill">CAS · International Law &amp; Economics</span>
-        <span class="role-pill">Multilingual</span>
+      <div class="hero-now stage stage-4">
+        <span class="hero-now-label">Currently</span>
+        <span class="hero-now-text"
+              data-en="Working at Burkhalter. Reading at the University of Bern.<br>Building <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>."
+              data-de="Arbeit bei Burkhalter. Studium an der Universität Bern.<br>Aufbau von <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>."
+              data-fr="En poste chez Burkhalter. Études à l'Université de Berne.<br>Développement de <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>.">
+          Working at Burkhalter. Reading at the University of Bern.<br>Building <em style="color: var(--gold); font-style: italic;">«Legal Information Extraction with Large Language Models»</em>.
+        </span>
       </div>
-      <div class="hero-actions">
+      <div class="hero-roles stage stage-5">
+        <span class="role-pill" data-en="Trainee Lawyer" data-de="Substitut" data-fr="Avocat-stagiaire">Trainee Lawyer</span>
+        <span class="role-pill" data-en="Corporate · Tax · Banking" data-de="Gesellschafts-, Steuer- &amp; Bankrecht" data-fr="Sociétés · Fiscal · Banque">Corporate · Tax · Banking</span>
+        <span class="role-pill" data-en="DLT · Stablecoins" data-de="DLT · Stablecoins" data-fr="DLT · Stablecoins">DLT · Stablecoins</span>
+        <span class="role-pill" data-en="MSc · Corporate Finance" data-de="MSc · Corporate Finance" data-fr="MSc · Finance d'entreprise">MSc · Corporate Finance</span>
+      </div>
+      <div class="hero-actions stage stage-6">
         <a href="#contact" class="btn btn-primary">
-          Get in touch
+          <span data-en="Request a meeting" data-de="Termin anfragen" data-fr="Demander un rendez-vous">Request a meeting</span>
           <span class="arrow">→</span>
         </a>
-        <a href="#profile" class="btn btn-ghost">
+        <a href="#profile" class="btn btn-ghost"
+           data-en="Read profile" data-de="Profil lesen" data-fr="Lire le profil">
           Read profile
         </a>
       </div>
     </div>
-    <div class="portrait-frame">
+    <div class="portrait-frame stage stage-3">
       <img src="portrait.jpg" alt="Daniel Tscheraghsepehr" />
-      <span class="portrait-cap">Zurich</span>
     </div>
   </div>
 </section>
@@ -1039,9 +1381,24 @@
 
 <section class="maxim">
   <div class="wrap">
-    <div class="maxim-latin reveal">«Ius est ars boni et aequi.»</div>
-    <div class="maxim-de reveal">— Law is the art of the good and the just.</div>
-    <div class="maxim-attr reveal">Celsus · Digest 1, 1, 1</div>
+    <div class="maxim-latin reveal"
+         data-en="«Consistency compounds.»"
+         data-de="«Beständigkeit potenziert sich.»"
+         data-fr="«La constance se compose.»">
+      «Consistency compounds.»
+    </div>
+    <div class="maxim-de reveal"
+         data-en="Small advantages, repeated, become decisive."
+         data-de="Kleine Vorteile, wiederholt, werden entscheidend."
+         data-fr="De petits avantages, répétés, deviennent décisifs.">
+      Small advantages, repeated, become decisive.
+    </div>
+    <div class="maxim-attr reveal"
+         data-en="First principle"
+         data-de="Grundprinzip"
+         data-fr="Principe de base">
+      First principle
+    </div>
   </div>
 </section>
 
@@ -1050,18 +1407,32 @@
 <section id="profile">
   <div class="manifest-grid">
     <aside class="manifest-side">
-      <div class="section-num reveal">01 — Profile</div>
-      <h2 class="heading reveal">Two disciplines,<br>many languages,<br><em>one stance.</em></h2>
+      <div class="section-num reveal" data-en="01 · Profile" data-de="01 · Profil" data-fr="01 · Profil">01 · Profile</div>
+      <h2 class="heading reveal"
+          data-en="Two disciplines.<br><em>One stance.</em>"
+          data-de="Zwei Disziplinen.<br><em>Eine Haltung.</em>"
+          data-fr="Deux disciplines.<br><em>Une posture.</em>">
+        Two disciplines.<br><em>One stance.</em>
+      </h2>
     </aside>
     <div class="manifest-text">
-      <p class="reveal">
-        Law is the language in which a society negotiates what may be expected of its members. Economics is the language in which it allocates its resources. To work fluently in both is to understand <strong>contracts, transactions and accountability</strong> not as separate worlds, but as two sides of the same coin.
+      <p class="reveal"
+         data-en="Trainee Lawyer at <strong>Burkhalter Rechtsanwälte</strong> in Bern and Zurich. Reading Corporate Finance at the University of Bern and International Law &amp; Economics at the World Trade Institute."
+         data-de="Substitut bei <strong>Burkhalter Rechtsanwälte</strong> in Bern und Zürich. MSc in Corporate Finance an der Universität Bern und CAS in International Law &amp; Economics am World Trade Institute."
+         data-fr="Avocat-stagiaire chez <strong>Burkhalter Rechtsanwälte</strong> à Berne et Zurich. MSc en Corporate Finance à l'Université de Berne et CAS en droit international et économie au World Trade Institute.">
+        Trainee Lawyer at <strong>Burkhalter Rechtsanwälte</strong> in Bern and Zurich. Reading Corporate Finance at the University of Bern and International Law &amp; Economics at the World Trade Institute.
       </p>
-      <p class="reveal">
-        I read law at the University of Bern (BLaw 2024, MLaw 2025) and now serve as a <strong>Trainee Lawyer at Burkhalter Rechtsanwälte</strong> in Bern and Zurich. In parallel, I am pursuing an <strong>MSc in Business Administration</strong> with a specialisation in Corporate Finance, and a <strong>CAS in International Law &amp; Economics</strong> at the World Trade Institute.
+      <p class="reveal"
+         data-en="Built where law meets finance."
+         data-de="Geschaffen für die Schnittstelle von Recht und Finanzen."
+         data-fr="Conçu pour l'intersection entre le droit et la finance.">
+        Built where law meets finance.
       </p>
-      <p class="reveal">
-        My background as an accredited court interpreter for the Canton of Bern shaped how I read texts: precisely, with attention to nuance, and aware that the choice of a single word can decide a case. The same care underlies how I draft, advise and present.
+      <p class="manifest-langs reveal"
+         data-en="Working in <strong>German, English, Farsi, Dari and French</strong>."
+         data-de="Arbeitssprachen: <strong>Deutsch, Englisch, Farsi, Dari und Französisch</strong>."
+         data-fr="Langues de travail : <strong>allemand, anglais, persan, dari et français</strong>.">
+        Working in <strong>German, English, Farsi, Dari and French</strong>.
       </p>
     </div>
   </div>
@@ -1071,30 +1442,43 @@
 
 <div class="wrap">
 <section id="education">
-  <div class="section-num reveal">02 — Education</div>
-  <h2 class="section-h reveal">Where I have <em>read</em>.</h2>
+  <div class="section-num reveal" data-en="02 · Education" data-de="02 · Ausbildung" data-fr="02 · Formation">02 · Education</div>
+  <h2 class="section-h reveal"
+      data-en="Where I have <em>read</em>."
+      data-de="Wo ich <em>studiert</em> habe."
+      data-fr="Où j'ai <em>étudié</em>.">
+    Where I have <em>read</em>.
+  </h2>
   <div class="cv-list">
     <div class="cv-row reveal">
       <div class="cv-main">
         <h3>CAS in International Law &amp; <em>Economics</em></h3>
-        <div class="org">World Trade Institute (WTI) <span class="loc">— Bern</span></div>
-        <p>Postgraduate certificate at the intersection of law and economics. Coursework in international trade and market access law (WTO/FTA fundamentals), international contract law and trade compliance.</p>
+        <div class="org">World Trade Institute (WTI) <span class="loc">Bern</span></div>
+        <p data-en="WTO and FTA fundamentals, international contract law, trade compliance."
+           data-de="Grundlagen WTO und Freihandel, internationales Vertragsrecht, Trade Compliance."
+           data-fr="Fondements OMC et ALE, droit international des contrats, conformité commerciale.">
+          WTO and FTA fundamentals, international contract law, trade compliance.
+        </p>
         <div class="cv-tags">
-          <span class="cv-tag">WTO/FTA</span>
-          <span class="cv-tag">Contract Law</span>
-          <span class="cv-tag">Compliance</span>
+          <span class="cv-tag">WTO / FTA</span>
+          <span class="cv-tag" data-en="Contract" data-de="Vertrag" data-fr="Contrat">Contract</span>
+          <span class="cv-tag" data-en="Compliance" data-de="Compliance" data-fr="Conformité">Compliance</span>
         </div>
       </div>
       <div class="cv-side">CAS</div>
     </div>
     <div class="cv-row reveal">
       <div class="cv-main">
-        <h3>MSc in <em>Business Administration</em></h3>
-        <div class="org">University of Bern <span class="loc">— Bern</span></div>
-        <p>Master's programme with a specialisation in Corporate Finance. Focus areas: company valuation, real estate valuation, and financial reporting under IFRS and Swiss GAAP FER.</p>
+        <h3 data-en="MSc in <em>Business Administration</em>" data-de="MSc in <em>Business Administration</em>" data-fr="MSc en <em>Administration des Affaires</em>">MSc in <em>Business Administration</em></h3>
+        <div class="org">University of Bern <span class="loc">Bern</span></div>
+        <p data-en="Specialisation in Corporate Finance: company valuation, real estate valuation, financial reporting (IFRS, Swiss GAAP FER)."
+           data-de="Vertiefung Corporate Finance: Unternehmensbewertung, Immobilienbewertung, Rechnungslegung (IFRS, Swiss GAAP FER)."
+           data-fr="Spécialisation en Corporate Finance : évaluation d'entreprise, évaluation immobilière, reporting financier (IFRS, Swiss GAAP FER).">
+          Specialisation in Corporate Finance: company valuation, real estate valuation, financial reporting (IFRS, Swiss GAAP FER).
+        </p>
         <div class="cv-tags">
           <span class="cv-tag">Corporate Finance</span>
-          <span class="cv-tag">Valuation</span>
+          <span class="cv-tag" data-en="Valuation" data-de="Bewertung" data-fr="Évaluation">Valuation</span>
           <span class="cv-tag">IFRS / Swiss GAAP FER</span>
         </div>
       </div>
@@ -1102,24 +1486,33 @@
     </div>
     <div class="cv-row reveal">
       <div class="cv-main">
-        <h3>Master of <em>Law</em></h3>
-        <div class="org">University of Bern <span class="loc">— Bern</span></div>
-        <p>Concluding stage of legal studies — deepening of private, commercial and procedural law.</p>
+        <h3 data-en="Master of <em>Law</em>" data-de="Master of <em>Law</em>" data-fr="Master en <em>Droit</em>">Master of <em>Law</em></h3>
+        <div class="org">University of Bern <span class="loc">Bern</span></div>
+        <p data-en='Master&rsquo;s thesis: <em style="color: var(--gold); font-style: italic;">&laquo;Stablecoins and AML Law &mdash; Legal qualification of stablecoins under FINMA supervisory practice.&raquo;</em>'
+           data-de='Masterarbeit: <em style="color: var(--gold); font-style: italic;">&laquo;Stablecoins und das Geldw&auml;schereirecht &ndash; Zur rechtlichen Qualifikation von Stablecoins im Lichte der FINMA-Aufsichtspraxis.&raquo;</em>'
+           data-fr='M&eacute;moire de master&nbsp;: <em style="color: var(--gold); font-style: italic;">&laquo;&nbsp;Stablecoins et droit anti-blanchiment &mdash; Qualification juridique des stablecoins selon la pratique de surveillance de la FINMA.&nbsp;&raquo;</em>'>
+          Master&rsquo;s thesis: <em style="color: var(--gold); font-style: italic;">&laquo;Stablecoins and AML Law &mdash; Legal qualification of stablecoins under FINMA supervisory practice.&raquo;</em>
+        </p>
+        <div class="cv-tags">
+          <span class="cv-tag">Stablecoins</span>
+          <span class="cv-tag">FINMA</span>
+          <span class="cv-tag">AML</span>
+          <span class="cv-tag">DLT</span>
+        </div>
       </div>
       <div class="cv-side">MLaw</div>
     </div>
     <div class="cv-row reveal">
       <div class="cv-main">
-        <h3>BSc Minor in <em>Business Administration</em></h3>
-        <div class="org">University of Bern <span class="loc">— Bern</span></div>
+        <h3 data-en="BSc Minor in <em>Business Administration</em>" data-de="BSc Minor in <em>Business Administration</em>" data-fr="BSc Mineure en <em>Administration des Affaires</em>">BSc Minor in <em>Business Administration</em></h3>
+        <div class="org">University of Bern <span class="loc">Bern</span></div>
       </div>
-      <div class="cv-side">Minor</div>
+      <div class="cv-side" data-en="Minor" data-de="Nebenfach" data-fr="Mineure">Minor</div>
     </div>
     <div class="cv-row reveal">
       <div class="cv-main">
-        <h3>Bachelor of <em>Law</em></h3>
-        <div class="org">University of Bern <span class="loc">— Bern</span></div>
-        <p>Foundation in Swiss legal order, methodology and the principal fields of public, private and criminal law.</p>
+        <h3 data-en="Bachelor of <em>Law</em>" data-de="Bachelor of <em>Law</em>" data-fr="Bachelor en <em>Droit</em>">Bachelor of <em>Law</em></h3>
+        <div class="org">University of Bern <span class="loc">Bern</span></div>
       </div>
       <div class="cv-side">BLaw</div>
     </div>
@@ -1130,106 +1523,161 @@
 <section class="pull">
   <div class="wrap reveal">
     <div class="pull-mark">“</div>
-    <blockquote>
-      Strong knowledge of corporate law, corporate finance and valuation —<br>
-      combined with experience in <em>presenting complex topics</em> to external audiences.
+    <blockquote
+        data-en="<em>Pressure</em> reveals standards.<br><em>Execution</em> over noise."
+        data-de="<em>Druck</em> offenbart Standards.<br><em>Ausführung</em> statt Lärm."
+        data-fr="La <em>pression</em> révèle les standards.<br>L'<em>exécution</em> avant le bruit.">
+      <em>Pressure</em> reveals standards.<br><em>Execution</em> over noise.
     </blockquote>
-    <cite>Working profile</cite>
+    <cite data-en="Operating principle" data-de="Arbeitsprinzip" data-fr="Principe de travail">Operating principle</cite>
   </div>
 </section>
 
 <div class="wrap">
 <section id="experience">
-  <div class="section-num reveal">03 — Experience</div>
-  <h2 class="section-h reveal">Where I have <em>worked</em>.</h2>
+  <div class="section-num reveal" data-en="03 · Experience" data-de="03 · Erfahrung" data-fr="03 · Expérience">03 · Experience</div>
+  <h2 class="section-h reveal"
+      data-en="Where I have <em>worked</em>."
+      data-de="Wo ich <em>gearbeitet</em> habe."
+      data-fr="Où j'ai <em>travaillé</em>.">
+    Where I have <em>worked</em>.
+  </h2>
   <div class="cv-list">
     <div class="cv-row reveal">
       <div class="cv-main">
-        <h3>Trainee <em>Lawyer</em></h3>
-        <div class="org">Burkhalter Rechtsanwälte <span class="loc">— Bern / Zurich</span></div>
-        <p>Substantive legal work in a Swiss commercial law practice. Drafting, research and client matters across private and corporate law.</p>
-      </div>
-      <div class="cv-side">Current</div>
-    </div>
-    <div class="cv-row reveal">
-      <div class="cv-main">
-        <h3>Legal <em>Intern</em></h3>
-        <div class="org">Office of the Attorney General of the Canton of Bern <span class="loc">— Bern</span></div>
-        <p>Insight into Swiss prosecution practice. Supporting case files, applied criminal procedure, drafting.</p>
-      </div>
-      <div class="cv-side">Public</div>
-    </div>
-    <div class="cv-row reveal">
-      <div class="cv-main">
-        <h3>Legal <em>Intern</em></h3>
-        <div class="org">Häusermann + Partner <span class="loc">— Gstaad / Bern</span></div>
-        <p>Boutique-firm exposure across private and contract matters.</p>
-      </div>
-      <div class="cv-side">Private</div>
-    </div>
-    <div class="cv-row reveal">
-      <div class="cv-main">
-        <h3>Accredited Court <em>Interpreter</em></h3>
-        <div class="org">Canton of Bern <span class="loc">— courts &amp; authorities</span></div>
-        <p>Sworn interpreter for Swiss courts and prosecutorial authorities. Direct experience of the courtroom from the linguistic side — including the responsibilities and pitfalls explored in my publication on the Nuremberg trial.</p>
+        <h3 data-en="Trainee <em>Lawyer</em>" data-de="<em>Substitut</em>" data-fr="<em>Avocat-stagiaire</em>">Trainee <em>Lawyer</em></h3>
+        <div class="org">Burkhalter Rechtsanwälte <span class="loc">Bern / Zurich</span></div>
         <div class="cv-tags">
-          <span class="cv-tag">Sworn</span>
-          <span class="cv-tag">Multilingual</span>
+          <span class="cv-tag" data-en="Commercial Law" data-de="Wirtschaftsrecht" data-fr="Droit commercial">Commercial Law</span>
+          <span class="cv-tag" data-en="Corporate" data-de="Gesellschaftsrecht" data-fr="Sociétés">Corporate</span>
+          <span class="cv-tag" data-en="Drafting" data-de="Schriftsätze" data-fr="Rédaction">Drafting</span>
         </div>
       </div>
-      <div class="cv-side">Sworn</div>
+      <div class="cv-side" data-en="Current" data-de="Aktuell" data-fr="Actuel">Current</div>
     </div>
     <div class="cv-row reveal">
       <div class="cv-main">
-        <h3><em>Treasurer</em> · Board Member</h3>
-        <div class="org">ELSA Bern <span class="loc">— European Law Students' Association</span></div>
-        <p>Treasurer and member of the board of ELSA Bern, contributing to academic events and student governance.</p>
+        <h3 data-en="<em>Treasurer</em> · Board Member"
+            data-de="<em>Kassier</em> · Vorstandsmitglied"
+            data-fr="<em>Trésorier</em> · Membre du comité">
+          <em>Treasurer</em> · Board Member
+        </h3>
+        <div class="org">ELSA Bern <span class="loc">European Law Students' Association</span></div>
+        <div class="cv-tags">
+          <span class="cv-tag" data-en="Asset Management" data-de="Vermögensverwaltung" data-fr="Gestion d'actifs">Asset Management</span>
+          <span class="cv-tag" data-en="Budgeting &amp; Financial Control" data-de="Budgetierung &amp; Finanzkontrolle" data-fr="Budgétisation &amp; Contrôle financier">Budgeting &amp; Financial Control</span>
+          <span class="cv-tag" data-en="Annual Financial Reporting" data-de="Jahresabschluss" data-fr="Rapport financier annuel">Annual Financial Reporting</span>
+        </div>
       </div>
-      <div class="cv-side">Board</div>
+      <div class="cv-side" data-en="Board" data-de="Vorstand" data-fr="Comité">Board</div>
+    </div>
+    <div class="cv-row reveal">
+      <div class="cv-main">
+        <h3 data-en="Legal <em>Trainee</em>" data-de="<em>Rechtspraktikant</em>" data-fr="<em>Stagiaire juridique</em>">Legal <em>Trainee</em></h3>
+        <div class="org"
+             data-en="Office of the Attorney General of the Canton of Bern <span class=&quot;loc&quot;>Bern</span>"
+             data-de="Generalstaatsanwaltschaft des Kantons Bern <span class=&quot;loc&quot;>Bern</span>"
+             data-fr="Ministère public général du canton de Berne <span class=&quot;loc&quot;>Berne</span>">
+          Office of the Attorney General of the Canton of Bern <span class="loc">Bern</span>
+        </div>
+        <div class="cv-tags">
+          <span class="cv-tag" data-en="Litigation" data-de="Prozessführung" data-fr="Contentieux">Litigation</span>
+          <span class="cv-tag" data-en="Criminal Procedure" data-de="Strafverfahren" data-fr="Procédure pénale">Criminal Procedure</span>
+        </div>
+      </div>
+      <div class="cv-side" data-en="Public" data-de="Öffentlich" data-fr="Public">Public</div>
+    </div>
+    <div class="cv-row reveal">
+      <div class="cv-main">
+        <h3 data-en="Legal <em>Trainee</em>" data-de="<em>Rechtspraktikant</em>" data-fr="<em>Stagiaire juridique</em>">Legal <em>Trainee</em></h3>
+        <div class="org">Häusermann + Partner <span class="loc">Gstaad / Bern</span></div>
+        <div class="cv-tags">
+          <span class="cv-tag" data-en="Real Estate" data-de="Immobilien" data-fr="Immobilier">Real Estate</span>
+          <span class="cv-tag" data-en="Notarial Practice" data-de="Notariatspraxis" data-fr="Pratique notariale">Notarial Practice</span>
+          <span class="cv-tag" data-en="Tax Law" data-de="Steuerrecht" data-fr="Droit fiscal">Tax Law</span>
+        </div>
+      </div>
+      <div class="cv-side" data-en="Private" data-de="Privat" data-fr="Privé">Private</div>
+    </div>
+    <div class="cv-row reveal">
+      <div class="cv-main">
+        <h3 data-en="Accredited Court <em>Interpreter</em>"
+            data-de="Vereidigter <em>Gerichtsdolmetscher</em>"
+            data-fr="<em>Interprète judiciaire</em> assermenté">
+          Accredited Court <em>Interpreter</em>
+        </h3>
+        <div class="org"
+             data-en="Canton of Bern <span class=&quot;loc&quot;>courts &amp; authorities</span>"
+             data-de="Kanton Bern <span class=&quot;loc&quot;>Gerichte &amp; Behörden</span>"
+             data-fr="Canton de Berne <span class=&quot;loc&quot;>tribunaux &amp; autorités</span>">
+          Canton of Bern <span class="loc">courts &amp; authorities</span>
+        </div>
+        <div class="cv-tags">
+          <span class="cv-tag" data-en="Court Proceedings" data-de="Gerichtsverfahren" data-fr="Procédures judiciaires">Court Proceedings</span>
+          <span class="cv-tag" data-en="Sworn" data-de="Vereidigt" data-fr="Assermenté">Sworn</span>
+        </div>
+      </div>
+      <div class="cv-side" data-en="Sworn" data-de="Vereidigt" data-fr="Assermenté">Sworn</div>
     </div>
   </div>
 </section>
 </div>
 
 <div class="wrap">
-<section id="languages">
-  <div class="section-num reveal">04 — Languages</div>
-  <h2 class="section-h reveal">A <em>linguistic</em> register.</h2>
-  <div class="lang-grid">
-    <div class="lang-cell native reveal">
-      <div class="lang-name">German</div>
-      <div class="lang-level">Native or bilingual</div>
-      <div class="lang-bar"><div class="lang-fill" style="width: 100%"></div></div>
+<section id="projects">
+  <div class="section-num reveal" data-en="04 · Projects" data-de="04 · Projekte" data-fr="04 · Projets">04 · Projects</div>
+  <h2 class="section-h reveal"
+      data-en="Selected <em>work</em>."
+      data-de="Ausgewählte <em>Projekte</em>."
+      data-fr="Travaux <em>sélectionnés</em>.">
+    Selected <em>work</em>.
+  </h2>
+  <div class="project-card reveal">
+    <div class="project-mark">
+      <svg viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="cfaGold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#e2b878"/>
+            <stop offset="100%" stop-color="#a07a44"/>
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#cfaGold)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="55" cy="48" r="28"/>
+          <path d="M55 20 L60 48 L82 36"/>
+          <path d="M55 20 L50 48 L28 36"/>
+          <path d="M82 60 L60 48 L70 76"/>
+          <path d="M28 60 L50 48 L40 76"/>
+          <circle cx="55" cy="48" r="4" fill="url(#cfaGold)"/>
+        </g>
+        <text x="55" y="100" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="url(#cfaGold)" text-anchor="middle" letter-spacing="2">CFA</text>
+        <text x="55" y="116" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="9" fill="url(#cfaGold)" text-anchor="middle" letter-spacing="1">Research Challenge</text>
+      </svg>
     </div>
-    <div class="lang-cell native reveal">
-      <div class="lang-name">Persian</div>
-      <div class="lang-level">Native or bilingual</div>
-      <div class="lang-bar"><div class="lang-fill" style="width: 100%"></div></div>
-    </div>
-    <div class="lang-cell reveal">
-      <div class="lang-name">English</div>
-      <div class="lang-level">Full professional proficiency</div>
-      <div class="lang-bar"><div class="lang-fill" style="width: 90%"></div></div>
-    </div>
-    <div class="lang-cell reveal">
-      <div class="lang-name">Dari (Afghan)</div>
-      <div class="lang-level">Full professional proficiency</div>
-      <div class="lang-bar"><div class="lang-fill" style="width: 90%"></div></div>
-    </div>
-    <div class="lang-cell reveal">
-      <div class="lang-name">French</div>
-      <div class="lang-level">Limited working proficiency</div>
-      <div class="lang-bar"><div class="lang-fill" style="width: 55%"></div></div>
-    </div>
-    <div class="lang-cell reveal">
-      <div class="lang-name">Arabic</div>
-      <div class="lang-level">Elementary proficiency</div>
-      <div class="lang-bar"><div class="lang-fill" style="width: 30%"></div></div>
-    </div>
-    <div class="lang-cell reveal">
-      <div class="lang-name">Kurdish</div>
-      <div class="lang-level">Elementary proficiency</div>
-      <div class="lang-bar"><div class="lang-fill" style="width: 30%"></div></div>
+    <div class="project-body">
+      <div class="project-tag" data-en="Equity Research · Competition" data-de="Equity Research · Wettbewerb" data-fr="Recherche action · Compétition">Equity Research · Competition</div>
+      <h3 class="project-h">CFA Equity Research Challenge <em>2025/2026</em></h3>
+      <div class="project-org">CFA Institute · <span class="loc" data-en="Switzerland Local Round" data-de="Schweizer Lokalrunde" data-fr="Tour local Suisse">Switzerland Local Round</span></div>
+      <p data-en="Team-based equity research and valuation competition. Company analysis, financial modelling, investment thesis, written research report and pitch to a panel of investment professionals."
+         data-de="Team-basierter Equity-Research- und Bewertungswettbewerb. Unternehmensanalyse, Finanzmodellierung, Investment-These, schriftlicher Research-Report und Pitch vor einem Panel aus Investment Professionals."
+         data-fr="Compétition d'équipe en recherche action et évaluation. Analyse d'entreprise, modélisation financière, thèse d'investissement, rapport de recherche écrit et présentation devant un panel de professionnels de l'investissement.">
+        Team-based equity research and valuation competition. Company analysis, financial modelling, investment thesis, written research report and pitch to a panel of investment professionals.
+      </p>
+      <div class="cv-tags">
+        <span class="cv-tag" data-en="Equity Research" data-de="Equity Research" data-fr="Recherche action">Equity Research</span>
+        <span class="cv-tag" data-en="DCF Valuation" data-de="DCF-Bewertung" data-fr="Évaluation DCF">DCF Valuation</span>
+        <span class="cv-tag" data-en="Investment Thesis" data-de="Investment-These" data-fr="Thèse d'investissement">Investment Thesis</span>
+        <span class="cv-tag" data-en="Pitch" data-de="Pitch" data-fr="Pitch">Pitch</span>
+      </div>
+      <div class="project-team">
+        <div class="project-team-label" data-en="In team with" data-de="Im Team mit" data-fr="En équipe avec">In team with</div>
+        <div class="project-team-list">
+          <a href="https://adriankoenig.ch" target="_blank" rel="noopener noreferrer">Adrian König</a>
+          <span class="sep">·</span>
+          <span class="name">Dominik Hohl</span>
+          <span class="sep">·</span>
+          <span class="name">Pascale Bürgin</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1237,23 +1685,31 @@
 
 <div class="wrap">
 <section id="publication">
-  <div class="section-num reveal">05 — Publication</div>
-  <h2 class="section-h reveal">Written <em>work</em>.</h2>
+  <div class="section-num reveal" data-en="05 · Publication" data-de="05 · Publikation" data-fr="05 · Publication">05 · Publication</div>
+  <h2 class="section-h reveal"
+      data-en="Written <em>work</em>."
+      data-de="Schriftliches <em>Werk</em>."
+      data-fr="<em>Œuvre</em> écrite.">
+    Written <em>work</em>.
+  </h2>
   <div class="pub-feature reveal">
     <div class="pub-cover">
-      <div class="pub-cover-top">— Tscheraghsepehr</div>
+      <div class="pub-cover-top">Tscheraghsepehr</div>
       <div class="pub-cover-num">DT</div>
-      <div class="pub-cover-bot">Conference Volume</div>
+      <div class="pub-cover-bot" data-en="Conference Volume" data-de="Tagungsband" data-fr="Actes de Conférence">Conference Volume</div>
     </div>
     <div class="pub-body">
-      <div class="pub-tag">Publication</div>
+      <div class="pub-tag" data-en="Publication" data-de="Publikation" data-fr="Publication">Publication</div>
       <h3 class="pub-title">Sprache der Gerechtigkeit: Die Rolle der DolmetscherInnen und zentrale Stolpersteine im Nürnberger Prozess sowie ein Blick auf die Schweizer Praxis.</h3>
-      <p class="pub-subtitle">
-        “The Language of Justice: The role of interpreters and central pitfalls in the Nuremberg Trial — with a view to Swiss practice.”
+      <p class="pub-subtitle"
+         data-en="“The Language of Justice. The role of interpreters and central pitfalls in the Nuremberg Trial, with a view to Swiss practice.”"
+         data-de="„Sprache der Gerechtigkeit. Die Rolle der Dolmetscher und zentrale Stolpersteine im Nürnberger Prozess, mit einem Blick auf die Schweizer Praxis.“"
+         data-fr="« Le langage de la justice. Le rôle des interprètes et les écueils centraux du procès de Nuremberg, avec un regard sur la pratique suisse. »">
+        “The Language of Justice. The role of interpreters and central pitfalls in the Nuremberg Trial, with a view to Swiss practice.”
       </p>
       <div class="pub-meta">
-        <span><strong>Author</strong> Daniel Tscheraghsepehr</span>
-        <span><strong>Field</strong> Criminal Procedure &amp; Court Interpreting</span>
+        <span><strong data-en="Author" data-de="Autor" data-fr="Auteur">Author</strong> Daniel Tscheraghsepehr</span>
+        <span><strong data-en="Field" data-de="Bereich" data-fr="Domaine">Field</strong> <span data-en="Criminal Procedure &amp; Court Interpreting" data-de="Strafprozess &amp; Gerichtsdolmetschen" data-fr="Procédure pénale &amp; interprétation judiciaire">Criminal Procedure &amp; Court Interpreting</span></span>
       </div>
     </div>
   </div>
@@ -1262,32 +1718,57 @@
 
 <div class="wrap">
 <section id="talks">
-  <div class="section-num reveal">06 — Presentations</div>
-  <h2 class="section-h reveal">Spoken in <em>public</em>.</h2>
+  <div class="section-num reveal" data-en="06 · Selected Speaking" data-de="06 · Ausgewählte Vorträge" data-fr="06 · Conférences sélectionnées">06 · Selected Speaking</div>
+  <h2 class="section-h reveal"
+      data-en="Spoken in <em>public</em>."
+      data-de="In der <em>Öffentlichkeit</em> gesprochen."
+      data-fr="Pris la <em>parole</em> en public.">
+    Spoken in <em>public</em>.
+  </h2>
+  <div class="speaking-feature reveal">
+    <div class="speaking-feature-img">
+      <img src="nuremberg.jpg" alt="Daniel Tscheraghsepehr at the Trilateral Forum on Criminal Defence, Nuremberg" loading="lazy" />
+    </div>
+    <div class="speaking-feature-text">
+      <div class="speaking-feature-tag" data-en="Featured Engagement" data-de="Hervorgehobener Auftritt" data-fr="Intervention à la une">Featured Engagement</div>
+      <p class="speaking-feature-quote"
+         data-en="Trilateral Forum on <em>Criminal Defence</em>,<br>Nuremberg."
+         data-de="Dreiländerforum für <em>Strafverteidigung</em>,<br>Nürnberg."
+         data-fr="Forum trilatéral de la <em>défense pénale</em>,<br>Nuremberg.">
+        Trilateral Forum on <em>Criminal Defence</em>,<br>Nuremberg.
+      </p>
+      <div class="speaking-feature-meta"
+           data-en="<strong>Panel 2</strong> Interpreting · Swiss Perspective"
+           data-de="<strong>Panel 2</strong> Dolmetschen · Schweizer Perspektive"
+           data-fr="<strong>Panel 2</strong> Interprétation · Perspective suisse">
+        <strong>Panel 2</strong> Interpreting · Swiss Perspective
+      </div>
+    </div>
+  </div>
   <div class="talks-list">
     <div class="talk-row reveal">
       <div class="talk-date">Panel</div>
       <div class="talk-content">
-        <h4>Trilateral Forum on Criminal Defence — <em>«Interpreting, Swiss Perspective»</em></h4>
+        <h4>Trilateral Forum on Criminal Defence · <em>«Interpreting, Swiss Perspective»</em></h4>
         <div class="venue">Dreiländerforum Strafverteidigung · Nuremberg</div>
       </div>
     </div>
     <div class="talk-row reveal">
-      <div class="talk-date">Lecture</div>
+      <div class="talk-date" data-en="Lecture" data-de="Vortrag" data-fr="Conférence">Lecture</div>
       <div class="talk-content">
         <h4>«Paths to Success: <em>Motivation and Career Opportunities</em>»</h4>
         <div class="venue">Liebefeld Steinhölzli School</div>
       </div>
     </div>
     <div class="talk-row reveal">
-      <div class="talk-date">Talk</div>
+      <div class="talk-date" data-en="Speech" data-de="Vortrag" data-fr="Allocution">Speech</div>
       <div class="talk-content">
-        <h4>«Zwischen Sprachen und Recht: <em>Die Rolle von Gerichtsdolmetscher:innen</em>»</h4>
+        <h4>«Zwischen Sprachen und Recht · <em>Die Rolle von Gerichtsdolmetscher:innen</em>»</h4>
         <div class="venue">University of Bern · ELSA Event</div>
       </div>
     </div>
     <div class="talk-row reveal">
-      <div class="talk-date">Talk</div>
+      <div class="talk-date" data-en="Speech" data-de="Vortrag" data-fr="Allocution">Speech</div>
       <div class="talk-content">
         <h4>«Introduction to <em>ELSA Bern</em>»</h4>
         <div class="venue">University of Bern · Start of Semester Event</div>
@@ -1297,50 +1778,55 @@
 </section>
 </div>
 
-<section class="maxim">
-  <div class="wrap">
-    <div class="maxim-latin reveal">«Pacta sunt servanda.»</div>
-    <div class="maxim-de reveal">— Agreements are to be kept.</div>
-    <div class="maxim-attr reveal">Principle · General contract law</div>
-  </div>
-</section>
-
 <div class="wrap">
 <section id="code">
-  <div class="section-num reveal">07 — Code</div>
-  <h2 class="section-h reveal">What I <em>stand by</em>.</h2>
+  <div class="section-num reveal" data-en="07 · Code" data-de="07 · Kodex" data-fr="07 · Code">07 · Code</div>
+  <h2 class="section-h reveal"
+      data-en="What I <em>stand by</em>."
+      data-de="Wofür ich <em>stehe</em>."
+      data-fr="Ce que je <em>défends</em>.">
+    What I <em>stand by</em>.
+  </h2>
   <div class="code-list">
-    <div class="code-row reveal">
+    <div class="code-item reveal">
       <div class="code-num">i.</div>
-      <div class="code-content">
-        <h3>Care</h3>
-        <p>An argument that holds. A sentence that lands. A detail that was not overlooked — precisely where no one would think to check. Because what is made invisible is what makes the difference in the end.</p>
-      </div>
-      <div class="code-latin">— diligentia</div>
+      <span class="code-latin">praecisio</span>
+      <h3 data-en="Precision" data-de="Präzision" data-fr="Précision">Precision</h3>
+      <p data-en="The right word in the right place. A clause that survives litigation. A number that ties out."
+         data-de="Das richtige Wort am richtigen Ort. Eine Klausel, die einen Prozess übersteht. Eine Zahl, die aufgeht."
+         data-fr="Le bon mot au bon endroit. Une clause qui résiste au litige. Un chiffre qui s'aligne.">
+        The right word in the right place. A clause that survives litigation. A number that ties out.
+      </p>
     </div>
-    <div class="code-row reveal">
+    <div class="code-item reveal">
       <div class="code-num">ii.</div>
-      <div class="code-content">
-        <h3>Discretion</h3>
-        <p>What is shared in confidence stays in confidence. As a default, not on request. Professional ethics as a stance — not a phrase.</p>
-      </div>
-      <div class="code-latin">— discretio</div>
+      <span class="code-latin">discretio</span>
+      <h3 data-en="Discretion" data-de="Diskretion" data-fr="Discrétion">Discretion</h3>
+      <p data-en="What is shared in confidence stays in confidence. As a default. Not on request."
+         data-de="Was im Vertrauen besprochen wird, bleibt im Vertrauen. Standardmässig. Nicht auf Anfrage."
+         data-fr="Ce qui est partagé en confiance reste en confiance. Par défaut. Pas sur demande.">
+        What is shared in confidence stays in confidence. As a default. Not on request.
+      </p>
     </div>
-    <div class="code-row reveal">
+    <div class="code-item reveal">
       <div class="code-num">iii.</div>
-      <div class="code-content">
-        <h3>Clarity</h3>
-        <p>Direct in tone, precise in substance. If a matter cannot be explained simply, it has either not been understood — or is meant to be obscured. Both are to be avoided.</p>
-      </div>
-      <div class="code-latin">— claritas</div>
+      <span class="code-latin">applicabilitas</span>
+      <h3 data-en="Practicability" data-de="Umsetzbarkeit" data-fr="Praticabilité">Practicability</h3>
+      <p data-en="Advice meant to be acted on, not admired."
+         data-de="Beratung, die umgesetzt wird, nicht bewundert."
+         data-fr="Des conseils faits pour être appliqués, pas admirés.">
+        Advice meant to be acted on, not admired.
+      </p>
     </div>
-    <div class="code-row reveal">
+    <div class="code-item reveal">
       <div class="code-num">iv.</div>
-      <div class="code-content">
-        <h3>Reliability</h3>
-        <p>What is promised is kept. Deadlines, commitments, confidentiality. Whoever relies on it should never be disappointed.</p>
-      </div>
-      <div class="code-latin">— fides</div>
+      <span class="code-latin">conclusio</span>
+      <h3 data-en="Closing" data-de="Abschluss" data-fr="Clôture">Closing</h3>
+      <p data-en="A deal that does not close does not exist."
+         data-de="Ein Deal, der nicht abgeschlossen wird, existiert nicht."
+         data-fr="Un deal qui ne se conclut pas n'existe pas.">
+        A deal that does not close does not exist.
+      </p>
     </div>
   </div>
 </section>
@@ -1348,20 +1834,43 @@
 
 <div class="wrap">
 <section id="contact">
-  <div class="section-num reveal">08 — Contact</div>
-  <h2 class="section-h reveal">Reach me <em>directly</em>.</h2>
+  <div class="section-num reveal" data-en="08 · Contact" data-de="08 · Kontakt" data-fr="08 · Contact">08 · Contact</div>
+  <h2 class="section-h reveal"
+      data-en="Reach me <em>directly</em>."
+      data-de="Direkt <em>erreichbar</em>."
+      data-fr="<em>Joignable</em> directement.">
+    Reach me <em>directly</em>.
+  </h2>
   <div class="contact-stage">
     <div class="contact-left reveal">
-      <div class="contact-mark">— Write</div>
-      <h3 class="contact-h">An email is enough.</h3>
-      <p class="contact-note">
-        No forms, no waiting line. A personal reply, usually within one to two working days.
-      </p>
+      <div class="contact-mark" data-en="Write" data-de="Schreiben" data-fr="Écrire">Write</div>
+      <h3 class="contact-h" data-en="An email is enough." data-de="Eine E-Mail genügt." data-fr="Un e-mail suffit.">An email is enough.</h3>
     </div>
     <div class="contact-right reveal">
-      <div class="contact-mail-row">
-        <div class="contact-label">E-mail</div>
-        <a href="mailto:daniel@tscheraghsepehr.ch" class="contact-mail">daniel@tscheraghsepehr.ch</a>
+      <div class="contact-channels">
+        <a class="contact-channel" href="mailto:daniel@tscheraghsepehr.ch">
+          <span class="contact-channel-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="14" rx="1"/>
+              <path d="m3 7 9 6 9-6"/>
+            </svg>
+          </span>
+          <span class="contact-channel-body">
+            <span class="contact-channel-label" data-en="E-mail" data-de="E-Mail" data-fr="E-mail">E-mail</span>
+            <span class="contact-channel-value">daniel@tscheraghsepehr.ch</span>
+          </span>
+        </a>
+        <a class="contact-channel" href="https://ch.linkedin.com/in/daniel-tscheraghsepehr-5b0461267" target="_blank" rel="noopener noreferrer">
+          <span class="contact-channel-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z"/>
+            </svg>
+          </span>
+          <span class="contact-channel-body">
+            <span class="contact-channel-label">LinkedIn</span>
+            <span class="contact-channel-value">in/daniel-tscheraghsepehr</span>
+          </span>
+        </a>
       </div>
     </div>
   </div>
@@ -1369,19 +1878,30 @@
 </div>
 
 <footer>
-  <div class="wrap footer-inner">
-    <div class="footer-mono">
-      <span class="fmark">DT</span>
-      <span>Daniel Tscheraghsepehr</span>
-    </div>
-    <div class="footer-tagline">Made in Switzerland</div>
-    <div class="footer-right">
-      <div>tscheraghsepehr.ch</div>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-mono">
+        <span class="fmark">
+          <svg viewBox="0 0 28 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M 3 2.5 Q 3 2 3.5 2 L 24.5 2 Q 25 2 25 2.5 L 25 16 C 25 21 19 25 14 27.5 C 9 25 3 21 3 16 Z"
+                  fill="none" stroke="currentColor" stroke-width="0.6"/>
+            <path d="M 4.8 4 L 23.2 4 L 23.2 15.5 C 23.2 19.5 18.5 23 14 24.5 C 9.5 23 4.8 19.5 4.8 15.5 Z"
+                  fill="none" stroke="currentColor" stroke-width="0.35" opacity="0.5"/>
+            <text x="14" y="16" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-size="9" font-weight="600" fill="currentColor" text-anchor="middle" letter-spacing="-0.3">DT</text>
+          </svg>
+        </span>
+        <span>Daniel Tscheraghsepehr</span>
+      </div>
+      <div class="footer-tagline">Made in Switzerland</div>
+      <div class="footer-right">
+        <div>tscheraghsepehr.ch</div>
+      </div>
     </div>
   </div>
 </footer>
 
 <script>
+  // Scroll progress
   const progress = document.getElementById('progress');
   document.addEventListener('scroll', () => {
     const h = document.documentElement;
@@ -1389,6 +1909,7 @@
     progress.style.width = pct + '%';
   }, { passive: true });
 
+  // Reveal observer
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1398,6 +1919,27 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Language switching
+  const SUPPORTED = ['en', 'de', 'fr'];
+  function setLang(lang) {
+    if (!SUPPORTED.includes(lang)) lang = 'en';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const v = el.dataset[lang];
+      if (typeof v === 'string') el.innerHTML = v;
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    try { localStorage.setItem('site-lang', lang); } catch (e) {}
+  }
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+  let saved = 'en';
+  try { saved = localStorage.getItem('site-lang') || 'en'; } catch (e) {}
+  if (saved !== 'en') setLang(saved);
 </script>
 
 </body>
