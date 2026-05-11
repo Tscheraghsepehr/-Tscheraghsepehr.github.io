@@ -90,11 +90,11 @@
     position: fixed;
     left: 1.5rem;
     top: 50%;
-    transform: translateY(-50%) rotate(-90deg);
-    transform-origin: left center;
+    transform: translateY(-50%);
+    writing-mode: sideways-lr;
     color: var(--muted);
     font-size: 0.7rem;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
     font-weight: 500;
     z-index: 10;
@@ -102,9 +102,10 @@
     display: flex;
     align-items: center;
     gap: 1.2rem;
+    max-height: calc(100vh - 2rem);
   }
-  .side-rail::after { content: ""; width: 60px; height: 1px; background: var(--gold); opacity: 0.4; }
-  @media (max-width: 1100px) { .side-rail { display: none; } }
+  .side-rail::after { content: ""; width: 1px; height: 60px; background: var(--gold); opacity: 0.4; }
+  @media (max-width: 1100px), (max-height: 720px) { .side-rail { display: none; } }
 
   /* Top bar */
   header.top {
@@ -217,7 +218,7 @@
   }
 
   /* Hero */
-  .hero { padding: 5rem 0 6rem; position: relative; }
+  .hero { padding: 3.5rem 0 6rem; position: relative; }
   .hero-meta {
     display: flex;
     justify-content: space-between;
@@ -272,7 +273,10 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    animation: shimmer 7s ease-in-out infinite;
+    will-change: background-position;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    animation: shimmer 7s ease-in-out 2s infinite;
   }
   @keyframes shimmer {
     0%, 100% { background-position: 100% 0; }
@@ -1450,10 +1454,10 @@
       <div class="hero-now stage stage-4">
         <span class="hero-now-label">Currently</span>
         <span class="hero-now-text"
-              data-en="Working at Burkhalter. Reading at the University of Bern.<br>Building <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>."
-              data-de="Arbeit bei Burkhalter. Studium an der Universität Bern.<br>Aufbau von <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>."
-              data-fr="En poste chez Burkhalter. Études à l'Université de Berne.<br>Développement de <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>.">
-          Working at Burkhalter. Reading at the University of Bern.<br>Building <em style="color: var(--gold); font-style: italic;">«Legal Information Extraction with Large Language Models»</em>.
+              data-en="Working at Burkhalter Rechtsanwälte. Pursuing an MSc at the University of Bern.<br>Building <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>."
+              data-de="Arbeit bei Burkhalter Rechtsanwälte. Studium an der Universität Bern.<br>Aufbau von <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>."
+              data-fr="En poste chez Burkhalter Rechtsanwälte. Études à l'Université de Berne.<br>Développement de <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>.">
+          Working at Burkhalter Rechtsanwälte. Pursuing an MSc at the University of Bern.<br>Building <em style="color: var(--gold); font-style: italic;">«Legal Information Extraction with Large Language Models»</em>.
         </span>
       </div>
       <div class="hero-roles stage stage-5">
