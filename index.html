@@ -218,14 +218,14 @@
   }
 
   /* Hero */
-  .hero { padding: 3.5rem 0 6rem; position: relative; }
+  .hero { padding: 1.75rem 0 6rem; position: relative; }
   .hero-meta {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid var(--border);
-    margin-bottom: 3rem;
+    margin-bottom: 1.75rem;
     color: var(--muted);
     font-size: 0.92rem;
     letter-spacing: 0.04em;
@@ -895,6 +895,18 @@
     font-weight: 500;
     margin-right: 0.4rem;
   }
+  .pub-cite-source {
+    margin-top: 0.85rem;
+    color: var(--fg-soft);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.55;
+    letter-spacing: 0.005em;
+    max-width: 720px;
+  }
+  .pub-cite-source em { color: var(--gold); font-style: italic; }
+  .pub-cite-source strong { color: var(--fg); font-weight: 500; font-style: normal; }
 
   /* Publication (legacy, kept for fallback) */
   .pub-feature {
@@ -1241,6 +1253,55 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .email-challenge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    color: var(--fg);
+    letter-spacing: 0;
+  }
+  .email-challenge-q { color: var(--fg-soft); white-space: nowrap; }
+  .email-challenge-input {
+    width: 3rem;
+    padding: 0.22rem 0.45rem;
+    background: rgba(201, 160, 99, 0.08);
+    border: 1px solid var(--gold);
+    border-radius: 3px;
+    color: var(--fg);
+    font: inherit;
+    text-align: center;
+  }
+  .email-challenge-input:focus {
+    outline: none;
+    background: rgba(201, 160, 99, 0.18);
+    box-shadow: 0 0 0 2px rgba(201, 160, 99, 0.25);
+  }
+  .email-challenge-go {
+    background: var(--gold);
+    color: var(--bg);
+    border: none;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 3px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+  .email-challenge-go:hover { background: var(--gold-bright); }
+  .email-challenge.error .email-challenge-input {
+    border-color: #c44;
+    animation: ec-shake 0.32s;
+  }
+  @keyframes ec-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+  }
 
   /* Footer */
   footer {
@@ -1454,10 +1515,10 @@
       <div class="hero-now stage stage-4">
         <span class="hero-now-label">Currently</span>
         <span class="hero-now-text"
-              data-en="Working at Burkhalter Rechtsanwälte. Pursuing an MSc at the University of Bern.<br>Building <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>."
-              data-de="Arbeit bei Burkhalter Rechtsanwälte. Studium an der Universität Bern.<br>Aufbau von <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>."
-              data-fr="En poste chez Burkhalter Rechtsanwälte. Études à l'Université de Berne.<br>Développement de <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>.">
-          Working at Burkhalter Rechtsanwälte. Pursuing an MSc at the University of Bern.<br>Building <em style="color: var(--gold); font-style: italic;">«Legal Information Extraction with Large Language Models»</em>.
+              data-en="Working at Burkhalter Rechtsanwälte.<br>Pursuing an MSc at the University of Bern.<br>Building <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>."
+              data-de="Arbeit bei Burkhalter Rechtsanwälte.<br>Studium an der Universität Bern.<br>Aufbau von <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>."
+              data-fr="En poste chez Burkhalter Rechtsanwälte.<br>Études à l'Université de Berne.<br>Développement de <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>.">
+          Working at Burkhalter Rechtsanwälte.<br>Pursuing an MSc at the University of Bern.<br>Building <em style="color: var(--gold); font-style: italic;">«Legal Information Extraction with Large Language Models»</em>.
         </span>
       </div>
       <div class="hero-roles stage stage-5">
@@ -1866,6 +1927,13 @@
          data-fr="<strong>Actes de Conférence</strong> Interprétation judiciaire &amp; linguistique juridique">
       <strong>Conference Volume</strong> Court Interpreting &amp; Legal Linguistics
     </div>
+    <div class="pub-cite-source">
+      in: Vereinigung Österreichischer StrafverteidigerInnen et al. (eds.),
+      <strong>«Recht im Unrecht – Unrecht im Recht. Lehren aus Nürnberg»</strong>,
+      14. Dreiländerforum Strafverteidigung, 19./20.9.2025 in Nürnberg,
+      Schriftenreihe der VÖStV Bd. 44, hrsg. v. Richard Soyer,
+      <em>Verlag Österreich</em>, 2026.
+    </div>
   </div>
 </section>
 </div>
@@ -1982,7 +2050,8 @@
     </div>
     <div class="contact-right reveal">
       <div class="contact-channels">
-        <a class="contact-channel" href="mailto:daniel@tscheraghsepehr.ch">
+        <a class="contact-channel" id="email-link" href="#"
+           data-u="ZGFuaWVs" data-d="dHNjaGVyYWdoc2VwZWhyLmNo" rel="nofollow">
           <span class="contact-channel-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="5" width="18" height="14" rx="1"/>
@@ -1991,7 +2060,10 @@
           </span>
           <span class="contact-channel-body">
             <span class="contact-channel-label" data-en="E-mail" data-de="E-Mail" data-fr="E-mail">E-mail</span>
-            <span class="contact-channel-value">daniel@tscheraghsepehr.ch</span>
+            <span class="contact-channel-value"
+                  data-en="Click to reveal"
+                  data-de="Klicken zum Anzeigen"
+                  data-fr="Cliquer pour afficher">Click to reveal</span>
           </span>
         </a>
         <a class="contact-channel" href="https://ch.linkedin.com/in/daniel-tscheraghsepehr-5b0461267" target="_blank" rel="noopener noreferrer">
@@ -2074,6 +2146,87 @@
   let saved = 'en';
   try { saved = localStorage.getItem('site-lang') || 'en'; } catch (e) {}
   if (saved !== 'en') setLang(saved);
+
+  // Email click-to-reveal with math challenge (anti-crawler)
+  (function () {
+    const link = document.getElementById('email-link');
+    if (!link) return;
+    const valueEl = link.querySelector('.contact-channel-value');
+    let revealed = false;
+    let challengeActive = false;
+    let expectedAnswer = 0;
+
+    function getLang() {
+      return document.documentElement.lang || 'en';
+    }
+
+    function showChallenge() {
+      const a = 2 + Math.floor(Math.random() * 8);
+      const b = 1 + Math.floor(Math.random() * 7);
+      expectedAnswer = a + b;
+      ['en', 'de', 'fr'].forEach(k => valueEl.removeAttribute('data-' + k));
+      valueEl.innerHTML = '';
+      const wrap = document.createElement('span');
+      wrap.className = 'email-challenge';
+      const q = document.createElement('span');
+      q.className = 'email-challenge-q';
+      q.textContent = a + ' + ' + b + ' =';
+      const input = document.createElement('input');
+      input.className = 'email-challenge-input';
+      input.type = 'text';
+      input.inputMode = 'numeric';
+      input.autocomplete = 'off';
+      input.maxLength = 3;
+      input.setAttribute('aria-label', 'Spam check');
+      const go = document.createElement('button');
+      go.type = 'button';
+      go.className = 'email-challenge-go';
+      go.textContent = '→';
+      go.setAttribute('aria-label', 'Submit');
+      wrap.append(q, input, go);
+      valueEl.appendChild(wrap);
+      const stop = e => e.stopPropagation();
+      input.addEventListener('click', stop);
+      input.addEventListener('mousedown', stop);
+      go.addEventListener('click', e => { e.stopPropagation(); e.preventDefault(); tryAnswer(); });
+      input.addEventListener('keydown', e => {
+        e.stopPropagation();
+        if (e.key === 'Enter') { e.preventDefault(); tryAnswer(); }
+      });
+      setTimeout(() => input.focus(), 30);
+    }
+
+    function tryAnswer() {
+      const input = valueEl.querySelector('.email-challenge-input');
+      if (!input) return;
+      const got = parseInt(input.value, 10);
+      if (got === expectedAnswer) {
+        revealEmail();
+      } else {
+        const wrap = valueEl.querySelector('.email-challenge');
+        wrap.classList.add('error');
+        input.value = '';
+        setTimeout(() => wrap.classList.remove('error'), 360);
+        input.focus();
+      }
+    }
+
+    function revealEmail() {
+      const email = atob(link.dataset.u) + '@' + atob(link.dataset.d);
+      valueEl.textContent = email;
+      link.setAttribute('href', 'mailto:' + email);
+      revealed = true;
+    }
+
+    link.addEventListener('click', (e) => {
+      if (revealed) return;
+      e.preventDefault();
+      if (!challengeActive) {
+        challengeActive = true;
+        showChallenge();
+      }
+    });
+  })();
 </script>
 
 </body>
