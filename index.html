@@ -431,7 +431,7 @@
   .btn:hover .arrow { transform: translateX(4px); }
 
   /* Section base */
-  section { padding: 6rem 0; position: relative; }
+  section { padding: 3.5rem 0; position: relative; }
   .section-num {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -452,13 +452,13 @@
     line-height: 1.05;
     letter-spacing: -0.015em;
     color: var(--fg);
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.75rem;
     max-width: 800px;
   }
   .section-h em { font-style: italic; color: var(--gold); }
 
   /* Maxim */
-  .maxim { text-align: center; padding: 5rem 0; position: relative; }
+  .maxim { text-align: center; padding: 3rem 0; position: relative; }
   .maxim::before, .maxim::after {
     content: "";
     position: absolute;
@@ -571,6 +571,8 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 1rem;
   }
+  .cv-main p a { color: var(--fg); border-bottom: 1px solid var(--border); }
+  .cv-main p a:hover { color: var(--gold); border-color: var(--gold); }
   .cv-main p {
     color: var(--fg-soft);
     font-size: 0.92rem;
@@ -891,7 +893,7 @@
 
 
   /* Publications list (2026-09) */
-  .pub-list { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 3rem; }
+  .pub-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
   .pub-group-label {
     color: var(--muted); font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 500;
     margin: 0 0 0.75rem 0; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); max-width: 820px;
@@ -1435,7 +1437,7 @@
     .footer-mono { justify-content: center; }
     .footer-right { text-align: center; }
     nav.links { display: none; }
-    section { padding: 4rem 0; }
+    section { padding: 2.75rem 0; }
     .pull { padding: 4.5rem 1.5rem; }
     .maxim { padding: 4rem 0; }
     .wrap { padding: 0 1.5rem; }
@@ -1478,8 +1480,6 @@
         <a href="#publication" data-en="Publications" data-de="Publikationen" data-fr="Publications">Publications</a>
         <a href="#experience" data-en="Experience" data-de="Erfahrung" data-fr="Expérience">Experience</a>
         <a href="#education" data-en="Education" data-de="Ausbildung" data-fr="Formation">Education</a>
-        <a href="#projects" data-en="Projects" data-de="Projekte" data-fr="Projets">Projects</a>
-        <a href="#code" data-en="Code" data-de="Kodex" data-fr="Code">Code</a>
         <a href="#contact" data-en="Contact" data-de="Kontakt" data-fr="Contact">Contact</a>
       </nav>
       <div class="lang-switch" role="group" aria-label="Language">
@@ -1523,7 +1523,7 @@
         <span class="role-pill" data-en="Banking &amp; Finance" data-de="Banking &amp; Finance" data-fr="Banking &amp; Finance">Banking &amp; Finance</span>
         <span class="role-pill" data-en="Tax" data-de="Steuerrecht" data-fr="Fiscalité">Tax</span>
         <span class="role-pill" data-en="Real Estate" data-de="Immobilien" data-fr="Immobilier">Real Estate</span>
-        <span class="role-pill" data-en="DLT · Stablecoins" data-de="DLT · Stablecoins" data-fr="DLT · Stablecoins">DLT · Stablecoins</span>
+        <span class="role-pill" data-en="DLT &amp; Tokens" data-de="DLT &amp; Tokens" data-fr="DLT &amp; Tokens">DLT &amp; Tokens</span>
         <span class="role-pill" data-en="Corporate Finance" data-de="Corporate Finance" data-fr="Finance d'entreprise">Corporate Finance</span>
       </div>
       <div class="hero-actions stage stage-6">
@@ -1548,16 +1548,10 @@
 <section class="maxim">
   <div class="wrap">
     <div class="maxim-latin reveal"
-         data-en="Consistency compounds."
-         data-de="Beständigkeit zahlt sich aus."
-         data-fr="La constance finit par payer.">
-      Consistency compounds.
-    </div>
-    <div class="maxim-de reveal"
-         data-en="Small advantages, repeated, become decisive."
-         data-de="Kleine Vorteile, wiederholt, werden entscheidend."
-         data-fr="De petits avantages, répétés, deviennent décisifs.">
-      Small advantages, repeated, become decisive.
+         data-en="Consistency compounds"
+         data-de="Beständigkeit zahlt sich aus"
+         data-fr="La constance finit par payer">
+      Consistency compounds
     </div>
   </div>
 </section>
@@ -1789,17 +1783,7 @@
 </section>
 </div>
 
-<section class="pull">
-  <div class="wrap reveal">
-    <div class="pull-mark">“</div>
-    <blockquote
-        data-en="<em>Pressure</em> reveals standards.<br><em>Execution</em> over noise."
-        data-de="Unter <em>Druck</em> zeigt sich der Standard.<br><em>Umsetzung</em> statt Lärm."
-        data-fr="La <em>pression</em> révèle le niveau.<br>L'<em>exécution</em> plutôt que le bruit.">
-      <em>Pressure</em> reveals standards.<br><em>Execution</em> over noise.
-    </blockquote>
-  </div>
-</section>
+
 
 <div class="wrap">
 <section id="experience">
@@ -1837,6 +1821,29 @@
         </div>
       </div>
       <div class="cv-side" data-en="Current" data-de="Aktuell" data-fr="Actuel">Current</div>
+    </div>
+    <div class="cv-row reveal">
+      <div class="cv-main">
+        <h3>CFA Equity Research Challenge <em>2025/26</em></h3>
+        <div class="org"
+             data-en="CFA Institute <span class=&quot;loc&quot;>Switzerland Local Round</span>"
+             data-de="CFA Institute <span class=&quot;loc&quot;>Lokalrunde Schweiz</span>"
+             data-fr="CFA Institute <span class=&quot;loc&quot;>Phase locale Suisse</span>">
+          CFA Institute <span class="loc">Switzerland Local Round</span>
+        </div>
+        <p data-en="Team-based equity research and valuation competition: company analysis, financial modelling, investment thesis, written research report and pitch to a panel of investment professionals. In team with <a href='https://adriankoenig.ch' target='_blank' rel='noopener noreferrer'>Adrian König</a>, Dominik Hohl and Pascale Bürgin."
+           data-de="Equity-Research- und Bewertungswettbewerb im Team: Unternehmensanalyse, Finanzmodellierung, Investment-These, schriftlicher Research-Report und Pitch vor einem Panel aus Investment Professionals. Im Team mit <a href='https://adriankoenig.ch' target='_blank' rel='noopener noreferrer'>Adrian König</a>, Dominik Hohl und Pascale Bürgin."
+           data-fr="Compétition d'équipe en recherche actions et évaluation : analyse d'entreprise, modélisation financière, thèse d'investissement, rapport de recherche écrit et présentation devant un panel de professionnels de l'investissement. En équipe avec <a href='https://adriankoenig.ch' target='_blank' rel='noopener noreferrer'>Adrian König</a>, Dominik Hohl et Pascale Bürgin.">
+          Team-based equity research and valuation competition: company analysis, financial modelling, investment thesis, written research report and pitch to a panel of investment professionals. In team with <a href="https://adriankoenig.ch" target="_blank" rel="noopener noreferrer">Adrian König</a>, Dominik Hohl and Pascale Bürgin.
+        </p>
+        <div class="cv-tags">
+          <span class="cv-tag">Equity Research</span>
+          <span class="cv-tag" data-en="DCF Valuation" data-de="DCF-Bewertung" data-fr="Évaluation DCF">DCF Valuation</span>
+          <span class="cv-tag" data-en="Investment Thesis" data-de="Investment-These" data-fr="Thèse d'investissement">Investment Thesis</span>
+          <span class="cv-tag">Pitch</span>
+        </div>
+      </div>
+      <div class="cv-side" data-en="Competition" data-de="Wettbewerb" data-fr="Compétition">Competition</div>
     </div>
     <div class="cv-row reveal">
       <div class="cv-main">
@@ -1968,108 +1975,9 @@
 </section>
 </div>
 
-<div class="wrap">
-<section id="projects">
-  <h2 class="section-h reveal"
-      data-en="Selected <em>work</em>"
-      data-de="Ausgewählte <em>Projekte</em>"
-      data-fr="Travaux <em>sélectionnés</em>">
-    Selected <em>work</em>
-  </h2>
-  <div class="project-card reveal">
-    <div class="project-mark">
-      <svg viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="cfaGold" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#7fd3cc"/>
-            <stop offset="100%" stop-color="#2a7f7a"/>
-          </linearGradient>
-        </defs>
-        <g fill="none" stroke="url(#cfaGold)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="55" cy="48" r="28"/>
-          <path d="M55 20 L60 48 L82 36"/>
-          <path d="M55 20 L50 48 L28 36"/>
-          <path d="M82 60 L60 48 L70 76"/>
-          <path d="M28 60 L50 48 L40 76"/>
-          <circle cx="55" cy="48" r="4" fill="url(#cfaGold)"/>
-        </g>
-        <text x="55" y="100" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="url(#cfaGold)" text-anchor="middle" letter-spacing="2">CFA</text>
-        <text x="55" y="116" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="9" fill="url(#cfaGold)" text-anchor="middle" letter-spacing="1">Research Challenge</text>
-      </svg>
-    </div>
-    <div class="project-body">
-      <h3 class="project-h">CFA Equity Research Challenge <em>2025/2026</em></h3>
-      <div class="project-org">CFA Institute · <span class="loc" data-en="Switzerland Local Round" data-de="Lokalrunde Schweiz" data-fr="Phase locale Suisse">Switzerland Local Round</span></div>
-      <p data-en="Team-based equity research and valuation competition. Company analysis, financial modelling, investment thesis, written research report and pitch to a panel of investment professionals."
-         data-de="Equity-Research- und Bewertungswettbewerb im Team. Unternehmensanalyse, Finanzmodellierung, Investment-These, schriftlicher Research-Report und Pitch vor einem Panel aus Investment Professionals."
-         data-fr="Compétition d'équipe en recherche action et évaluation. Analyse d'entreprise, modélisation financière, thèse d'investissement, rapport de recherche écrit et présentation devant un panel de professionnels de l'investissement.">
-        Team-based equity research and valuation competition. Company analysis, financial modelling, investment thesis, written research report and pitch to a panel of investment professionals.
-      </p>
-      <div class="cv-tags">
-        <span class="cv-tag" data-en="Equity Research" data-de="Equity Research" data-fr="Recherche actions">Equity Research</span>
-        <span class="cv-tag" data-en="DCF Valuation" data-de="DCF-Bewertung" data-fr="Évaluation DCF">DCF Valuation</span>
-        <span class="cv-tag" data-en="Investment Thesis" data-de="Investment-These" data-fr="Thèse d'investissement">Investment Thesis</span>
-        <span class="cv-tag" data-en="Pitch" data-de="Pitch" data-fr="Pitch">Pitch</span>
-      </div>
-      <div class="project-team">
-        <div class="project-team-label" data-en="In team with" data-de="Im Team mit" data-fr="En équipe avec">In team with</div>
-        <div class="project-team-list">
-          <a href="https://adriankoenig.ch" target="_blank" rel="noopener noreferrer">Adrian König</a>
-          <span class="sep">·</span>
-          <span class="name">Dominik Hohl</span>
-          <span class="sep">·</span>
-          <span class="name">Pascale Bürgin</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
 
-<div class="wrap">
-<section id="code">
-  <h2 class="section-h reveal"
-      data-en="What I <em>stand by</em>"
-      data-de="Wofür ich <em>stehe</em>"
-      data-fr="Ce que je <em>défends</em>">
-    What I <em>stand by</em>
-  </h2>
-  <div class="code-list">
-    <div class="code-item reveal">
-      <h3 data-en="Precision" data-de="Präzision" data-fr="Précision">Precision</h3>
-      <p data-en="The right word in the right place. A clause that survives litigation. A number that ties out."
-         data-de="Das richtige Wort am richtigen Ort. Eine Klausel, die einen Prozess übersteht. Eine Zahl, die stimmt."
-         data-fr="Le bon mot au bon endroit. Une clause qui résiste au litige. Un chiffre qui s'aligne.">
-        The right word in the right place. A clause that survives litigation. A number that ties out.
-      </p>
-    </div>
-    <div class="code-item reveal">
-      <h3 data-en="Discretion" data-de="Diskretion" data-fr="Discrétion">Discretion</h3>
-      <p data-en="What is shared in confidence stays in confidence. As a default. Not on request."
-         data-de="Was im Vertrauen besprochen wird, bleibt im Vertrauen. Standardmässig. Nicht auf Anfrage."
-         data-fr="Ce qui est partagé en confiance reste en confiance. Par défaut. Pas sur demande.">
-        What is shared in confidence stays in confidence. As a default. Not on request.
-      </p>
-    </div>
-    <div class="code-item reveal">
-      <h3 data-en="Practicability" data-de="Umsetzbarkeit" data-fr="Praticabilité">Practicability</h3>
-      <p data-en="Advice meant to be acted on, not admired."
-         data-de="Beratung, die umgesetzt wird, nicht bewundert."
-         data-fr="Des conseils faits pour être appliqués, pas admirés.">
-        Advice meant to be acted on, not admired.
-      </p>
-    </div>
-    <div class="code-item reveal">
-      <h3 data-en="Closing" data-de="Abschluss" data-fr="Clôture">Closing</h3>
-      <p data-en="A deal that does not close does not exist."
-         data-de="Ein Deal, der nicht abgeschlossen wird, existiert nicht."
-         data-fr="Un deal qui ne se conclut pas n'existe pas.">
-        A deal that does not close does not exist.
-      </p>
-    </div>
-  </div>
-</section>
-</div>
+
+
 
 <div class="wrap">
 <section id="contact">
