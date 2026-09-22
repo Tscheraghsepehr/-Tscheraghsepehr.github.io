@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Daniel Tscheraghsepehr</title>
-<meta name="description" content="Daniel Tscheraghsepehr. Trainee Lawyer at Burkhalter Rechtsanwälte. Reading Corporate Finance at the University of Bern, and International Law & Economics at the World Trade Institute.">
+<meta name="description" content="Daniel Tscheraghsepehr. Trainee Lawyer at Burkhalter Rechtsanwälte. Studying Corporate Finance at the University of Bern. CAS in International Law & Economics, World Trade Institute.">
 <meta property="og:title" content="Daniel Tscheraghsepehr">
 <meta property="og:description" content="Trainee Lawyer · Corporate Finance · International Law &amp; Economics">
 <meta property="og:type" content="website">
@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://tscheraghsepehr.ch/portrait.jpg">
 <meta property="og:locale" content="en_GB">
 <meta name="theme-color" content="#0a0b0d">
-<link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 68"><rect width="64" height="68" fill="%230a0b0d"/><path d="M 8 6 L 56 6 L 56 36 C 56 47 42 56 32 60 C 22 56 8 47 8 36 Z" fill="none" stroke="%23c9a063" stroke-width="1.5"/><path d="M 12 9 L 52 9 L 52 35 C 52 44 40 52 32 55 C 24 52 12 44 12 35 Z" fill="none" stroke="%23c9a063" stroke-width="0.8" opacity="0.5"/><text x="32" y="36" font-family="Georgia,serif" font-style="italic" font-size="22" font-weight="700" fill="%23c9a063" text-anchor="middle">DT</text></svg>'>
+<link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 68"><rect width="64" height="68" fill="%230a0b0d"/><path d="M 8 6 L 56 6 L 56 36 C 56 47 42 56 32 60 C 22 56 8 47 8 36 Z" fill="none" stroke="%234fb3ad" stroke-width="1.5"/><path d="M 12 9 L 52 9 L 52 35 C 52 44 40 52 32 55 C 24 52 12 44 12 35 Z" fill="none" stroke="%234fb3ad" stroke-width="0.8" opacity="0.5"/><text x="32" y="36" font-family="Georgia,serif" font-style="italic" font-size="22" font-weight="700" fill="%234fb3ad" text-anchor="middle">DT</text></svg>'>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -21,15 +21,15 @@
     --bg: #0a0b0d;
     --bg-2: #101115;
     --surface: #15171c;
-    --fg: #f0ece2;
-    --fg-soft: #c5beae;
-    --muted: #82796a;
-    --border: #25272e;
-    --border-soft: #1a1c22;
-    --gold: #c9a063;
-    --gold-bright: #e2b878;
-    --gold-deep: #a07a44;
-    --gold-glow: rgba(201, 160, 99, 0.18);
+    --fg: #eef0ee;
+    --fg-soft: #b9c0be;
+    --muted: #7c8a88;
+    --border: #242a2c;
+    --border-soft: #1a1f21;
+    --gold: #4fb3ad;
+    --gold-bright: #7fd3cc;
+    --gold-deep: #2a7f7a;
+    --gold-glow: rgba(79, 179, 173, 0.18);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -47,9 +47,9 @@
     position: fixed;
     inset: -10%;
     background:
-      radial-gradient(ellipse 900px 700px at 15% 10%, rgba(201, 160, 99, 0.10), transparent 65%),
-      radial-gradient(ellipse 800px 600px at 95% 90%, rgba(201, 160, 99, 0.07), transparent 65%),
-      radial-gradient(ellipse 700px 500px at 50% 50%, rgba(201, 160, 99, 0.04), transparent 70%);
+      radial-gradient(ellipse 900px 700px at 15% 10%, rgba(79, 179, 173, 0.10), transparent 65%),
+      radial-gradient(ellipse 800px 600px at 95% 90%, rgba(79, 179, 173, 0.07), transparent 65%),
+      radial-gradient(ellipse 700px 500px at 50% 50%, rgba(79, 179, 173, 0.04), transparent 70%);
     pointer-events: none;
     z-index: 0;
     animation: drift 28s ease-in-out infinite;
@@ -119,11 +119,15 @@
   }
   .top-inner {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     padding: 1.1rem 0;
     gap: 1.5rem;
   }
+  .brand { flex-shrink: 0; white-space: nowrap; }
+  .nav-cluster { flex-shrink: 1; min-width: 0; }
+  @media (max-width: 1240px) { nav.links { gap: 1rem; letter-spacing: 0.12em; font-size: 0.64rem; } }
   .brand {
     display: flex;
     align-items: center;
@@ -157,10 +161,11 @@
   }
   nav.links {
     display: flex;
-    gap: 1.6rem;
+    gap: 1.35rem;
     align-items: center;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
+    white-space: nowrap;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     font-weight: 500;
   }
@@ -168,15 +173,6 @@
     color: var(--fg-soft);
     transition: color 0.25s;
     position: relative;
-  }
-  nav.links a sup {
-    color: var(--gold);
-    font-size: 0.75em;
-    margin-right: 0.25em;
-    font-style: italic;
-    font-family: 'Cormorant Garamond', serif;
-    text-transform: none;
-    letter-spacing: 0;
   }
   nav.links a::after {
     content: "";
@@ -211,7 +207,7 @@
     border-right: 1px solid var(--border);
   }
   .lang-btn:last-child { border-right: none; }
-  .lang-btn:hover { color: var(--fg); background: rgba(201, 160, 99, 0.05); }
+  .lang-btn:hover { color: var(--fg); background: rgba(79, 179, 173, 0.05); }
   .lang-btn.active {
     color: var(--bg);
     background: var(--gold);
@@ -261,9 +257,9 @@
       100deg,
       var(--gold-deep) 0%,
       var(--gold) 25%,
-      #f5d999 45%,
-      #ffeec2 50%,
-      #f5d999 55%,
+      #a8e6e1 45%,
+      #dff7f4 50%,
+      #a8e6e1 55%,
       var(--gold) 75%,
       var(--gold-deep) 100%
     );
@@ -328,19 +324,6 @@
     align-items: center;
     gap: 0.5rem;
   }
-  .hero-now-label::before {
-    content: "";
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--gold);
-    box-shadow: 0 0 0 0 var(--gold);
-    animation: nowPulse 2.4s ease-out infinite;
-  }
-  @keyframes nowPulse {
-    0% { box-shadow: 0 0 0 0 rgba(201, 160, 99, 0.5); }
-    70% { box-shadow: 0 0 0 8px rgba(201, 160, 99, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(201, 160, 99, 0); }
-  }
   .hero-now-text {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -367,12 +350,6 @@
     text-transform: uppercase;
     font-weight: 500;
     transition: all 0.25s;
-  }
-  .role-pill::before {
-    content: "";
-    width: 5px; height: 5px;
-    background: var(--gold);
-    border-radius: 50%;
   }
   .role-pill:hover { color: var(--gold); border-color: var(--gold); }
 
@@ -442,7 +419,7 @@
     background: var(--gold-bright);
     border-color: var(--gold-bright);
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(201, 160, 99, 0.32);
+    box-shadow: 0 12px 28px rgba(79, 179, 173, 0.32);
   }
   .btn-ghost {
     background: transparent;
@@ -634,7 +611,7 @@
     inset: 0;
     background:
       radial-gradient(circle 600px at 30% 30%, var(--gold-glow), transparent 60%),
-      radial-gradient(circle 500px at 70% 70%, rgba(201, 160, 99, 0.08), transparent 60%);
+      radial-gradient(circle 500px at 70% 70%, rgba(79, 179, 173, 0.08), transparent 60%);
     opacity: 0.7;
     pointer-events: none;
   }
@@ -907,6 +884,22 @@
   }
   .pub-cite-source em { color: var(--gold); font-style: italic; }
   .pub-cite-source strong { color: var(--fg); font-weight: 500; font-style: normal; }
+
+
+  /* Publications list (2026-09) */
+  .pub-list { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 3rem; }
+  .pub-group-label {
+    color: var(--muted); font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 500;
+    margin: 0 0 0.75rem 0; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); max-width: 820px;
+  }
+  .pub-list + .pub-group-label { margin-top: 1rem; }
+  .pub-cite-link {
+    display: inline-block; margin-top: 1rem; color: var(--gold); font-size: 0.72rem; letter-spacing: 0.22em;
+    text-transform: uppercase; font-weight: 500; text-decoration: none; transition: color 0.3s;
+  }
+  .pub-cite-link:hover { color: var(--gold-bright); }
+  .pub-cite-link .arrow { display: inline-block; margin-left: 0.35rem; transition: transform 0.3s; }
+  .pub-cite-link:hover .arrow { transform: translateX(4px); }
 
   /* Publication (legacy, kept for fallback) */
   .pub-feature {
@@ -1224,7 +1217,7 @@
   }
   .contact-channel:hover {
     border-color: var(--gold);
-    background: rgba(201, 160, 99, 0.06);
+    background: rgba(79, 179, 173, 0.06);
     transform: translateX(4px);
   }
   .contact-channel:hover .contact-channel-icon { color: var(--gold-bright); transform: scale(1.05); }
@@ -1266,7 +1259,7 @@
   .email-challenge-input {
     width: 3rem;
     padding: 0.22rem 0.45rem;
-    background: rgba(201, 160, 99, 0.08);
+    background: rgba(79, 179, 173, 0.08);
     border: 1px solid var(--gold);
     border-radius: 3px;
     color: var(--fg);
@@ -1275,8 +1268,8 @@
   }
   .email-challenge-input:focus {
     outline: none;
-    background: rgba(201, 160, 99, 0.18);
-    box-shadow: 0 0 0 2px rgba(201, 160, 99, 0.25);
+    background: rgba(79, 179, 173, 0.18);
+    box-shadow: 0 0 0 2px rgba(79, 179, 173, 0.25);
   }
   .email-challenge-go {
     background: var(--gold);
@@ -1477,13 +1470,14 @@
     </a>
     <div class="nav-cluster">
       <nav class="links">
-        <a href="#profile" data-en="<sup>i</sup>Profile" data-de="<sup>i</sup>Profil" data-fr="<sup>i</sup>Profil"><sup>i</sup>Profile</a>
-        <a href="#focus" data-en="<sup>ii</sup>Focus" data-de="<sup>ii</sup>Schwerpunkt" data-fr="<sup>ii</sup>Focus"><sup>ii</sup>Focus</a>
-        <a href="#education" data-en="<sup>iii</sup>Education" data-de="<sup>iii</sup>Ausbildung" data-fr="<sup>iii</sup>Formation"><sup>iii</sup>Education</a>
-        <a href="#experience" data-en="<sup>iv</sup>Experience" data-de="<sup>iv</sup>Erfahrung" data-fr="<sup>iv</sup>Expérience"><sup>iv</sup>Experience</a>
-        <a href="#projects" data-en="<sup>v</sup>Projects" data-de="<sup>v</sup>Projekte" data-fr="<sup>v</sup>Projets"><sup>v</sup>Projects</a>
-        <a href="#code" data-en="<sup>vi</sup>Code" data-de="<sup>vi</sup>Kodex" data-fr="<sup>vi</sup>Code"><sup>vi</sup>Code</a>
-        <a href="#contact" data-en="<sup>vii</sup>Contact" data-de="<sup>vii</sup>Kontakt" data-fr="<sup>vii</sup>Contact"><sup>vii</sup>Contact</a>
+        <a href="#profile" data-en="Profile" data-de="Profil" data-fr="Profil">Profile</a>
+        <a href="#focus" data-en="Focus" data-de="Schwerpunkt" data-fr="Focus">Focus</a>
+        <a href="#education" data-en="Education" data-de="Ausbildung" data-fr="Formation">Education</a>
+        <a href="#experience" data-en="Experience" data-de="Erfahrung" data-fr="Expérience">Experience</a>
+        <a href="#projects" data-en="Projects" data-de="Projekte" data-fr="Projets">Projects</a>
+        <a href="#publication" data-en="Publications" data-de="Publikationen" data-fr="Publications">Publications</a>
+        <a href="#code" data-en="Code" data-de="Kodex" data-fr="Code">Code</a>
+        <a href="#contact" data-en="Contact" data-de="Kontakt" data-fr="Contact">Contact</a>
       </nav>
       <div class="lang-switch" role="group" aria-label="Language">
         <button class="lang-btn active" data-lang="en" type="button">EN</button>
@@ -1516,16 +1510,18 @@
         <span class="hero-now-label">Currently</span>
         <span class="hero-now-text"
               data-en="Working at Burkhalter Rechtsanwälte.<br>Pursuing an MSc at the University of Bern.<br>Building <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>."
-              data-de="Arbeit bei Burkhalter Rechtsanwälte.<br>Studium an der Universität Bern.<br>Aufbau von <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>."
+              data-de="Tätig bei Burkhalter Rechtsanwälte.<br>Studium an der Universität Bern.<br>Im Aufbau: <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>."
               data-fr="En poste chez Burkhalter Rechtsanwälte.<br>Études à l'Université de Berne.<br>Développement de <em style='color: var(--gold); font-style: italic;'>«Legal Information Extraction with Large Language Models»</em>.">
           Working at Burkhalter Rechtsanwälte.<br>Pursuing an MSc at the University of Bern.<br>Building <em style="color: var(--gold); font-style: italic;">«Legal Information Extraction with Large Language Models»</em>.
         </span>
       </div>
       <div class="hero-roles stage stage-5">
-        <span class="role-pill" data-en="Trainee Lawyer" data-de="Substitut" data-fr="Avocat-stagiaire">Trainee Lawyer</span>
-        <span class="role-pill" data-en="Corporate · Tax · Banking" data-de="Gesellschafts-, Steuer- &amp; Bankrecht" data-fr="Sociétés · Fiscal · Banque">Corporate · Tax · Banking</span>
+        <span class="role-pill" data-en="Corporate &amp; M&amp;A" data-de="Gesellschaftsrecht &amp; M&amp;A" data-fr="Sociétés &amp; M&amp;A">Corporate &amp; M&amp;A</span>
+        <span class="role-pill" data-en="Banking &amp; Finance" data-de="Banking &amp; Finance" data-fr="Banking &amp; Finance">Banking &amp; Finance</span>
+        <span class="role-pill" data-en="Tax" data-de="Steuerrecht" data-fr="Fiscalité">Tax</span>
+        <span class="role-pill" data-en="Real Estate" data-de="Immobilien" data-fr="Immobilier">Real Estate</span>
         <span class="role-pill" data-en="DLT · Stablecoins" data-de="DLT · Stablecoins" data-fr="DLT · Stablecoins">DLT · Stablecoins</span>
-        <span class="role-pill" data-en="MSc · Corporate Finance" data-de="MSc · Corporate Finance" data-fr="MSc · Finance d'entreprise">MSc · Corporate Finance</span>
+        <span class="role-pill" data-en="Corporate Finance" data-de="Corporate Finance" data-fr="Finance d'entreprise">Corporate Finance</span>
       </div>
       <div class="hero-actions stage stage-6">
         <a href="#contact" class="btn btn-primary">
@@ -1550,8 +1546,8 @@
   <div class="wrap">
     <div class="maxim-latin reveal"
          data-en="Consistency compounds."
-         data-de="Beständigkeit potenziert sich."
-         data-fr="La constance se compose.">
+         data-de="Beständigkeit zahlt sich aus."
+         data-fr="La constance finit par payer.">
       Consistency compounds.
     </div>
     <div class="maxim-de reveal"
@@ -1576,23 +1572,23 @@
     <aside class="manifest-side">
       <div class="section-num reveal" data-en="01 · Profile" data-de="01 · Profil" data-fr="01 · Profil">01 · Profile</div>
       <h2 class="heading reveal"
-          data-en="Two disciplines.<br><em>One direction.</em>"
-          data-de="Zwei Disziplinen.<br><em>Eine Richtung.</em>"
-          data-fr="Deux disciplines.<br><em>Une direction.</em>">
-        Two disciplines.<br><em>One direction.</em>
+          data-en="Two disciplines<br><em>One direction</em>"
+          data-de="Zwei Disziplinen<br><em>Eine Richtung</em>"
+          data-fr="Deux disciplines<br><em>Une direction</em>">
+        Two disciplines<br><em>One direction</em>
       </h2>
     </aside>
     <div class="manifest-text">
       <p class="reveal"
-         data-en="Trainee Lawyer at <strong>Burkhalter Rechtsanwälte</strong> in Bern and Zurich. Studying Corporate Finance at the University of Bern and International Law &amp; Economics at the World Trade Institute."
-         data-de="Substitut bei <strong>Burkhalter Rechtsanwälte</strong> in Bern und Zürich. Studium in Corporate Finance an der Universität Bern und International Law &amp; Economics am World Trade Institute."
-         data-fr="Avocat-stagiaire chez <strong>Burkhalter Rechtsanwälte</strong> à Berne et Zurich. Études en Corporate Finance à l'Université de Berne et en droit international et économie au World Trade Institute.">
-        Trainee Lawyer at <strong>Burkhalter Rechtsanwälte</strong> in Bern and Zurich. Studying Corporate Finance at the University of Bern and International Law &amp; Economics at the World Trade Institute.
+         data-en="Trainee Lawyer at <strong>Burkhalter Rechtsanwälte</strong> in Bern and Zurich. Studying Corporate Finance at the University of Bern. CAS in International Law &amp; Economics from the World Trade Institute."
+         data-de="Substitut bei <strong>Burkhalter Rechtsanwälte</strong> in Bern und Zürich. Studium in Corporate Finance an der Universität Bern. CAS in International Law &amp; Economics am World Trade Institute."
+         data-fr="Avocat-stagiaire chez <strong>Burkhalter Rechtsanwälte</strong> à Berne et Zurich. Études en Corporate Finance à l'Université de Berne. CAS en droit international et économie du World Trade Institute.">
+        Trainee Lawyer at <strong>Burkhalter Rechtsanwälte</strong> in Bern and Zurich. Studying Corporate Finance at the University of Bern. CAS in International Law &amp; Economics from the World Trade Institute.
       </p>
       <p class="reveal"
          data-en="Built where law meets finance."
-         data-de="Geschaffen für die Schnittstelle von Recht und Finanzen."
-         data-fr="Conçu pour l'intersection entre le droit et la finance.">
+         data-de="Zuhause an der Schnittstelle von Recht und Finanzen."
+         data-fr="À l'intersection du droit et de la finance.">
         Built where law meets finance.
       </p>
       <p class="manifest-langs reveal"
@@ -1611,10 +1607,10 @@
 <section id="focus">
   <div class="section-num reveal" data-en="02 · Focus" data-de="02 · Schwerpunkt" data-fr="02 · Focus">02 · Focus</div>
   <h2 class="section-h reveal"
-      data-en="Core <em>areas</em>."
-      data-de="Kern<em>bereiche</em>."
-      data-fr="Domaines <em>clés</em>.">
-    Core <em>areas</em>.
+      data-en="Core <em>areas</em>"
+      data-de="Kern<em>bereiche</em>"
+      data-fr="Domaines <em>clés</em>">
+    Core <em>areas</em>
   </h2>
   <div class="focus-grid">
     <div class="focus-item reveal">
@@ -1640,13 +1636,13 @@
       <h3 data-en="Capital Markets" data-de="Kapitalmärkte" data-fr="Marchés de capitaux">Capital Markets</h3>
       <p data-en="Equity research, valuation, investment thesis."
          data-de="Equity Research, Bewertung, Investment-These."
-         data-fr="Recherche action, évaluation, thèse d'investissement.">
+         data-fr="Recherche actions, évaluation, thèse d'investissement.">
         Equity research, valuation, investment thesis.
       </p>
     </div>
     <div class="focus-item reveal">
       <span class="focus-num">iv.</span>
-      <h3 data-en="Corporate Tax" data-de="Steuerrecht" data-fr="Fiscalité d'entreprise">Corporate Tax</h3>
+      <h3 data-en="Corporate Tax" data-de="Unternehmenssteuerrecht" data-fr="Fiscalité d'entreprise">Corporate Tax</h3>
       <p data-en="Cross-border structures, transactional advisory."
          data-de="Grenzüberschreitende Strukturen, transaktionale Beratung."
          data-fr="Structures transfrontalières, conseil transactionnel.">
@@ -1670,10 +1666,10 @@
 <section id="education">
   <div class="section-num reveal" data-en="03 · Education" data-de="03 · Ausbildung" data-fr="03 · Formation">03 · Education</div>
   <h2 class="section-h reveal"
-      data-en="Academic <em>background</em>."
-      data-de="Akademischer <em>Werdegang</em>."
-      data-fr="Parcours <em>académique</em>.">
-    Academic <em>background</em>.
+      data-en="Academic <em>background</em>"
+      data-de="Akademischer <em>Werdegang</em>"
+      data-fr="Parcours <em>académique</em>">
+    Academic <em>background</em>
   </h2>
   <div class="cv-list">
     <div class="cv-row reveal">
@@ -1681,7 +1677,7 @@
         <h3>CAS in International Law &amp; <em>Economics</em></h3>
         <div class="org">World Trade Institute (WTI) <span class="loc">Bern</span></div>
         <p data-en="WTO and FTA fundamentals, international contract law, trade compliance."
-           data-de="Grundlagen WTO und Freihandel, internationales Vertragsrecht, Trade Compliance."
+           data-de="Grundlagen WTO und Freihandelsabkommen, internationales Vertragsrecht, Trade Compliance."
            data-fr="Fondements OMC et ALE, droit international des contrats, conformité commerciale.">
           WTO and FTA fundamentals, international contract law, trade compliance.
         </p>
@@ -1695,7 +1691,7 @@
     </div>
     <div class="cv-row reveal">
       <div class="cv-main">
-        <h3 data-en="MSc in <em>Business Administration</em>" data-de="MSc in <em>Business Administration</em>" data-fr="MSc en <em>Administration des Affaires</em>">MSc in <em>Business Administration</em></h3>
+        <h3 data-en="MSc in <em>Business Administration</em>" data-de="MSc in <em>Business Administration</em>" data-fr="MSc en <em>administration des affaires</em>">MSc in <em>Business Administration</em></h3>
         <div class="org">University of Bern <span class="loc">Bern</span></div>
         <p data-en="Specialisation in Corporate Finance: company valuation, real estate valuation, financial reporting (IFRS, Swiss GAAP FER)."
            data-de="Vertiefung Corporate Finance: Unternehmensbewertung, Immobilienbewertung, Rechnungslegung (IFRS, Swiss GAAP FER)."
@@ -1712,7 +1708,7 @@
     </div>
     <div class="cv-row reveal">
       <div class="cv-main">
-        <h3 data-en="Master of <em>Law</em>" data-de="Master of <em>Law</em>" data-fr="Master en <em>Droit</em>">Master of <em>Law</em></h3>
+        <h3 data-en="Master of <em>Law</em>" data-de="Master of <em>Law</em>" data-fr="Master en <em>droit</em>">Master of <em>Law</em></h3>
         <div class="org">University of Bern <span class="loc">Bern</span></div>
         <p data-en='Master&rsquo;s thesis: <em style="color: var(--gold); font-style: italic;">&laquo;Stablecoins and AML Law &mdash; Legal qualification of stablecoins under FINMA supervisory practice.&raquo;</em>'
            data-de='Masterarbeit: <em style="color: var(--gold); font-style: italic;">&laquo;Stablecoins und das Geldw&auml;schereirecht &ndash; Zur rechtlichen Qualifikation von Stablecoins im Lichte der FINMA-Aufsichtspraxis.&raquo;</em>'
@@ -1730,14 +1726,14 @@
     </div>
     <div class="cv-row reveal">
       <div class="cv-main">
-        <h3 data-en="BSc Minor in <em>Business Administration</em>" data-de="BSc Minor in <em>Business Administration</em>" data-fr="BSc Mineure en <em>Administration des Affaires</em>">BSc Minor in <em>Business Administration</em></h3>
+        <h3 data-en="BSc Minor in <em>Business Administration</em>" data-de="BSc Minor in <em>Business Administration</em>" data-fr="Mineure BSc en <em>administration des affaires</em>">BSc Minor in <em>Business Administration</em></h3>
         <div class="org">University of Bern <span class="loc">Bern</span></div>
       </div>
       <div class="cv-side" data-en="Minor" data-de="Nebenfach" data-fr="Mineure">Minor</div>
     </div>
     <div class="cv-row reveal">
       <div class="cv-main">
-        <h3 data-en="Bachelor of <em>Law</em>" data-de="Bachelor of <em>Law</em>" data-fr="Bachelor en <em>Droit</em>">Bachelor of <em>Law</em></h3>
+        <h3 data-en="Bachelor of <em>Law</em>" data-de="Bachelor of <em>Law</em>" data-fr="Bachelor en <em>droit</em>">Bachelor of <em>Law</em></h3>
         <div class="org">University of Bern <span class="loc">Bern</span></div>
       </div>
       <div class="cv-side">BLaw</div>
@@ -1751,8 +1747,8 @@
     <div class="pull-mark">“</div>
     <blockquote
         data-en="<em>Pressure</em> reveals standards.<br><em>Execution</em> over noise."
-        data-de="<em>Druck</em> offenbart Standards.<br><em>Ausführung</em> statt Lärm."
-        data-fr="La <em>pression</em> révèle les standards.<br>L'<em>exécution</em> avant le bruit.">
+        data-de="Unter <em>Druck</em> zeigt sich der Standard.<br><em>Umsetzung</em> statt Lärm."
+        data-fr="La <em>pression</em> révèle le niveau.<br>L'<em>exécution</em> plutôt que le bruit.">
       <em>Pressure</em> reveals standards.<br><em>Execution</em> over noise.
     </blockquote>
     <cite data-en="Operating principle" data-de="Arbeitsprinzip" data-fr="Principe de travail">Operating principle</cite>
@@ -1763,10 +1759,10 @@
 <section id="experience">
   <div class="section-num reveal" data-en="04 · Experience" data-de="04 · Erfahrung" data-fr="04 · Expérience">04 · Experience</div>
   <h2 class="section-h reveal"
-      data-en="Where I have <em>worked</em>."
-      data-de="Wo ich <em>gearbeitet</em> habe."
-      data-fr="Où j'ai <em>travaillé</em>.">
-    Where I have <em>worked</em>.
+      data-en="Where I have <em>worked</em>"
+      data-de="Wo ich <em>gearbeitet</em> habe"
+      data-fr="Où j'ai <em>travaillé</em>">
+    Where I have <em>worked</em>
   </h2>
   <div class="cv-list">
     <div class="cv-row reveal">
@@ -1776,7 +1772,7 @@
         <div class="cv-tags">
           <span class="cv-tag" data-en="Commercial Law" data-de="Wirtschaftsrecht" data-fr="Droit commercial">Commercial Law</span>
           <span class="cv-tag" data-en="Corporate" data-de="Gesellschaftsrecht" data-fr="Sociétés">Corporate</span>
-          <span class="cv-tag" data-en="Drafting" data-de="Schriftsätze" data-fr="Rédaction">Drafting</span>
+          <span class="cv-tag" data-en="Drafting" data-de="Vertrags- und Schriftsatzredaktion" data-fr="Rédaction">Drafting</span>
         </div>
       </div>
       <div class="cv-side" data-en="Current" data-de="Aktuell" data-fr="Actuel">Current</div>
@@ -1808,7 +1804,7 @@
         </div>
         <div class="cv-tags">
           <span class="cv-tag" data-en="Litigation" data-de="Prozessführung" data-fr="Contentieux">Litigation</span>
-          <span class="cv-tag" data-en="Procedural Law" data-de="Verfahrensrecht" data-fr="Droit procédural">Procedural Law</span>
+          <span class="cv-tag" data-en="Procedural Law" data-de="Verfahrensrecht" data-fr="Droit de la procédure">Procedural Law</span>
         </div>
       </div>
       <div class="cv-side" data-en="Public" data-de="Öffentlich" data-fr="Public">Public</div>
@@ -1852,18 +1848,18 @@
 <section id="projects">
   <div class="section-num reveal" data-en="05 · Projects" data-de="05 · Projekte" data-fr="05 · Projets">05 · Projects</div>
   <h2 class="section-h reveal"
-      data-en="Selected <em>work</em>."
-      data-de="Ausgewählte <em>Projekte</em>."
-      data-fr="Travaux <em>sélectionnés</em>.">
-    Selected <em>work</em>.
+      data-en="Selected <em>work</em>"
+      data-de="Ausgewählte <em>Projekte</em>"
+      data-fr="Travaux <em>sélectionnés</em>">
+    Selected <em>work</em>
   </h2>
   <div class="project-card reveal">
     <div class="project-mark">
       <svg viewBox="0 0 110 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
           <linearGradient id="cfaGold" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#e2b878"/>
-            <stop offset="100%" stop-color="#a07a44"/>
+            <stop offset="0%" stop-color="#7fd3cc"/>
+            <stop offset="100%" stop-color="#2a7f7a"/>
           </linearGradient>
         </defs>
         <g fill="none" stroke="url(#cfaGold)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
@@ -1879,16 +1875,16 @@
       </svg>
     </div>
     <div class="project-body">
-      <div class="project-tag" data-en="Equity Research · Competition" data-de="Equity Research · Wettbewerb" data-fr="Recherche action · Compétition">Equity Research · Competition</div>
+      <div class="project-tag" data-en="Equity Research · Competition" data-de="Equity Research · Wettbewerb" data-fr="Recherche actions · Compétition">Equity Research · Competition</div>
       <h3 class="project-h">CFA Equity Research Challenge <em>2025/2026</em></h3>
-      <div class="project-org">CFA Institute · <span class="loc" data-en="Switzerland Local Round" data-de="Schweizer Lokalrunde" data-fr="Tour local Suisse">Switzerland Local Round</span></div>
+      <div class="project-org">CFA Institute · <span class="loc" data-en="Switzerland Local Round" data-de="Lokalrunde Schweiz" data-fr="Phase locale Suisse">Switzerland Local Round</span></div>
       <p data-en="Team-based equity research and valuation competition. Company analysis, financial modelling, investment thesis, written research report and pitch to a panel of investment professionals."
-         data-de="Team-basierter Equity-Research- und Bewertungswettbewerb. Unternehmensanalyse, Finanzmodellierung, Investment-These, schriftlicher Research-Report und Pitch vor einem Panel aus Investment Professionals."
+         data-de="Equity-Research- und Bewertungswettbewerb im Team. Unternehmensanalyse, Finanzmodellierung, Investment-These, schriftlicher Research-Report und Pitch vor einem Panel aus Investment Professionals."
          data-fr="Compétition d'équipe en recherche action et évaluation. Analyse d'entreprise, modélisation financière, thèse d'investissement, rapport de recherche écrit et présentation devant un panel de professionnels de l'investissement.">
         Team-based equity research and valuation competition. Company analysis, financial modelling, investment thesis, written research report and pitch to a panel of investment professionals.
       </p>
       <div class="cv-tags">
-        <span class="cv-tag" data-en="Equity Research" data-de="Equity Research" data-fr="Recherche action">Equity Research</span>
+        <span class="cv-tag" data-en="Equity Research" data-de="Equity Research" data-fr="Recherche actions">Equity Research</span>
         <span class="cv-tag" data-en="DCF Valuation" data-de="DCF-Bewertung" data-fr="Évaluation DCF">DCF Valuation</span>
         <span class="cv-tag" data-en="Investment Thesis" data-de="Investment-These" data-fr="Thèse d'investissement">Investment Thesis</span>
         <span class="cv-tag" data-en="Pitch" data-de="Pitch" data-fr="Pitch">Pitch</span>
@@ -1910,30 +1906,150 @@
 
 <div class="wrap">
 <section id="publication">
-  <div class="section-num reveal" data-en="06 · Publication" data-de="06 · Publikation" data-fr="06 · Publication">06 · Publication</div>
+  <div class="section-num reveal" data-en="06 · Publications" data-de="06 · Publikationen" data-fr="06 · Publications">06 · Publications</div>
   <h2 class="section-h reveal"
-      data-en="Written <em>work</em>."
-      data-de="Schriftliches <em>Werk</em>."
-      data-fr="<em>Œuvre</em> écrite.">
-    Written <em>work</em>.
+      data-en="Written <em>work</em>"
+      data-de="Schriftliche <em>Arbeiten</em>"
+      data-fr="Travaux <em>écrits</em>">
+    Written <em>work</em>
   </h2>
-  <div class="pub-cite reveal">
-    <div class="pub-cite-tag" data-en="Publication" data-de="Publikation" data-fr="Publication">Publication</div>
-    <div class="pub-cite-author">Tscheraghsepehr, D.</div>
-    <div class="pub-cite-title">Sprache der Gerechtigkeit: Die Rolle der DolmetscherInnen und zentrale Stolpersteine im Nürnberger Prozess sowie ein Blick auf die Schweizer Praxis.</div>
-    <div class="pub-cite-meta"
-         data-en="<strong>Conference Volume</strong> Court Interpreting &amp; Legal Linguistics"
-         data-de="<strong>Tagungsband</strong> Gerichtsdolmetschen &amp; Rechtslinguistik"
-         data-fr="<strong>Actes de Conférence</strong> Interprétation judiciaire &amp; linguistique juridique">
-      <strong>Conference Volume</strong> Court Interpreting &amp; Legal Linguistics
+
+  <div class="pub-group-label reveal" data-en="Published" data-de="Erschienen" data-fr="Parus">Published</div>
+  <div class="pub-list">
+
+    <div class="pub-cite reveal">
+      <div class="pub-cite-tag" data-en="Paper · ICML 2026" data-de="Paper · ICML 2026" data-fr="Article · ICML 2026">Paper · ICML 2026</div>
+      <div class="pub-cite-author">König, A. / Tscheraghsepehr, D. / Pawlowsky, P. / Holicki, A. / Hauser, M. L. et al.</div>
+      <div class="pub-cite-title">LEGEX: An Eight-Jurisdiction Benchmark for Legal Review-Table Extraction.</div>
+      <div class="pub-cite-meta"
+           data-en="<strong>Accepted</strong> ICML 2026 · Proceedings of Machine Learning Research, Vol. 306"
+           data-de="<strong>Angenommen</strong> ICML 2026 · Proceedings of Machine Learning Research, Bd. 306"
+           data-fr="<strong>Accepté</strong> ICML 2026 · Proceedings of Machine Learning Research, vol. 306">
+        <strong>Accepted</strong> ICML 2026 · Proceedings of Machine Learning Research, Vol. 306
+      </div>
+      <div class="pub-cite-source"
+           data-en="A benchmark for extracting structured review tables from legal documents across eight jurisdictions. Presented as a poster at the AI4Law Workshop, ICML 2026, Seoul, 10 July 2026.<br><strong>Authors:</strong> Adrian König, Daniel Tscheraghsepehr, Philip Pawlowsky, Arne Holicki, Maximilian Louis Hauser, Raphael Zemp, Thiago Xavier, Aram Antoine Hess, Luc Wenger, Li-Chen Cheng, Benjamin Berkowitsch, Vakhtang Marjanidze, Enzo Nuener, Nerea Garcia Moran, Jelle Begeyn, Andjelija Mitrakovic, Antoine Vermeulen, Shruti Jhanwar, Sapana Danai, Caleb Catalan, Roman Wixinger."
+           data-de="Ein Benchmark für die Extraktion strukturierter Review Tables aus Rechtsdokumenten in acht Rechtsordnungen. Als Poster präsentiert am AI4Law Workshop, ICML 2026, Seoul, 10. Juli 2026.<br><strong>Autoren:</strong> Adrian König, Daniel Tscheraghsepehr, Philip Pawlowsky, Arne Holicki, Maximilian Louis Hauser, Raphael Zemp, Thiago Xavier, Aram Antoine Hess, Luc Wenger, Li-Chen Cheng, Benjamin Berkowitsch, Vakhtang Marjanidze, Enzo Nuener, Nerea Garcia Moran, Jelle Begeyn, Andjelija Mitrakovic, Antoine Vermeulen, Shruti Jhanwar, Sapana Danai, Caleb Catalan, Roman Wixinger."
+           data-fr="Un banc d'essai pour l'extraction de tableaux de revue structurés à partir de documents juridiques dans huit ordres juridiques. Présenté sous forme de poster à l'atelier AI4Law, ICML 2026, Séoul, 10 juillet 2026.<br><strong>Auteurs :</strong> Adrian König, Daniel Tscheraghsepehr, Philip Pawlowsky, Arne Holicki, Maximilian Louis Hauser, Raphael Zemp, Thiago Xavier, Aram Antoine Hess, Luc Wenger, Li-Chen Cheng, Benjamin Berkowitsch, Vakhtang Marjanidze, Enzo Nuener, Nerea Garcia Moran, Jelle Begeyn, Andjelija Mitrakovic, Antoine Vermeulen, Shruti Jhanwar, Sapana Danai, Caleb Catalan, Roman Wixinger.">
+        A benchmark for extracting structured review tables from legal documents across eight jurisdictions. Presented as a poster at the AI4Law Workshop, ICML 2026, Seoul, 10 July 2026.<br><strong>Authors:</strong> Adrian König, Daniel Tscheraghsepehr, Philip Pawlowsky, Arne Holicki, Maximilian Louis Hauser, Raphael Zemp, Thiago Xavier, Aram Antoine Hess, Luc Wenger, Li-Chen Cheng, Benjamin Berkowitsch, Vakhtang Marjanidze, Enzo Nuener, Nerea Garcia Moran, Jelle Begeyn, Andjelija Mitrakovic, Antoine Vermeulen, Shruti Jhanwar, Sapana Danai, Caleb Catalan, Roman Wixinger.
+      </div>
     </div>
-    <div class="pub-cite-source">
-      in: Vereinigung Österreichischer StrafverteidigerInnen et al. (eds.),
-      <strong>«Recht im Unrecht – Unrecht im Recht. Lehren aus Nürnberg»</strong>,
-      14. Dreiländerforum Strafverteidigung, 19./20.9.2025 in Nürnberg,
-      Schriftenreihe der VÖStV Bd. 44, hrsg. v. Richard Soyer,
-      <em>Verlag Österreich</em>, 2026.
+    <div class="pub-cite reveal">
+      <div class="pub-cite-tag" data-en="Article · Jusletter · 2026" data-de="Aufsatz · Jusletter · 2026" data-fr="Article · Jusletter · 2026">Article · Jusletter · 2026</div>
+      <div class="pub-cite-author">Wenger, L. / Tscheraghsepehr, D.</div>
+      <div class="pub-cite-title">PFAS-Verdacht als Sachmangel beim Grundstückkauf.</div>
+      <div class="pub-cite-meta"
+           data-en="<strong>Jusletter</strong> 14 September 2026 · Editions Weblaw"
+           data-de="<strong>Jusletter</strong> 14. September 2026 · Editions Weblaw"
+           data-fr="<strong>Jusletter</strong> 14 septembre 2026 · Editions Weblaw">
+        <strong>Jusletter</strong> 14 September 2026 · Editions Weblaw
+      </div>
+      <div class="pub-cite-source"
+           data-en="Since 2023 the Federal Supreme Court accepts that the mere suspicion of a defect can constitute a defect under Art. 197 para. 1 CO. The article applies this to PFAS in soil, works through defect, remedies, exclusion clauses and disclosure duties, and closes with model clauses for real estate transactions.<br><strong>Suggested citation:</strong> Luc Wenger / Daniel Tscheraghsepehr, PFAS-Verdacht als Sachmangel beim Grundstückkauf, in: Jusletter 14. September 2026."
+           data-de="Seit 2023 anerkennt das Bundesgericht, dass bereits der blosse Verdacht eines Mangels einen Sachmangel nach Art. 197 Abs. 1 OR begründen kann. Der Beitrag überträgt dies auf PFAS im Boden, behandelt Mangel, Rechtsfolgen, Freizeichnung und Aufklärungspflichten und schliesst mit Musterklauseln für Grundstückgeschäfte.<br><strong>Zitiervorschlag:</strong> Luc Wenger / Daniel Tscheraghsepehr, PFAS-Verdacht als Sachmangel beim Grundstückkauf, in: Jusletter 14. September 2026."
+           data-fr="Depuis 2023, le Tribunal fédéral admet que le simple soupçon d'un défaut peut constituer un défaut au sens de l'art. 197 al. 1 CO. L'article applique cette jurisprudence aux PFAS dans le sol, traite du défaut, des remèdes, des clauses d'exclusion et des devoirs d'information, et se termine par des clauses types pour les transactions immobilières.<br><strong>Citation suggérée :</strong> Luc Wenger / Daniel Tscheraghsepehr, PFAS-Verdacht als Sachmangel beim Grundstückkauf, in: Jusletter 14. September 2026.">
+        Since 2023 the Federal Supreme Court accepts that the mere suspicion of a defect can constitute a defect under Art. 197 para. 1 CO. The article applies this to PFAS in soil, works through defect, remedies, exclusion clauses and disclosure duties, and closes with model clauses for real estate transactions.<br><strong>Suggested citation:</strong> Luc Wenger / Daniel Tscheraghsepehr, PFAS-Verdacht als Sachmangel beim Grundstückkauf, in: Jusletter 14. September 2026.
+      </div>
+      <a class="pub-cite-link" href="https://jusletter.weblaw.ch/juslissues/2026/1296/pfas-verdacht-als-sa_c5dd55dbd4.html" target="_blank" rel="noopener noreferrer"
+         data-en="Read on Jusletter <span class='arrow'>→</span>" data-de="Auf Jusletter lesen <span class='arrow'>→</span>" data-fr="Lire sur Jusletter <span class='arrow'>→</span>">Read on Jusletter <span class="arrow">→</span></a>
     </div>
+    <div class="pub-cite reveal">
+      <div class="pub-cite-tag" data-en="Book · WEKA" data-de="Buch · WEKA" data-fr="Livre · WEKA">Book · WEKA</div>
+      <div class="pub-cite-author">Burkhalter Rechtsanwälte AG · Burkhalter, P. / Kirmizikaya, C. / Tscheraghsepehr, D.</div>
+      <div class="pub-cite-title">Steuern und Immobilien. Steuern vom Erwerb bis zur Veräusserung.</div>
+      <div class="pub-cite-meta"
+           data-en="<strong>Handbook</strong> New edition · WEKA Business Media AG, Zurich"
+           data-de="<strong>Handbuch</strong> Neue Auflage · WEKA Business Media AG, Zürich"
+           data-fr="<strong>Manuel</strong> Nouvelle édition · WEKA Business Media AG, Zurich">
+        <strong>Handbook</strong> New edition · WEKA Business Media AG, Zurich
+      </div>
+      <div class="pub-cite-source"
+           data-en="A practitioner's handbook on the taxation of real estate in Switzerland, from acquisition to sale: property gains tax, private and business assets, real estate held by companies, intercantonal and international tax allocation, VAT. Updated by the authors of <strong>Burkhalter Rechtsanwälte AG</strong>, Bern. ISBN 978-3-297-12062-0."
+           data-de="Praxishandbuch zur Besteuerung von Immobilien in der Schweiz vom Erwerb bis zur Veräusserung: Grundstückgewinnsteuer, Privat- und Geschäftsvermögen, Liegenschaften juristischer Personen, interkantonale und internationale Steuerausscheidung, Mehrwertsteuer. Überarbeitet durch die Autorenschaft der <strong>Burkhalter Rechtsanwälte AG</strong>, Bern. ISBN 978-3-297-12062-0."
+           data-fr="Manuel pratique sur la fiscalité immobilière en Suisse, de l'acquisition à la vente : impôt sur les gains immobiliers, fortune privée et commerciale, immeubles détenus par des personnes morales, répartition fiscale intercantonale et internationale, TVA. Mis à jour par les auteurs de <strong>Burkhalter Rechtsanwälte AG</strong>, Berne. ISBN 978-3-297-12062-0.">
+        A practitioner's handbook on the taxation of real estate in Switzerland, from acquisition to sale: property gains tax, private and business assets, real estate held by companies, intercantonal and international tax allocation, VAT. Updated by the authors of <strong>Burkhalter Rechtsanwälte AG</strong>, Bern. ISBN 978-3-297-12062-0.
+      </div>
+      <a class="pub-cite-link" href="https://www.weka.ch/finanzen-steuern/steuern/steuern-und-immobilien.html" target="_blank" rel="noopener noreferrer"
+         data-en="View at WEKA <span class='arrow'>→</span>" data-de="Bei WEKA ansehen <span class='arrow'>→</span>" data-fr="Voir chez WEKA <span class='arrow'>→</span>">View at WEKA <span class="arrow">→</span></a>
+    </div>
+    <div class="pub-cite reveal">
+      <div class="pub-cite-tag" data-en="Conference volume · 2026" data-de="Tagungsband · 2026" data-fr="Actes de conférence · 2026">Conference volume · 2026</div>
+      <div class="pub-cite-author">Tscheraghsepehr, D.</div>
+      <div class="pub-cite-title">Sprache der Gerechtigkeit: Die Rolle der DolmetscherInnen und zentrale Stolpersteine im Nürnberger Prozess sowie ein Blick auf die Schweizer Praxis.</div>
+      <div class="pub-cite-meta"
+           data-en="<strong>Conference Volume</strong> Court Interpreting &amp; Legal Linguistics"
+           data-de="<strong>Tagungsband</strong> Gerichtsdolmetschen &amp; Rechtslinguistik"
+           data-fr="<strong>Actes de Conférence</strong> Interprétation judiciaire &amp; linguistique juridique">
+        <strong>Conference Volume</strong> Court Interpreting &amp; Legal Linguistics
+      </div>
+      <div class="pub-cite-source">
+        in: Vereinigung Österreichischer StrafverteidigerInnen et al. (eds.),
+        <strong>«Recht im Unrecht – Unrecht im Recht. Lehren aus Nürnberg»</strong>,
+        14. Dreiländerforum Strafverteidigung, 19./20.9.2025 in Nürnberg,
+        Schriftenreihe der VÖStV Bd. 44, hrsg. v. Richard Soyer,
+        <em>Verlag Österreich</em>, 2026.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="pub-group-label reveal" data-en="Forthcoming &amp; in preparation" data-de="Im Erscheinen &amp; in Vorbereitung" data-fr="À paraître &amp; en préparation">Forthcoming &amp; in preparation</div>
+  <div class="pub-list">
+
+    <div class="pub-cite reveal">
+      <div class="pub-cite-tag" data-en="Article · Anwaltsrevue · October 2026" data-de="Aufsatz · Anwaltsrevue · Oktober 2026" data-fr="Article · Anwaltsrevue · octobre 2026">Article · Anwaltsrevue · October 2026</div>
+      <div class="pub-cite-author">König, A. / Wixinger, R. / Tscheraghsepehr, D. / Pawlowsky, P. / Holicki, A. / Hauser, M.</div>
+      <div class="pub-cite-title">Wie juristisch präzise arbeiten KI-Tools?</div>
+      <div class="pub-cite-meta"
+           data-en="<strong>Forthcoming</strong> Anwaltsrevue, October 2026 · Swiss Bar Association · Stämpfli"
+           data-de="<strong>Erscheint</strong> Anwaltsrevue, Oktober 2026 · Schweizerischer Anwaltsverband · Stämpfli"
+           data-fr="<strong>À paraître</strong> Anwaltsrevue, octobre 2026 · Fédération Suisse des Avocats · Stämpfli">
+        <strong>Forthcoming</strong> Anwaltsrevue, October 2026 · Swiss Bar Association · Stämpfli
+      </div>
+      <div class="pub-cite-source"
+           data-en="What the LEGEX results mean for legal practice: where AI tools read files precisely, where they stop halfway, and what a lawyer must still check."
+           data-de="Was die LEGEX-Ergebnisse für die Praxis bedeuten: wo KI-Tools Akten präzise lesen, wo sie auf halbem Weg aufhören, und was der Anwalt weiterhin selbst prüfen muss."
+           data-fr="Ce que les résultats de LEGEX signifient pour la pratique : où les outils d'IA lisent les dossiers avec précision, où ils s'arrêtent à mi-chemin, et ce que l'avocat doit encore vérifier lui-même.">
+        What the LEGEX results mean for legal practice: where AI tools read files precisely, where they stop halfway, and what a lawyer must still check.
+      </div>
+    </div>
+
+    <div class="pub-cite reveal">
+      <div class="pub-cite-tag" data-en="Article · Jusletter · Autumn 2026" data-de="Aufsatz · Jusletter · Herbst 2026" data-fr="Article · Jusletter · automne 2026">Article · Jusletter · Autumn 2026</div>
+      <div class="pub-cite-author">König, A. / Tscheraghsepehr, D.</div>
+      <div class="pub-cite-title">Bankers Judging Bankers: An Identification Signature for Sector Tendency in Swiss Commercial Adjudication.</div>
+      <div class="pub-cite-meta"
+           data-en="<strong>Forthcoming</strong> Jusletter, autumn 2026 · Editions Weblaw"
+           data-de="<strong>Erscheint</strong> Jusletter, Herbst 2026 · Editions Weblaw"
+           data-fr="<strong>À paraître</strong> Jusletter, automne 2026 · Editions Weblaw">
+        <strong>Forthcoming</strong> Jusletter, autumn 2026 · Editions Weblaw
+      </div>
+      <div class="pub-cite-source"
+           data-en="An empirical look at Swiss commercial courts with lay judges from the banking sector: can a sector tendency in the outcomes be identified, and how would one recognise it?"
+           data-de="Ein empirischer Blick auf Schweizer Handelsgerichte mit Fachrichtern aus dem Bankensektor: lässt sich eine Sektortendenz in den Ergebnissen erkennen, und woran?"
+           data-fr="Un regard empirique sur les tribunaux de commerce suisses comptant des juges spécialisés issus du secteur bancaire : peut-on identifier une tendance sectorielle dans les résultats, et à quoi la reconnaît-on ?">
+        An empirical look at Swiss commercial courts with lay judges from the banking sector: can a sector tendency in the outcomes be identified, and how would one recognise it?
+      </div>
+    </div>
+
+    <div class="pub-cite reveal">
+      <div class="pub-cite-tag" data-en="Paper · In preparation" data-de="Paper · In Vorbereitung" data-fr="Article · en préparation">Paper · In preparation</div>
+      <div class="pub-cite-author">Tscheraghsepehr, D. / König, A.</div>
+      <div class="pub-cite-title">Stablecoins and Arbitration: Asset Recovery in Distress Situations.</div>
+      <div class="pub-cite-meta"
+           data-en="<strong>In preparation</strong> with Adrian König · Stablecoins · Insolvency · Arbitration"
+           data-de="<strong>In Vorbereitung</strong> mit Adrian König · Stablecoins · Insolvenz · Schiedsverfahren"
+           data-fr="<strong>En préparation</strong> avec Adrian König · Stablecoins · Insolvabilité · Arbitrage">
+        <strong>In preparation</strong> with Adrian König · Stablecoins · Insolvency · Arbitration
+      </div>
+      <div class="pub-cite-source"
+           data-en="What happens to stablecoin holdings when an issuer or custodian fails: segregation under Art. 242a DEBA, the limits of issuer freeze rights, and the recovery routes through litigation and arbitration. Based on a CAS research paper at the World Trade Institute."
+           data-de="Was mit Stablecoin-Beständen geschieht, wenn Emittent oder Verwahrer ausfallen: Aussonderung nach Art. 242a SchKG, die Grenzen der Freeze-Rechte des Emittenten und die Wege der Rückführung über Prozess und Schiedsverfahren. Aufbauend auf einem CAS Research Paper am World Trade Institute."
+           data-fr="Ce qu'il advient des avoirs en stablecoins lorsqu'un émetteur ou un dépositaire fait défaut : distraction selon l'art. 242a LP, limites des droits de gel de l'émetteur et voies de recouvrement par la voie judiciaire et arbitrale. Fondé sur un travail de recherche CAS au World Trade Institute.">
+        What happens to stablecoin holdings when an issuer or custodian fails: segregation under Art. 242a DEBA, the limits of issuer freeze rights, and the recovery routes through litigation and arbitration. Based on a CAS research paper at the World Trade Institute.
+      </div>
+    </div>
+
   </div>
 </section>
 </div>
@@ -1942,10 +2058,10 @@
 <section id="talks">
   <div class="section-num reveal" data-en="07 · Selected Speaking" data-de="07 · Ausgewählte Vorträge" data-fr="07 · Conférences sélectionnées">07 · Selected Speaking</div>
   <h2 class="section-h reveal"
-      data-en="Spoken in <em>public</em>."
-      data-de="In der <em>Öffentlichkeit</em> gesprochen."
-      data-fr="Pris la <em>parole</em> en public.">
-    Spoken in <em>public</em>.
+      data-en="Spoken in <em>public</em>"
+      data-de="Öffentliche <em>Auftritte</em>"
+      data-fr="Prises de <em>parole</em>">
+    Spoken in <em>public</em>
   </h2>
   <div class="talks-list">
     <div class="talk-row reveal">
@@ -1963,14 +2079,14 @@
       </div>
     </div>
     <div class="talk-row reveal">
-      <div class="talk-date" data-en="Speech" data-de="Vortrag" data-fr="Allocution">Speech</div>
+      <div class="talk-date" data-en="Speech" data-de="Ansprache" data-fr="Allocution">Speech</div>
       <div class="talk-content">
         <h4>«Zwischen Sprachen und Recht · <em>Die Rolle von Gerichtsdolmetscher:innen</em>»</h4>
         <div class="venue">University of Bern · ELSA Event</div>
       </div>
     </div>
     <div class="talk-row reveal">
-      <div class="talk-date" data-en="Speech" data-de="Vortrag" data-fr="Allocution">Speech</div>
+      <div class="talk-date" data-en="Speech" data-de="Ansprache" data-fr="Allocution">Speech</div>
       <div class="talk-content">
         <h4>«Introduction to <em>ELSA Bern</em>»</h4>
         <div class="venue">University of Bern · Start of Semester Event</div>
@@ -1984,10 +2100,10 @@
 <section id="code">
   <div class="section-num reveal" data-en="08 · Code" data-de="08 · Kodex" data-fr="08 · Code">08 · Code</div>
   <h2 class="section-h reveal"
-      data-en="What I <em>stand by</em>."
-      data-de="Wofür ich <em>stehe</em>."
-      data-fr="Ce que je <em>défends</em>.">
-    What I <em>stand by</em>.
+      data-en="What I <em>stand by</em>"
+      data-de="Wofür ich <em>stehe</em>"
+      data-fr="Ce que je <em>défends</em>">
+    What I <em>stand by</em>
   </h2>
   <div class="code-list">
     <div class="code-item reveal">
@@ -1995,7 +2111,7 @@
       <span class="code-latin">praecisio</span>
       <h3 data-en="Precision" data-de="Präzision" data-fr="Précision">Precision</h3>
       <p data-en="The right word in the right place. A clause that survives litigation. A number that ties out."
-         data-de="Das richtige Wort am richtigen Ort. Eine Klausel, die einen Prozess übersteht. Eine Zahl, die aufgeht."
+         data-de="Das richtige Wort am richtigen Ort. Eine Klausel, die einen Prozess übersteht. Eine Zahl, die stimmt."
          data-fr="Le bon mot au bon endroit. Une clause qui résiste au litige. Un chiffre qui s'aligne.">
         The right word in the right place. A clause that survives litigation. A number that ties out.
       </p>
@@ -2038,15 +2154,15 @@
 <section id="contact">
   <div class="section-num reveal" data-en="09 · Contact" data-de="09 · Kontakt" data-fr="09 · Contact">09 · Contact</div>
   <h2 class="section-h reveal"
-      data-en="Reach me <em>directly</em>."
-      data-de="Direkt <em>erreichbar</em>."
-      data-fr="<em>Joignable</em> directement.">
-    Reach me <em>directly</em>.
+      data-en="Reach me <em>directly</em>"
+      data-de="Direkt <em>erreichbar</em>"
+      data-fr="<em>Joignable</em> directement">
+    Reach me <em>directly</em>
   </h2>
   <div class="contact-stage">
     <div class="contact-left reveal">
       <div class="contact-mark" data-en="Write" data-de="Schreiben" data-fr="Écrire">Write</div>
-      <h3 class="contact-h" data-en="An email is enough." data-de="Eine E-Mail genügt." data-fr="Un e-mail suffit.">An email is enough.</h3>
+      <h3 class="contact-h" data-en="An email is enough" data-de="Eine E-Mail genügt" data-fr="Un e-mail suffit">An email is enough</h3>
     </div>
     <div class="contact-right reveal">
       <div class="contact-channels">
