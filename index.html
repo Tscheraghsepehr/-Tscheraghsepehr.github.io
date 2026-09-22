@@ -851,6 +851,10 @@
     font-style: italic;
     letter-spacing: 0.02em;
   }
+  .pub-cite-author a { color: var(--fg-soft); border-bottom: 1px solid var(--border); transition: color 0.25s, border-color 0.25s; }
+  .pub-cite-author a:hover { color: var(--gold); border-color: var(--gold); }
+  .pub-cite-source a { color: var(--fg); border-bottom: 1px solid var(--border); font-style: normal; }
+  .pub-cite-source a:hover { color: var(--gold); border-color: var(--gold); }
   .pub-cite-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.15rem, 1.8vw, 1.45rem);
@@ -1471,11 +1475,10 @@
     <div class="nav-cluster">
       <nav class="links">
         <a href="#profile" data-en="Profile" data-de="Profil" data-fr="Profil">Profile</a>
-        <a href="#focus" data-en="Focus" data-de="Schwerpunkt" data-fr="Focus">Focus</a>
-        <a href="#education" data-en="Education" data-de="Ausbildung" data-fr="Formation">Education</a>
-        <a href="#experience" data-en="Experience" data-de="Erfahrung" data-fr="Expérience">Experience</a>
-        <a href="#projects" data-en="Projects" data-de="Projekte" data-fr="Projets">Projects</a>
         <a href="#publication" data-en="Publications" data-de="Publikationen" data-fr="Publications">Publications</a>
+        <a href="#experience" data-en="Experience" data-de="Erfahrung" data-fr="Expérience">Experience</a>
+        <a href="#education" data-en="Education" data-de="Ausbildung" data-fr="Formation">Education</a>
+        <a href="#projects" data-en="Projects" data-de="Projekte" data-fr="Projets">Projects</a>
         <a href="#code" data-en="Code" data-de="Kodex" data-fr="Code">Code</a>
         <a href="#contact" data-en="Contact" data-de="Kontakt" data-fr="Contact">Contact</a>
       </nav>
@@ -1597,132 +1600,190 @@
 </div>
 
 <div class="wrap">
-<section id="focus">
+<section id="publication">
   <h2 class="section-h reveal"
-      data-en="Core <em>areas</em>"
-      data-de="Kern<em>bereiche</em>"
-      data-fr="Domaines <em>clés</em>">
-    Core <em>areas</em>
+      data-en="<em>Publications</em>"
+      data-de="<em>Publikationen</em>"
+      data-fr="<em>Publications</em>">
+    <em>Publications</em>
   </h2>
-  <div class="focus-grid">
-    <div class="focus-item reveal">
-      <h3 data-en="Banking &amp; Finance" data-de="Banking &amp; Finance" data-fr="Banking &amp; Finance">Banking &amp; Finance</h3>
-      <p data-en="FINMA practice, regulatory advice, transaction structuring."
-         data-de="FINMA-Praxis, Aufsichtsrecht, Transaktionsstrukturierung."
-         data-fr="Pratique FINMA, conseil réglementaire, structuration de transactions.">
-        FINMA practice, regulatory advice, transaction structuring.
-      </p>
+
+  <div class="pub-group-label reveal" data-en="Published" data-de="Erschienen" data-fr="Parus">Published</div>
+  <div class="pub-list">
+
+    <div class="pub-cite reveal">
+      <div class="pub-cite-tag" data-en="Paper · ICML 2026" data-de="Paper · ICML 2026" data-fr="Article · ICML 2026">Paper · ICML 2026</div>
+      <div class="pub-cite-author"><a href="https://adriankoenig.ch" target="_blank" rel="noopener noreferrer">Adrian König</a> / Daniel Tscheraghsepehr / Philip Pawlowsky / Arne Holicki / Maximilian Louis Hauser et al.</div>
+      <div class="pub-cite-title">LEGEX: An Eight-Jurisdiction Benchmark for Legal Review-Table Extraction</div>
+      <div class="pub-cite-meta"
+           data-en="<strong>Accepted</strong> ICML 2026 · Proceedings of Machine Learning Research, Vol. 306"
+           data-de="<strong>Angenommen</strong> ICML 2026 · Proceedings of Machine Learning Research, Bd. 306"
+           data-fr="<strong>Accepté</strong> ICML 2026 · Proceedings of Machine Learning Research, vol. 306">
+        <strong>Accepted</strong> ICML 2026 · Proceedings of Machine Learning Research, Vol. 306
+      </div>
+      <div class="pub-cite-source"
+           data-en="A benchmark for extracting structured review tables from legal documents across eight jurisdictions. Presented as a poster at the AI4Law Workshop, ICML 2026, Seoul, 10 July 2026.<br><strong>Authors:</strong> <a href='https://adriankoenig.ch' target='_blank' rel='noopener noreferrer'>Adrian König</a>, Daniel Tscheraghsepehr, Philip Pawlowsky, Arne Holicki, Maximilian Louis Hauser, Raphael Zemp, Thiago Xavier, Aram Antoine Hess, <a href='https://bernlex.ch/team/luc-wenger' target='_blank' rel='noopener noreferrer'>Luc Wenger</a>, Li-Chen Cheng, Benjamin Berkowitsch, Vakhtang Marjanidze, Enzo Nuener, Nerea Garcia Moran, Jelle Begeyn, Andjelija Mitrakovic, Antoine Vermeulen, Shruti Jhanwar, Sapana Danai, Caleb Catalan, <a href='https://www.ergon.ch/de/ueber-ergon/team/roman-wixinger' target='_blank' rel='noopener noreferrer'>Roman Wixinger</a>."
+           data-de="Ein Benchmark für die Extraktion strukturierter Review Tables aus Rechtsdokumenten in acht Rechtsordnungen. Als Poster präsentiert am AI4Law Workshop, ICML 2026, Seoul, 10. Juli 2026.<br><strong>Autoren:</strong> <a href='https://adriankoenig.ch' target='_blank' rel='noopener noreferrer'>Adrian König</a>, Daniel Tscheraghsepehr, Philip Pawlowsky, Arne Holicki, Maximilian Louis Hauser, Raphael Zemp, Thiago Xavier, Aram Antoine Hess, <a href='https://bernlex.ch/team/luc-wenger' target='_blank' rel='noopener noreferrer'>Luc Wenger</a>, Li-Chen Cheng, Benjamin Berkowitsch, Vakhtang Marjanidze, Enzo Nuener, Nerea Garcia Moran, Jelle Begeyn, Andjelija Mitrakovic, Antoine Vermeulen, Shruti Jhanwar, Sapana Danai, Caleb Catalan, <a href='https://www.ergon.ch/de/ueber-ergon/team/roman-wixinger' target='_blank' rel='noopener noreferrer'>Roman Wixinger</a>."
+           data-fr="Un banc d'essai pour l'extraction de tableaux de revue structurés à partir de documents juridiques dans huit ordres juridiques. Présenté sous forme de poster à l'atelier AI4Law, ICML 2026, Séoul, 10 juillet 2026.<br><strong>Auteurs :</strong> <a href='https://adriankoenig.ch' target='_blank' rel='noopener noreferrer'>Adrian König</a>, Daniel Tscheraghsepehr, Philip Pawlowsky, Arne Holicki, Maximilian Louis Hauser, Raphael Zemp, Thiago Xavier, Aram Antoine Hess, <a href='https://bernlex.ch/team/luc-wenger' target='_blank' rel='noopener noreferrer'>Luc Wenger</a>, Li-Chen Cheng, Benjamin Berkowitsch, Vakhtang Marjanidze, Enzo Nuener, Nerea Garcia Moran, Jelle Begeyn, Andjelija Mitrakovic, Antoine Vermeulen, Shruti Jhanwar, Sapana Danai, Caleb Catalan, <a href='https://www.ergon.ch/de/ueber-ergon/team/roman-wixinger' target='_blank' rel='noopener noreferrer'>Roman Wixinger</a>.">
+        A benchmark for extracting structured review tables from legal documents across eight jurisdictions. Presented as a poster at the AI4Law Workshop, ICML 2026, Seoul, 10 July 2026.<br><strong>Authors:</strong> <a href='https://adriankoenig.ch' target='_blank' rel='noopener noreferrer'>Adrian König</a>, Daniel Tscheraghsepehr, Philip Pawlowsky, Arne Holicki, Maximilian Louis Hauser, Raphael Zemp, Thiago Xavier, Aram Antoine Hess, <a href='https://bernlex.ch/team/luc-wenger' target='_blank' rel='noopener noreferrer'>Luc Wenger</a>, Li-Chen Cheng, Benjamin Berkowitsch, Vakhtang Marjanidze, Enzo Nuener, Nerea Garcia Moran, Jelle Begeyn, Andjelija Mitrakovic, Antoine Vermeulen, Shruti Jhanwar, Sapana Danai, Caleb Catalan, <a href='https://www.ergon.ch/de/ueber-ergon/team/roman-wixinger' target='_blank' rel='noopener noreferrer'>Roman Wixinger</a>.
+      </div>
     </div>
-    <div class="focus-item reveal">
-      <h3 data-en="Corporate &amp; M&amp;A" data-de="Gesellschaftsrecht &amp; M&amp;A" data-fr="Sociétés &amp; M&amp;A">Corporate &amp; M&amp;A</h3>
-      <p data-en="Transactional support, due diligence, deal documentation."
-         data-de="Transaktionsbegleitung, Due Diligence, Vertragsdokumentation."
-         data-fr="Accompagnement transactionnel, due diligence, documentation contractuelle.">
-        Transactional support, due diligence, deal documentation.
-      </p>
+    <div class="pub-cite reveal">
+      <div class="pub-cite-tag" data-en="Article · Jusletter · 2026" data-de="Aufsatz · Jusletter · 2026" data-fr="Article · Jusletter · 2026">Article · Jusletter · 2026</div>
+      <div class="pub-cite-author"><a href="https://bernlex.ch/team/luc-wenger" target="_blank" rel="noopener noreferrer">Luc Wenger</a> / Daniel Tscheraghsepehr</div>
+      <div class="pub-cite-title">PFAS-Verdacht als Sachmangel beim Grundstückkauf</div>
+      <div class="pub-cite-meta"
+           data-en="<strong>Jusletter</strong> 14 September 2026 · Editions Weblaw"
+           data-de="<strong>Jusletter</strong> 14. September 2026 · Editions Weblaw"
+           data-fr="<strong>Jusletter</strong> 14 septembre 2026 · Editions Weblaw">
+        <strong>Jusletter</strong> 14 September 2026 · Editions Weblaw
+      </div>
+      <div class="pub-cite-source"
+           data-en="Since 2023 the Federal Supreme Court accepts that the mere suspicion of a defect can constitute a defect under Art. 197 para. 1 CO. The article applies this to PFAS in soil, works through defect, remedies, exclusion clauses and disclosure duties, and closes with model clauses for real estate transactions.<br><strong>Suggested citation:</strong> Luc Wenger / Daniel Tscheraghsepehr, PFAS-Verdacht als Sachmangel beim Grundstückkauf, in: Jusletter 14. September 2026."
+           data-de="Seit 2023 anerkennt das Bundesgericht, dass bereits der blosse Verdacht eines Mangels einen Sachmangel nach Art. 197 Abs. 1 OR begründen kann. Der Beitrag überträgt dies auf PFAS im Boden, behandelt Mangel, Rechtsfolgen, Freizeichnung und Aufklärungspflichten und schliesst mit Musterklauseln für Grundstückgeschäfte.<br><strong>Zitiervorschlag:</strong> Luc Wenger / Daniel Tscheraghsepehr, PFAS-Verdacht als Sachmangel beim Grundstückkauf, in: Jusletter 14. September 2026."
+           data-fr="Depuis 2023, le Tribunal fédéral admet que le simple soupçon d'un défaut peut constituer un défaut au sens de l'art. 197 al. 1 CO. L'article applique cette jurisprudence aux PFAS dans le sol, traite du défaut, des remèdes, des clauses d'exclusion et des devoirs d'information, et se termine par des clauses types pour les transactions immobilières.<br><strong>Citation suggérée :</strong> Luc Wenger / Daniel Tscheraghsepehr, PFAS-Verdacht als Sachmangel beim Grundstückkauf, in: Jusletter 14. September 2026.">
+        Since 2023 the Federal Supreme Court accepts that the mere suspicion of a defect can constitute a defect under Art. 197 para. 1 CO. The article applies this to PFAS in soil, works through defect, remedies, exclusion clauses and disclosure duties, and closes with model clauses for real estate transactions.<br><strong>Suggested citation:</strong> Luc Wenger / Daniel Tscheraghsepehr, PFAS-Verdacht als Sachmangel beim Grundstückkauf, in: Jusletter 14. September 2026.
+      </div>
+      <a class="pub-cite-link" href="https://jusletter.weblaw.ch/juslissues/2026/1296/pfas-verdacht-als-sa_c5dd55dbd4.html" target="_blank" rel="noopener noreferrer"
+         data-en="Read on Jusletter <span class='arrow'>→</span>" data-de="Auf Jusletter lesen <span class='arrow'>→</span>" data-fr="Lire sur Jusletter <span class='arrow'>→</span>">Read on Jusletter <span class="arrow">→</span></a>
     </div>
-    <div class="focus-item reveal">
-      <h3 data-en="Capital Markets" data-de="Kapitalmärkte" data-fr="Marchés de capitaux">Capital Markets</h3>
-      <p data-en="Equity research, valuation, investment thesis."
-         data-de="Equity Research, Bewertung, Investment-These."
-         data-fr="Recherche actions, évaluation, thèse d'investissement.">
-        Equity research, valuation, investment thesis.
-      </p>
+    <div class="pub-cite reveal">
+      <div class="pub-cite-tag" data-en="Book · WEKA" data-de="Buch · WEKA" data-fr="Livre · WEKA">Book · WEKA</div>
+      <div class="pub-cite-author"><a href="https://drpb.ch/peter-burkhalter/" target="_blank" rel="noopener noreferrer">Dr. Peter Burkhalter</a> / <a href="https://drpb.ch/can-kirmizikaya/" target="_blank" rel="noopener noreferrer">Can Kirmizikaya</a> / Daniel Tscheraghsepehr</div>
+      <div class="pub-cite-title">Steuern und Immobilien</div>
+      <div class="pub-cite-meta"
+           data-en="<strong>Handbook</strong> New edition · WEKA Business Media AG, Zurich"
+           data-de="<strong>Handbuch</strong> Neue Auflage · WEKA Business Media AG, Zürich"
+           data-fr="<strong>Manuel</strong> Nouvelle édition · WEKA Business Media AG, Zurich">
+        <strong>Handbook</strong> New edition · WEKA Business Media AG, Zurich
+      </div>
+      <div class="pub-cite-source"
+           data-en="A practitioner's handbook on the taxation of real estate in Switzerland, from acquisition to sale: property gains tax, private and business assets, real estate held by companies, intercantonal and international tax allocation, VAT. Updated by the authors of <strong>Burkhalter Rechtsanwälte AG</strong>, Bern. ISBN 978-3-297-12062-0."
+           data-de="Praxishandbuch zur Besteuerung von Immobilien in der Schweiz vom Erwerb bis zur Veräusserung: Grundstückgewinnsteuer, Privat- und Geschäftsvermögen, Liegenschaften juristischer Personen, interkantonale und internationale Steuerausscheidung, Mehrwertsteuer. Überarbeitet durch die Autorenschaft der <strong>Burkhalter Rechtsanwälte AG</strong>, Bern. ISBN 978-3-297-12062-0."
+           data-fr="Manuel pratique sur la fiscalité immobilière en Suisse, de l'acquisition à la vente : impôt sur les gains immobiliers, fortune privée et commerciale, immeubles détenus par des personnes morales, répartition fiscale intercantonale et internationale, TVA. Mis à jour par les auteurs de <strong>Burkhalter Rechtsanwälte AG</strong>, Berne. ISBN 978-3-297-12062-0.">
+        A practitioner's handbook on the taxation of real estate in Switzerland, from acquisition to sale: property gains tax, private and business assets, real estate held by companies, intercantonal and international tax allocation, VAT. Updated by the authors of <strong>Burkhalter Rechtsanwälte AG</strong>, Bern. ISBN 978-3-297-12062-0.
+      </div>
+      <a class="pub-cite-link" href="https://www.weka.ch/finanzen-steuern/steuern/steuern-und-immobilien.html" target="_blank" rel="noopener noreferrer"
+         data-en="View at WEKA <span class='arrow'>→</span>" data-de="Bei WEKA ansehen <span class='arrow'>→</span>" data-fr="Voir chez WEKA <span class='arrow'>→</span>">View at WEKA <span class="arrow">→</span></a>
     </div>
-    <div class="focus-item reveal">
-      <h3 data-en="Corporate Tax" data-de="Unternehmenssteuerrecht" data-fr="Fiscalité d'entreprise">Corporate Tax</h3>
-      <p data-en="Cross-border structures, transactional advisory."
-         data-de="Grenzüberschreitende Strukturen, transaktionale Beratung."
-         data-fr="Structures transfrontalières, conseil transactionnel.">
-        Cross-border structures, transactional advisory.
-      </p>
+    <div class="pub-cite reveal">
+      <div class="pub-cite-tag" data-en="Conference volume · 2026" data-de="Tagungsband · 2026" data-fr="Actes de conférence · 2026">Conference volume · 2026</div>
+      <div class="pub-cite-author">Daniel Tscheraghsepehr</div>
+      <div class="pub-cite-title">Sprache der Gerechtigkeit: Die Rolle der DolmetscherInnen und zentrale Stolpersteine im Nürnberger Prozess sowie ein Blick auf die Schweizer Praxis</div>
+      <div class="pub-cite-meta"
+           data-en="<strong>Conference Volume</strong> Court Interpreting &amp; Legal Linguistics"
+           data-de="<strong>Tagungsband</strong> Gerichtsdolmetschen &amp; Rechtslinguistik"
+           data-fr="<strong>Actes de Conférence</strong> Interprétation judiciaire &amp; linguistique juridique">
+        <strong>Conference Volume</strong> Court Interpreting &amp; Legal Linguistics
+      </div>
+      <div class="pub-cite-source">
+        in: Vereinigung Österreichischer StrafverteidigerInnen et al. (eds.),
+        <strong>«Recht im Unrecht – Unrecht im Recht. Lehren aus Nürnberg»</strong>,
+        14. Dreiländerforum Strafverteidigung, 19./20.9.2025 in Nürnberg,
+        Schriftenreihe der VÖStV Bd. 44, hrsg. v. Richard Soyer,
+        <em>Verlag Österreich</em>, 2026.
+      </div>
     </div>
-    <div class="focus-item full-row reveal">
-      <h3 data-en="DLT &amp; Digital Assets" data-de="DLT &amp; Digitale Vermögenswerte" data-fr="DLT &amp; Actifs numériques">DLT &amp; Digital Assets</h3>
-      <p data-en="Stablecoins, AML, FINMA supervisory practice. Master's research."
-         data-de="Stablecoins, Geldwäschereirecht, FINMA-Aufsichtspraxis. Masterarbeit."
-         data-fr="Stablecoins, anti-blanchiment, pratique de surveillance FINMA. Mémoire de master.">
-        Stablecoins, AML, FINMA supervisory practice. Master's research.
-      </p>
+
+  </div>
+
+  <div class="pub-group-label reveal" data-en="Forthcoming &amp; in preparation" data-de="Im Erscheinen &amp; in Vorbereitung" data-fr="À paraître &amp; en préparation">Forthcoming &amp; in preparation</div>
+  <div class="pub-list">
+
+    <div class="pub-cite reveal">
+      <div class="pub-cite-tag" data-en="Article · Anwaltsrevue · October 2026" data-de="Aufsatz · Anwaltsrevue · Oktober 2026" data-fr="Article · Anwaltsrevue · octobre 2026">Article · Anwaltsrevue · October 2026</div>
+      <div class="pub-cite-author"><a href="https://adriankoenig.ch" target="_blank" rel="noopener noreferrer">Adrian König</a> / <a href="https://www.ergon.ch/de/ueber-ergon/team/roman-wixinger" target="_blank" rel="noopener noreferrer">Roman Wixinger</a> / Daniel Tscheraghsepehr / Philip Pawlowsky / Arne Holicki / Maximilian Hauser</div>
+      <div class="pub-cite-title">Wie juristisch präzise arbeiten KI-Tools?</div>
+      <div class="pub-cite-meta"
+           data-en="<strong>Forthcoming</strong> Anwaltsrevue, October 2026 · Swiss Bar Association · Stämpfli"
+           data-de="<strong>Erscheint</strong> Anwaltsrevue, Oktober 2026 · Schweizerischer Anwaltsverband · Stämpfli"
+           data-fr="<strong>À paraître</strong> Anwaltsrevue, octobre 2026 · Fédération Suisse des Avocats · Stämpfli">
+        <strong>Forthcoming</strong> Anwaltsrevue, October 2026 · Swiss Bar Association · Stämpfli
+      </div>
+      <div class="pub-cite-source"
+           data-en="What the LEGEX results mean for legal practice: where AI tools read files precisely, where they stop halfway, and what a lawyer must still check."
+           data-de="Was die LEGEX-Ergebnisse für die Praxis bedeuten: wo KI-Tools Akten präzise lesen, wo sie auf halbem Weg aufhören, und was der Anwalt weiterhin selbst prüfen muss."
+           data-fr="Ce que les résultats de LEGEX signifient pour la pratique : où les outils d'IA lisent les dossiers avec précision, où ils s'arrêtent à mi-chemin, et ce que l'avocat doit encore vérifier lui-même.">
+        What the LEGEX results mean for legal practice: where AI tools read files precisely, where they stop halfway, and what a lawyer must still check.
+      </div>
     </div>
+
+    <div class="pub-cite reveal">
+      <div class="pub-cite-tag" data-en="Article · Jusletter · Autumn 2026" data-de="Aufsatz · Jusletter · Herbst 2026" data-fr="Article · Jusletter · automne 2026">Article · Jusletter · Autumn 2026</div>
+      <div class="pub-cite-author"><a href="https://adriankoenig.ch" target="_blank" rel="noopener noreferrer">Adrian König</a> / Daniel Tscheraghsepehr</div>
+      <div class="pub-cite-title">Bankers Judging Bankers: An Identification Signature for Sector Tendency in Swiss Commercial Adjudication</div>
+      <div class="pub-cite-meta"
+           data-en="<strong>Forthcoming</strong> Jusletter, autumn 2026 · Editions Weblaw"
+           data-de="<strong>Erscheint</strong> Jusletter, Herbst 2026 · Editions Weblaw"
+           data-fr="<strong>À paraître</strong> Jusletter, automne 2026 · Editions Weblaw">
+        <strong>Forthcoming</strong> Jusletter, autumn 2026 · Editions Weblaw
+      </div>
+      <div class="pub-cite-source"
+           data-en="An empirical look at Swiss commercial courts with lay judges from the banking sector: can a sector tendency in the outcomes be identified, and how would one recognise it?"
+           data-de="Ein empirischer Blick auf Schweizer Handelsgerichte mit Fachrichtern aus dem Bankensektor: lässt sich eine Sektortendenz in den Ergebnissen erkennen, und woran?"
+           data-fr="Un regard empirique sur les tribunaux de commerce suisses comptant des juges spécialisés issus du secteur bancaire : peut-on identifier une tendance sectorielle dans les résultats, et à quoi la reconnaît-on ?">
+        An empirical look at Swiss commercial courts with lay judges from the banking sector: can a sector tendency in the outcomes be identified, and how would one recognise it?
+      </div>
+    </div>
+
+    <div class="pub-cite reveal">
+      <div class="pub-cite-tag" data-en="Paper · In preparation" data-de="Paper · In Vorbereitung" data-fr="Article · en préparation">Paper · In preparation</div>
+      <div class="pub-cite-author">Daniel Tscheraghsepehr / <a href="https://adriankoenig.ch" target="_blank" rel="noopener noreferrer">Adrian König</a></div>
+      <div class="pub-cite-title">Stablecoins and Arbitration: Asset Recovery in Distress Situations</div>
+      <div class="pub-cite-meta"
+           data-en="<strong>In preparation</strong> Stablecoins · Insolvency · Arbitration"
+           data-de="<strong>In Vorbereitung</strong> Stablecoins · Insolvenz · Schiedsverfahren"
+           data-fr="<strong>En préparation</strong> Stablecoins · Insolvabilité · Arbitrage">
+        <strong>In preparation</strong> Stablecoins · Insolvency · Arbitration
+      </div>
+      <div class="pub-cite-source"
+           data-en="What happens to stablecoin holdings when an issuer or custodian fails: segregation under Art. 242a DEBA, the limits of issuer freeze rights, and the recovery routes through litigation and arbitration. Based on a CAS research paper at the World Trade Institute."
+           data-de="Was mit Stablecoin-Beständen geschieht, wenn Emittent oder Verwahrer ausfallen: Aussonderung nach Art. 242a SchKG, die Grenzen der Freeze-Rechte des Emittenten und die Wege der Rückführung über Prozess und Schiedsverfahren. Aufbauend auf einem CAS Research Paper am World Trade Institute."
+           data-fr="Ce qu'il advient des avoirs en stablecoins lorsqu'un émetteur ou un dépositaire fait défaut : distraction selon l'art. 242a LP, limites des droits de gel de l'émetteur et voies de recouvrement par la voie judiciaire et arbitrale. Fondé sur un travail de recherche CAS au World Trade Institute.">
+        What happens to stablecoin holdings when an issuer or custodian fails: segregation under Art. 242a DEBA, the limits of issuer freeze rights, and the recovery routes through litigation and arbitration. Based on a CAS research paper at the World Trade Institute.
+      </div>
+    </div>
+
   </div>
 </section>
 </div>
 
 <div class="wrap">
-<section id="education">
+<section id="talks">
   <h2 class="section-h reveal"
-      data-en="Academic <em>background</em>"
-      data-de="Akademischer <em>Werdegang</em>"
-      data-fr="Parcours <em>académique</em>">
-    Academic <em>background</em>
+      data-en="Selected <em>talks</em>"
+      data-de="Ausgewählte <em>Vorträge</em>"
+      data-fr="Conférences <em>sélectionnées</em>">
+    Selected <em>talks</em>
   </h2>
-  <div class="cv-list">
-    <div class="cv-row reveal">
-      <div class="cv-main">
-        <h3>CAS in International Law &amp; <em>Economics</em></h3>
-        <div class="org">World Trade Institute (WTI) <span class="loc">Bern</span></div>
-        <p data-en="WTO and FTA fundamentals, international contract law, trade compliance."
-           data-de="Grundlagen WTO und Freihandelsabkommen, internationales Vertragsrecht, Trade Compliance."
-           data-fr="Fondements OMC et ALE, droit international des contrats, conformité commerciale.">
-          WTO and FTA fundamentals, international contract law, trade compliance.
-        </p>
-        <div class="cv-tags">
-          <span class="cv-tag">WTO / FTA</span>
-          <span class="cv-tag" data-en="Contract" data-de="Vertrag" data-fr="Contrat">Contract</span>
-          <span class="cv-tag" data-en="Compliance" data-de="Compliance" data-fr="Conformité">Compliance</span>
-        </div>
+  <div class="talks-list">
+    <div class="talk-row reveal">
+      <div class="talk-date">Panel</div>
+      <div class="talk-content">
+        <h4>Trilateral Forum on Criminal Defence · <em>«Interpreting, Swiss Perspective»</em></h4>
+        <div class="venue">Dreiländerforum Strafverteidigung · Nuremberg</div>
       </div>
-      <div class="cv-side">CAS</div>
     </div>
-    <div class="cv-row reveal">
-      <div class="cv-main">
-        <h3 data-en="MSc in <em>Business Administration</em>" data-de="MSc in <em>Business Administration</em>" data-fr="MSc en <em>administration des affaires</em>">MSc in <em>Business Administration</em></h3>
-        <div class="org">University of Bern <span class="loc">Bern</span></div>
-        <p data-en="Specialisation in Corporate Finance: company valuation, real estate valuation, financial reporting (IFRS, Swiss GAAP FER)."
-           data-de="Vertiefung Corporate Finance: Unternehmensbewertung, Immobilienbewertung, Rechnungslegung (IFRS, Swiss GAAP FER)."
-           data-fr="Spécialisation en Corporate Finance : évaluation d'entreprise, évaluation immobilière, reporting financier (IFRS, Swiss GAAP FER).">
-          Specialisation in Corporate Finance: company valuation, real estate valuation, financial reporting (IFRS, Swiss GAAP FER).
-        </p>
-        <div class="cv-tags">
-          <span class="cv-tag">Corporate Finance</span>
-          <span class="cv-tag" data-en="Valuation" data-de="Bewertung" data-fr="Évaluation">Valuation</span>
-          <span class="cv-tag">IFRS / Swiss GAAP FER</span>
-        </div>
+    <div class="talk-row reveal">
+      <div class="talk-date" data-en="Lecture" data-de="Vortrag" data-fr="Conférence">Lecture</div>
+      <div class="talk-content">
+        <h4>«Paths to Success: <em>Motivation and Career Opportunities</em>»</h4>
+        <div class="venue">Liebefeld Steinhölzli School</div>
       </div>
-      <div class="cv-side">MSc</div>
     </div>
-    <div class="cv-row reveal">
-      <div class="cv-main">
-        <h3 data-en="Master of <em>Law</em>" data-de="Master of <em>Law</em>" data-fr="Master en <em>droit</em>">Master of <em>Law</em></h3>
-        <div class="org">University of Bern <span class="loc">Bern</span></div>
-        <p data-en='Master&rsquo;s thesis: <em style="color: var(--gold); font-style: italic;">&laquo;Stablecoins and AML Law &mdash; Legal qualification of stablecoins under FINMA supervisory practice.&raquo;</em>'
-           data-de='Masterarbeit: <em style="color: var(--gold); font-style: italic;">&laquo;Stablecoins und das Geldw&auml;schereirecht &ndash; Zur rechtlichen Qualifikation von Stablecoins im Lichte der FINMA-Aufsichtspraxis.&raquo;</em>'
-           data-fr='M&eacute;moire de master&nbsp;: <em style="color: var(--gold); font-style: italic;">&laquo;&nbsp;Stablecoins et droit anti-blanchiment &mdash; Qualification juridique des stablecoins selon la pratique de surveillance de la FINMA.&nbsp;&raquo;</em>'>
-          Master&rsquo;s thesis: <em style="color: var(--gold); font-style: italic;">&laquo;Stablecoins and AML Law &mdash; Legal qualification of stablecoins under FINMA supervisory practice.&raquo;</em>
-        </p>
-        <div class="cv-tags">
-          <span class="cv-tag">Stablecoins</span>
-          <span class="cv-tag">FINMA</span>
-          <span class="cv-tag">AML</span>
-          <span class="cv-tag">DLT</span>
-        </div>
+    <div class="talk-row reveal">
+      <div class="talk-date" data-en="Speech" data-de="Ansprache" data-fr="Allocution">Speech</div>
+      <div class="talk-content">
+        <h4>«Zwischen Sprachen und Recht · <em>Die Rolle von Gerichtsdolmetscher:innen</em>»</h4>
+        <div class="venue">University of Bern · ELSA Event</div>
       </div>
-      <div class="cv-side">MLaw</div>
     </div>
-    <div class="cv-row reveal">
-      <div class="cv-main">
-        <h3 data-en="BSc Minor in <em>Business Administration</em>" data-de="BSc Minor in <em>Business Administration</em>" data-fr="Mineure BSc en <em>administration des affaires</em>">BSc Minor in <em>Business Administration</em></h3>
-        <div class="org">University of Bern <span class="loc">Bern</span></div>
+    <div class="talk-row reveal">
+      <div class="talk-date" data-en="Speech" data-de="Ansprache" data-fr="Allocution">Speech</div>
+      <div class="talk-content">
+        <h4>«Introduction to <em>ELSA Bern</em>»</h4>
+        <div class="venue">University of Bern · Start of Semester Event</div>
       </div>
-      <div class="cv-side" data-en="Minor" data-de="Nebenfach" data-fr="Mineure">Minor</div>
-    </div>
-    <div class="cv-row reveal">
-      <div class="cv-main">
-        <h3 data-en="Bachelor of <em>Law</em>" data-de="Bachelor of <em>Law</em>" data-fr="Bachelor en <em>droit</em>">Bachelor of <em>Law</em></h3>
-        <div class="org">University of Bern <span class="loc">Bern</span></div>
-      </div>
-      <div class="cv-side">BLaw</div>
     </div>
   </div>
 </section>
@@ -1829,6 +1890,85 @@
 </div>
 
 <div class="wrap">
+<section id="education">
+  <h2 class="section-h reveal"
+      data-en="Academic <em>background</em>"
+      data-de="Akademischer <em>Werdegang</em>"
+      data-fr="Parcours <em>académique</em>">
+    Academic <em>background</em>
+  </h2>
+  <div class="cv-list">
+    <div class="cv-row reveal">
+      <div class="cv-main">
+        <h3>CAS in International Law &amp; <em>Economics</em></h3>
+        <div class="org">World Trade Institute (WTI) <span class="loc">Bern</span></div>
+        <p data-en="WTO and FTA fundamentals, international contract law, trade compliance."
+           data-de="Grundlagen WTO und Freihandelsabkommen, internationales Vertragsrecht, Trade Compliance."
+           data-fr="Fondements OMC et ALE, droit international des contrats, conformité commerciale.">
+          WTO and FTA fundamentals, international contract law, trade compliance.
+        </p>
+        <div class="cv-tags">
+          <span class="cv-tag">WTO / FTA</span>
+          <span class="cv-tag" data-en="Contract" data-de="Vertrag" data-fr="Contrat">Contract</span>
+          <span class="cv-tag" data-en="Compliance" data-de="Compliance" data-fr="Conformité">Compliance</span>
+        </div>
+      </div>
+      <div class="cv-side">CAS</div>
+    </div>
+    <div class="cv-row reveal">
+      <div class="cv-main">
+        <h3 data-en="MSc in <em>Business Administration</em>" data-de="MSc in <em>Business Administration</em>" data-fr="MSc en <em>administration des affaires</em>">MSc in <em>Business Administration</em></h3>
+        <div class="org">University of Bern <span class="loc">Bern</span></div>
+        <p data-en="Specialisation in Corporate Finance: company valuation, real estate valuation, financial reporting (IFRS, Swiss GAAP FER)."
+           data-de="Vertiefung Corporate Finance: Unternehmensbewertung, Immobilienbewertung, Rechnungslegung (IFRS, Swiss GAAP FER)."
+           data-fr="Spécialisation en Corporate Finance : évaluation d'entreprise, évaluation immobilière, reporting financier (IFRS, Swiss GAAP FER).">
+          Specialisation in Corporate Finance: company valuation, real estate valuation, financial reporting (IFRS, Swiss GAAP FER).
+        </p>
+        <div class="cv-tags">
+          <span class="cv-tag">Corporate Finance</span>
+          <span class="cv-tag" data-en="Valuation" data-de="Bewertung" data-fr="Évaluation">Valuation</span>
+          <span class="cv-tag">IFRS / Swiss GAAP FER</span>
+        </div>
+      </div>
+      <div class="cv-side">MSc</div>
+    </div>
+    <div class="cv-row reveal">
+      <div class="cv-main">
+        <h3 data-en="Master of <em>Law</em>" data-de="Master of <em>Law</em>" data-fr="Master en <em>droit</em>">Master of <em>Law</em></h3>
+        <div class="org">University of Bern <span class="loc">Bern</span></div>
+        <p data-en='Master&rsquo;s thesis: <em style="color: var(--gold); font-style: italic;">&laquo;Stablecoins and AML Law &mdash; Legal qualification of stablecoins under FINMA supervisory practice.&raquo;</em>'
+           data-de='Masterarbeit: <em style="color: var(--gold); font-style: italic;">&laquo;Stablecoins und das Geldw&auml;schereirecht &ndash; Zur rechtlichen Qualifikation von Stablecoins im Lichte der FINMA-Aufsichtspraxis.&raquo;</em>'
+           data-fr='M&eacute;moire de master&nbsp;: <em style="color: var(--gold); font-style: italic;">&laquo;&nbsp;Stablecoins et droit anti-blanchiment &mdash; Qualification juridique des stablecoins selon la pratique de surveillance de la FINMA.&nbsp;&raquo;</em>'>
+          Master&rsquo;s thesis: <em style="color: var(--gold); font-style: italic;">&laquo;Stablecoins and AML Law &mdash; Legal qualification of stablecoins under FINMA supervisory practice.&raquo;</em>
+        </p>
+        <div class="cv-tags">
+          <span class="cv-tag">Stablecoins</span>
+          <span class="cv-tag">FINMA</span>
+          <span class="cv-tag">AML</span>
+          <span class="cv-tag">DLT</span>
+        </div>
+      </div>
+      <div class="cv-side">MLaw</div>
+    </div>
+    <div class="cv-row reveal">
+      <div class="cv-main">
+        <h3 data-en="BSc Minor in <em>Business Administration</em>" data-de="BSc Minor in <em>Business Administration</em>" data-fr="Mineure BSc en <em>administration des affaires</em>">BSc Minor in <em>Business Administration</em></h3>
+        <div class="org">University of Bern <span class="loc">Bern</span></div>
+      </div>
+      <div class="cv-side" data-en="Minor" data-de="Nebenfach" data-fr="Mineure">Minor</div>
+    </div>
+    <div class="cv-row reveal">
+      <div class="cv-main">
+        <h3 data-en="Bachelor of <em>Law</em>" data-de="Bachelor of <em>Law</em>" data-fr="Bachelor en <em>droit</em>">Bachelor of <em>Law</em></h3>
+        <div class="org">University of Bern <span class="loc">Bern</span></div>
+      </div>
+      <div class="cv-side">BLaw</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="wrap">
 <section id="projects">
   <h2 class="section-h reveal"
       data-en="Selected <em>work</em>"
@@ -1880,196 +2020,6 @@
           <span class="sep">·</span>
           <span class="name">Pascale Bürgin</span>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
-
-<div class="wrap">
-<section id="publication">
-  <h2 class="section-h reveal"
-      data-en="Written <em>work</em>"
-      data-de="Schriftliche <em>Arbeiten</em>"
-      data-fr="Travaux <em>écrits</em>">
-    Written <em>work</em>
-  </h2>
-
-  <div class="pub-group-label reveal" data-en="Published" data-de="Erschienen" data-fr="Parus">Published</div>
-  <div class="pub-list">
-
-    <div class="pub-cite reveal">
-      <div class="pub-cite-tag" data-en="Paper · ICML 2026" data-de="Paper · ICML 2026" data-fr="Article · ICML 2026">Paper · ICML 2026</div>
-      <div class="pub-cite-author">König, A. / Tscheraghsepehr, D. / Pawlowsky, P. / Holicki, A. / Hauser, M. L. et al.</div>
-      <div class="pub-cite-title">LEGEX: An Eight-Jurisdiction Benchmark for Legal Review-Table Extraction.</div>
-      <div class="pub-cite-meta"
-           data-en="<strong>Accepted</strong> ICML 2026 · Proceedings of Machine Learning Research, Vol. 306"
-           data-de="<strong>Angenommen</strong> ICML 2026 · Proceedings of Machine Learning Research, Bd. 306"
-           data-fr="<strong>Accepté</strong> ICML 2026 · Proceedings of Machine Learning Research, vol. 306">
-        <strong>Accepted</strong> ICML 2026 · Proceedings of Machine Learning Research, Vol. 306
-      </div>
-      <div class="pub-cite-source"
-           data-en="A benchmark for extracting structured review tables from legal documents across eight jurisdictions. Presented as a poster at the AI4Law Workshop, ICML 2026, Seoul, 10 July 2026.<br><strong>Authors:</strong> Adrian König, Daniel Tscheraghsepehr, Philip Pawlowsky, Arne Holicki, Maximilian Louis Hauser, Raphael Zemp, Thiago Xavier, Aram Antoine Hess, Luc Wenger, Li-Chen Cheng, Benjamin Berkowitsch, Vakhtang Marjanidze, Enzo Nuener, Nerea Garcia Moran, Jelle Begeyn, Andjelija Mitrakovic, Antoine Vermeulen, Shruti Jhanwar, Sapana Danai, Caleb Catalan, Roman Wixinger."
-           data-de="Ein Benchmark für die Extraktion strukturierter Review Tables aus Rechtsdokumenten in acht Rechtsordnungen. Als Poster präsentiert am AI4Law Workshop, ICML 2026, Seoul, 10. Juli 2026.<br><strong>Autoren:</strong> Adrian König, Daniel Tscheraghsepehr, Philip Pawlowsky, Arne Holicki, Maximilian Louis Hauser, Raphael Zemp, Thiago Xavier, Aram Antoine Hess, Luc Wenger, Li-Chen Cheng, Benjamin Berkowitsch, Vakhtang Marjanidze, Enzo Nuener, Nerea Garcia Moran, Jelle Begeyn, Andjelija Mitrakovic, Antoine Vermeulen, Shruti Jhanwar, Sapana Danai, Caleb Catalan, Roman Wixinger."
-           data-fr="Un banc d'essai pour l'extraction de tableaux de revue structurés à partir de documents juridiques dans huit ordres juridiques. Présenté sous forme de poster à l'atelier AI4Law, ICML 2026, Séoul, 10 juillet 2026.<br><strong>Auteurs :</strong> Adrian König, Daniel Tscheraghsepehr, Philip Pawlowsky, Arne Holicki, Maximilian Louis Hauser, Raphael Zemp, Thiago Xavier, Aram Antoine Hess, Luc Wenger, Li-Chen Cheng, Benjamin Berkowitsch, Vakhtang Marjanidze, Enzo Nuener, Nerea Garcia Moran, Jelle Begeyn, Andjelija Mitrakovic, Antoine Vermeulen, Shruti Jhanwar, Sapana Danai, Caleb Catalan, Roman Wixinger.">
-        A benchmark for extracting structured review tables from legal documents across eight jurisdictions. Presented as a poster at the AI4Law Workshop, ICML 2026, Seoul, 10 July 2026.<br><strong>Authors:</strong> Adrian König, Daniel Tscheraghsepehr, Philip Pawlowsky, Arne Holicki, Maximilian Louis Hauser, Raphael Zemp, Thiago Xavier, Aram Antoine Hess, Luc Wenger, Li-Chen Cheng, Benjamin Berkowitsch, Vakhtang Marjanidze, Enzo Nuener, Nerea Garcia Moran, Jelle Begeyn, Andjelija Mitrakovic, Antoine Vermeulen, Shruti Jhanwar, Sapana Danai, Caleb Catalan, Roman Wixinger.
-      </div>
-    </div>
-    <div class="pub-cite reveal">
-      <div class="pub-cite-tag" data-en="Article · Jusletter · 2026" data-de="Aufsatz · Jusletter · 2026" data-fr="Article · Jusletter · 2026">Article · Jusletter · 2026</div>
-      <div class="pub-cite-author">Wenger, L. / Tscheraghsepehr, D.</div>
-      <div class="pub-cite-title">PFAS-Verdacht als Sachmangel beim Grundstückkauf.</div>
-      <div class="pub-cite-meta"
-           data-en="<strong>Jusletter</strong> 14 September 2026 · Editions Weblaw"
-           data-de="<strong>Jusletter</strong> 14. September 2026 · Editions Weblaw"
-           data-fr="<strong>Jusletter</strong> 14 septembre 2026 · Editions Weblaw">
-        <strong>Jusletter</strong> 14 September 2026 · Editions Weblaw
-      </div>
-      <div class="pub-cite-source"
-           data-en="Since 2023 the Federal Supreme Court accepts that the mere suspicion of a defect can constitute a defect under Art. 197 para. 1 CO. The article applies this to PFAS in soil, works through defect, remedies, exclusion clauses and disclosure duties, and closes with model clauses for real estate transactions.<br><strong>Suggested citation:</strong> Luc Wenger / Daniel Tscheraghsepehr, PFAS-Verdacht als Sachmangel beim Grundstückkauf, in: Jusletter 14. September 2026."
-           data-de="Seit 2023 anerkennt das Bundesgericht, dass bereits der blosse Verdacht eines Mangels einen Sachmangel nach Art. 197 Abs. 1 OR begründen kann. Der Beitrag überträgt dies auf PFAS im Boden, behandelt Mangel, Rechtsfolgen, Freizeichnung und Aufklärungspflichten und schliesst mit Musterklauseln für Grundstückgeschäfte.<br><strong>Zitiervorschlag:</strong> Luc Wenger / Daniel Tscheraghsepehr, PFAS-Verdacht als Sachmangel beim Grundstückkauf, in: Jusletter 14. September 2026."
-           data-fr="Depuis 2023, le Tribunal fédéral admet que le simple soupçon d'un défaut peut constituer un défaut au sens de l'art. 197 al. 1 CO. L'article applique cette jurisprudence aux PFAS dans le sol, traite du défaut, des remèdes, des clauses d'exclusion et des devoirs d'information, et se termine par des clauses types pour les transactions immobilières.<br><strong>Citation suggérée :</strong> Luc Wenger / Daniel Tscheraghsepehr, PFAS-Verdacht als Sachmangel beim Grundstückkauf, in: Jusletter 14. September 2026.">
-        Since 2023 the Federal Supreme Court accepts that the mere suspicion of a defect can constitute a defect under Art. 197 para. 1 CO. The article applies this to PFAS in soil, works through defect, remedies, exclusion clauses and disclosure duties, and closes with model clauses for real estate transactions.<br><strong>Suggested citation:</strong> Luc Wenger / Daniel Tscheraghsepehr, PFAS-Verdacht als Sachmangel beim Grundstückkauf, in: Jusletter 14. September 2026.
-      </div>
-      <a class="pub-cite-link" href="https://jusletter.weblaw.ch/juslissues/2026/1296/pfas-verdacht-als-sa_c5dd55dbd4.html" target="_blank" rel="noopener noreferrer"
-         data-en="Read on Jusletter <span class='arrow'>→</span>" data-de="Auf Jusletter lesen <span class='arrow'>→</span>" data-fr="Lire sur Jusletter <span class='arrow'>→</span>">Read on Jusletter <span class="arrow">→</span></a>
-    </div>
-    <div class="pub-cite reveal">
-      <div class="pub-cite-tag" data-en="Book · WEKA" data-de="Buch · WEKA" data-fr="Livre · WEKA">Book · WEKA</div>
-      <div class="pub-cite-author">Burkhalter Rechtsanwälte AG · Burkhalter, P. / Kirmizikaya, C. / Tscheraghsepehr, D.</div>
-      <div class="pub-cite-title">Steuern und Immobilien. Steuern vom Erwerb bis zur Veräusserung.</div>
-      <div class="pub-cite-meta"
-           data-en="<strong>Handbook</strong> New edition · WEKA Business Media AG, Zurich"
-           data-de="<strong>Handbuch</strong> Neue Auflage · WEKA Business Media AG, Zürich"
-           data-fr="<strong>Manuel</strong> Nouvelle édition · WEKA Business Media AG, Zurich">
-        <strong>Handbook</strong> New edition · WEKA Business Media AG, Zurich
-      </div>
-      <div class="pub-cite-source"
-           data-en="A practitioner's handbook on the taxation of real estate in Switzerland, from acquisition to sale: property gains tax, private and business assets, real estate held by companies, intercantonal and international tax allocation, VAT. Updated by the authors of <strong>Burkhalter Rechtsanwälte AG</strong>, Bern. ISBN 978-3-297-12062-0."
-           data-de="Praxishandbuch zur Besteuerung von Immobilien in der Schweiz vom Erwerb bis zur Veräusserung: Grundstückgewinnsteuer, Privat- und Geschäftsvermögen, Liegenschaften juristischer Personen, interkantonale und internationale Steuerausscheidung, Mehrwertsteuer. Überarbeitet durch die Autorenschaft der <strong>Burkhalter Rechtsanwälte AG</strong>, Bern. ISBN 978-3-297-12062-0."
-           data-fr="Manuel pratique sur la fiscalité immobilière en Suisse, de l'acquisition à la vente : impôt sur les gains immobiliers, fortune privée et commerciale, immeubles détenus par des personnes morales, répartition fiscale intercantonale et internationale, TVA. Mis à jour par les auteurs de <strong>Burkhalter Rechtsanwälte AG</strong>, Berne. ISBN 978-3-297-12062-0.">
-        A practitioner's handbook on the taxation of real estate in Switzerland, from acquisition to sale: property gains tax, private and business assets, real estate held by companies, intercantonal and international tax allocation, VAT. Updated by the authors of <strong>Burkhalter Rechtsanwälte AG</strong>, Bern. ISBN 978-3-297-12062-0.
-      </div>
-      <a class="pub-cite-link" href="https://www.weka.ch/finanzen-steuern/steuern/steuern-und-immobilien.html" target="_blank" rel="noopener noreferrer"
-         data-en="View at WEKA <span class='arrow'>→</span>" data-de="Bei WEKA ansehen <span class='arrow'>→</span>" data-fr="Voir chez WEKA <span class='arrow'>→</span>">View at WEKA <span class="arrow">→</span></a>
-    </div>
-    <div class="pub-cite reveal">
-      <div class="pub-cite-tag" data-en="Conference volume · 2026" data-de="Tagungsband · 2026" data-fr="Actes de conférence · 2026">Conference volume · 2026</div>
-      <div class="pub-cite-author">Tscheraghsepehr, D.</div>
-      <div class="pub-cite-title">Sprache der Gerechtigkeit: Die Rolle der DolmetscherInnen und zentrale Stolpersteine im Nürnberger Prozess sowie ein Blick auf die Schweizer Praxis.</div>
-      <div class="pub-cite-meta"
-           data-en="<strong>Conference Volume</strong> Court Interpreting &amp; Legal Linguistics"
-           data-de="<strong>Tagungsband</strong> Gerichtsdolmetschen &amp; Rechtslinguistik"
-           data-fr="<strong>Actes de Conférence</strong> Interprétation judiciaire &amp; linguistique juridique">
-        <strong>Conference Volume</strong> Court Interpreting &amp; Legal Linguistics
-      </div>
-      <div class="pub-cite-source">
-        in: Vereinigung Österreichischer StrafverteidigerInnen et al. (eds.),
-        <strong>«Recht im Unrecht – Unrecht im Recht. Lehren aus Nürnberg»</strong>,
-        14. Dreiländerforum Strafverteidigung, 19./20.9.2025 in Nürnberg,
-        Schriftenreihe der VÖStV Bd. 44, hrsg. v. Richard Soyer,
-        <em>Verlag Österreich</em>, 2026.
-      </div>
-    </div>
-
-  </div>
-
-  <div class="pub-group-label reveal" data-en="Forthcoming &amp; in preparation" data-de="Im Erscheinen &amp; in Vorbereitung" data-fr="À paraître &amp; en préparation">Forthcoming &amp; in preparation</div>
-  <div class="pub-list">
-
-    <div class="pub-cite reveal">
-      <div class="pub-cite-tag" data-en="Article · Anwaltsrevue · October 2026" data-de="Aufsatz · Anwaltsrevue · Oktober 2026" data-fr="Article · Anwaltsrevue · octobre 2026">Article · Anwaltsrevue · October 2026</div>
-      <div class="pub-cite-author">König, A. / Wixinger, R. / Tscheraghsepehr, D. / Pawlowsky, P. / Holicki, A. / Hauser, M.</div>
-      <div class="pub-cite-title">Wie juristisch präzise arbeiten KI-Tools?</div>
-      <div class="pub-cite-meta"
-           data-en="<strong>Forthcoming</strong> Anwaltsrevue, October 2026 · Swiss Bar Association · Stämpfli"
-           data-de="<strong>Erscheint</strong> Anwaltsrevue, Oktober 2026 · Schweizerischer Anwaltsverband · Stämpfli"
-           data-fr="<strong>À paraître</strong> Anwaltsrevue, octobre 2026 · Fédération Suisse des Avocats · Stämpfli">
-        <strong>Forthcoming</strong> Anwaltsrevue, October 2026 · Swiss Bar Association · Stämpfli
-      </div>
-      <div class="pub-cite-source"
-           data-en="What the LEGEX results mean for legal practice: where AI tools read files precisely, where they stop halfway, and what a lawyer must still check."
-           data-de="Was die LEGEX-Ergebnisse für die Praxis bedeuten: wo KI-Tools Akten präzise lesen, wo sie auf halbem Weg aufhören, und was der Anwalt weiterhin selbst prüfen muss."
-           data-fr="Ce que les résultats de LEGEX signifient pour la pratique : où les outils d'IA lisent les dossiers avec précision, où ils s'arrêtent à mi-chemin, et ce que l'avocat doit encore vérifier lui-même.">
-        What the LEGEX results mean for legal practice: where AI tools read files precisely, where they stop halfway, and what a lawyer must still check.
-      </div>
-    </div>
-
-    <div class="pub-cite reveal">
-      <div class="pub-cite-tag" data-en="Article · Jusletter · Autumn 2026" data-de="Aufsatz · Jusletter · Herbst 2026" data-fr="Article · Jusletter · automne 2026">Article · Jusletter · Autumn 2026</div>
-      <div class="pub-cite-author">König, A. / Tscheraghsepehr, D.</div>
-      <div class="pub-cite-title">Bankers Judging Bankers: An Identification Signature for Sector Tendency in Swiss Commercial Adjudication.</div>
-      <div class="pub-cite-meta"
-           data-en="<strong>Forthcoming</strong> Jusletter, autumn 2026 · Editions Weblaw"
-           data-de="<strong>Erscheint</strong> Jusletter, Herbst 2026 · Editions Weblaw"
-           data-fr="<strong>À paraître</strong> Jusletter, automne 2026 · Editions Weblaw">
-        <strong>Forthcoming</strong> Jusletter, autumn 2026 · Editions Weblaw
-      </div>
-      <div class="pub-cite-source"
-           data-en="An empirical look at Swiss commercial courts with lay judges from the banking sector: can a sector tendency in the outcomes be identified, and how would one recognise it?"
-           data-de="Ein empirischer Blick auf Schweizer Handelsgerichte mit Fachrichtern aus dem Bankensektor: lässt sich eine Sektortendenz in den Ergebnissen erkennen, und woran?"
-           data-fr="Un regard empirique sur les tribunaux de commerce suisses comptant des juges spécialisés issus du secteur bancaire : peut-on identifier une tendance sectorielle dans les résultats, et à quoi la reconnaît-on ?">
-        An empirical look at Swiss commercial courts with lay judges from the banking sector: can a sector tendency in the outcomes be identified, and how would one recognise it?
-      </div>
-    </div>
-
-    <div class="pub-cite reveal">
-      <div class="pub-cite-tag" data-en="Paper · In preparation" data-de="Paper · In Vorbereitung" data-fr="Article · en préparation">Paper · In preparation</div>
-      <div class="pub-cite-author">Tscheraghsepehr, D. / König, A.</div>
-      <div class="pub-cite-title">Stablecoins and Arbitration: Asset Recovery in Distress Situations.</div>
-      <div class="pub-cite-meta"
-           data-en="<strong>In preparation</strong> with Adrian König · Stablecoins · Insolvency · Arbitration"
-           data-de="<strong>In Vorbereitung</strong> mit Adrian König · Stablecoins · Insolvenz · Schiedsverfahren"
-           data-fr="<strong>En préparation</strong> avec Adrian König · Stablecoins · Insolvabilité · Arbitrage">
-        <strong>In preparation</strong> with Adrian König · Stablecoins · Insolvency · Arbitration
-      </div>
-      <div class="pub-cite-source"
-           data-en="What happens to stablecoin holdings when an issuer or custodian fails: segregation under Art. 242a DEBA, the limits of issuer freeze rights, and the recovery routes through litigation and arbitration. Based on a CAS research paper at the World Trade Institute."
-           data-de="Was mit Stablecoin-Beständen geschieht, wenn Emittent oder Verwahrer ausfallen: Aussonderung nach Art. 242a SchKG, die Grenzen der Freeze-Rechte des Emittenten und die Wege der Rückführung über Prozess und Schiedsverfahren. Aufbauend auf einem CAS Research Paper am World Trade Institute."
-           data-fr="Ce qu'il advient des avoirs en stablecoins lorsqu'un émetteur ou un dépositaire fait défaut : distraction selon l'art. 242a LP, limites des droits de gel de l'émetteur et voies de recouvrement par la voie judiciaire et arbitrale. Fondé sur un travail de recherche CAS au World Trade Institute.">
-        What happens to stablecoin holdings when an issuer or custodian fails: segregation under Art. 242a DEBA, the limits of issuer freeze rights, and the recovery routes through litigation and arbitration. Based on a CAS research paper at the World Trade Institute.
-      </div>
-    </div>
-
-  </div>
-</section>
-</div>
-
-<div class="wrap">
-<section id="talks">
-  <h2 class="section-h reveal"
-      data-en="Selected <em>speaking</em>"
-      data-de="Ausgewählte <em>Vorträge</em>"
-      data-fr="Conférences <em>sélectionnées</em>">
-    Selected <em>speaking</em>
-  </h2>
-  <div class="talks-list">
-    <div class="talk-row reveal">
-      <div class="talk-date">Panel</div>
-      <div class="talk-content">
-        <h4>Trilateral Forum on Criminal Defence · <em>«Interpreting, Swiss Perspective»</em></h4>
-        <div class="venue">Dreiländerforum Strafverteidigung · Nuremberg</div>
-      </div>
-    </div>
-    <div class="talk-row reveal">
-      <div class="talk-date" data-en="Lecture" data-de="Vortrag" data-fr="Conférence">Lecture</div>
-      <div class="talk-content">
-        <h4>«Paths to Success: <em>Motivation and Career Opportunities</em>»</h4>
-        <div class="venue">Liebefeld Steinhölzli School</div>
-      </div>
-    </div>
-    <div class="talk-row reveal">
-      <div class="talk-date" data-en="Speech" data-de="Ansprache" data-fr="Allocution">Speech</div>
-      <div class="talk-content">
-        <h4>«Zwischen Sprachen und Recht · <em>Die Rolle von Gerichtsdolmetscher:innen</em>»</h4>
-        <div class="venue">University of Bern · ELSA Event</div>
-      </div>
-    </div>
-    <div class="talk-row reveal">
-      <div class="talk-date" data-en="Speech" data-de="Ansprache" data-fr="Allocution">Speech</div>
-      <div class="talk-content">
-        <h4>«Introduction to <em>ELSA Bern</em>»</h4>
-        <div class="venue">University of Bern · Start of Semester Event</div>
       </div>
     </div>
   </div>
