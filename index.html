@@ -1307,8 +1307,8 @@
     z-index: 2;
   }
   .footer-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 2rem;
   }
@@ -1427,7 +1427,7 @@
     .contact-stage { grid-template-columns: 1fr; }
     .contact-left { border-right: none; border-bottom: 1px solid var(--border); }
     .contact-left, .contact-right { padding: 2.5rem 1.75rem; }
-    .footer-inner { grid-template-columns: 1fr; text-align: center; }
+    .footer-inner { flex-direction: column; text-align: center; }
     .footer-mono { justify-content: center; }
     .footer-right { text-align: center; }
     nav.links { display: none; }
@@ -1556,12 +1556,6 @@
          data-fr="De petits avantages, répétés, deviennent décisifs.">
       Small advantages, repeated, become decisive.
     </div>
-    <div class="maxim-attr reveal"
-         data-en="First principle"
-         data-de="Grundprinzip"
-         data-fr="Principe de base">
-      First principle
-    </div>
   </div>
 </section>
 
@@ -1570,7 +1564,6 @@
 <section id="profile">
   <div class="manifest-grid">
     <aside class="manifest-side">
-      <div class="section-num reveal" data-en="01 · Profile" data-de="01 · Profil" data-fr="01 · Profil">01 · Profile</div>
       <h2 class="heading reveal"
           data-en="Two disciplines<br><em>One direction</em>"
           data-de="Zwei Disziplinen<br><em>Eine Richtung</em>"
@@ -1605,7 +1598,6 @@
 
 <div class="wrap">
 <section id="focus">
-  <div class="section-num reveal" data-en="02 · Focus" data-de="02 · Schwerpunkt" data-fr="02 · Focus">02 · Focus</div>
   <h2 class="section-h reveal"
       data-en="Core <em>areas</em>"
       data-de="Kern<em>bereiche</em>"
@@ -1614,7 +1606,6 @@
   </h2>
   <div class="focus-grid">
     <div class="focus-item reveal">
-      <span class="focus-num">i.</span>
       <h3 data-en="Banking &amp; Finance" data-de="Banking &amp; Finance" data-fr="Banking &amp; Finance">Banking &amp; Finance</h3>
       <p data-en="FINMA practice, regulatory advice, transaction structuring."
          data-de="FINMA-Praxis, Aufsichtsrecht, Transaktionsstrukturierung."
@@ -1623,7 +1614,6 @@
       </p>
     </div>
     <div class="focus-item reveal">
-      <span class="focus-num">ii.</span>
       <h3 data-en="Corporate &amp; M&amp;A" data-de="Gesellschaftsrecht &amp; M&amp;A" data-fr="Sociétés &amp; M&amp;A">Corporate &amp; M&amp;A</h3>
       <p data-en="Transactional support, due diligence, deal documentation."
          data-de="Transaktionsbegleitung, Due Diligence, Vertragsdokumentation."
@@ -1632,7 +1622,6 @@
       </p>
     </div>
     <div class="focus-item reveal">
-      <span class="focus-num">iii.</span>
       <h3 data-en="Capital Markets" data-de="Kapitalmärkte" data-fr="Marchés de capitaux">Capital Markets</h3>
       <p data-en="Equity research, valuation, investment thesis."
          data-de="Equity Research, Bewertung, Investment-These."
@@ -1641,7 +1630,6 @@
       </p>
     </div>
     <div class="focus-item reveal">
-      <span class="focus-num">iv.</span>
       <h3 data-en="Corporate Tax" data-de="Unternehmenssteuerrecht" data-fr="Fiscalité d'entreprise">Corporate Tax</h3>
       <p data-en="Cross-border structures, transactional advisory."
          data-de="Grenzüberschreitende Strukturen, transaktionale Beratung."
@@ -1650,7 +1638,6 @@
       </p>
     </div>
     <div class="focus-item full-row reveal">
-      <span class="focus-num">v.</span>
       <h3 data-en="DLT &amp; Digital Assets" data-de="DLT &amp; Digitale Vermögenswerte" data-fr="DLT &amp; Actifs numériques">DLT &amp; Digital Assets</h3>
       <p data-en="Stablecoins, AML, FINMA supervisory practice. Master's research."
          data-de="Stablecoins, Geldwäschereirecht, FINMA-Aufsichtspraxis. Masterarbeit."
@@ -1664,7 +1651,6 @@
 
 <div class="wrap">
 <section id="education">
-  <div class="section-num reveal" data-en="03 · Education" data-de="03 · Ausbildung" data-fr="03 · Formation">03 · Education</div>
   <h2 class="section-h reveal"
       data-en="Academic <em>background</em>"
       data-de="Akademischer <em>Werdegang</em>"
@@ -1751,13 +1737,11 @@
         data-fr="La <em>pression</em> révèle le niveau.<br>L'<em>exécution</em> plutôt que le bruit.">
       <em>Pressure</em> reveals standards.<br><em>Execution</em> over noise.
     </blockquote>
-    <cite data-en="Operating principle" data-de="Arbeitsprinzip" data-fr="Principe de travail">Operating principle</cite>
   </div>
 </section>
 
 <div class="wrap">
 <section id="experience">
-  <div class="section-num reveal" data-en="04 · Experience" data-de="04 · Erfahrung" data-fr="04 · Expérience">04 · Experience</div>
   <h2 class="section-h reveal"
       data-en="Where I have <em>worked</em>"
       data-de="Wo ich <em>gearbeitet</em> habe"
@@ -1846,7 +1830,6 @@
 
 <div class="wrap">
 <section id="projects">
-  <div class="section-num reveal" data-en="05 · Projects" data-de="05 · Projekte" data-fr="05 · Projets">05 · Projects</div>
   <h2 class="section-h reveal"
       data-en="Selected <em>work</em>"
       data-de="Ausgewählte <em>Projekte</em>"
@@ -1875,7 +1858,6 @@
       </svg>
     </div>
     <div class="project-body">
-      <div class="project-tag" data-en="Equity Research · Competition" data-de="Equity Research · Wettbewerb" data-fr="Recherche actions · Compétition">Equity Research · Competition</div>
       <h3 class="project-h">CFA Equity Research Challenge <em>2025/2026</em></h3>
       <div class="project-org">CFA Institute · <span class="loc" data-en="Switzerland Local Round" data-de="Lokalrunde Schweiz" data-fr="Phase locale Suisse">Switzerland Local Round</span></div>
       <p data-en="Team-based equity research and valuation competition. Company analysis, financial modelling, investment thesis, written research report and pitch to a panel of investment professionals."
@@ -1906,7 +1888,6 @@
 
 <div class="wrap">
 <section id="publication">
-  <div class="section-num reveal" data-en="06 · Publications" data-de="06 · Publikationen" data-fr="06 · Publications">06 · Publications</div>
   <h2 class="section-h reveal"
       data-en="Written <em>work</em>"
       data-de="Schriftliche <em>Arbeiten</em>"
@@ -2056,12 +2037,11 @@
 
 <div class="wrap">
 <section id="talks">
-  <div class="section-num reveal" data-en="07 · Selected Speaking" data-de="07 · Ausgewählte Vorträge" data-fr="07 · Conférences sélectionnées">07 · Selected Speaking</div>
   <h2 class="section-h reveal"
-      data-en="Spoken in <em>public</em>"
-      data-de="Öffentliche <em>Auftritte</em>"
-      data-fr="Prises de <em>parole</em>">
-    Spoken in <em>public</em>
+      data-en="Selected <em>speaking</em>"
+      data-de="Ausgewählte <em>Vorträge</em>"
+      data-fr="Conférences <em>sélectionnées</em>">
+    Selected <em>speaking</em>
   </h2>
   <div class="talks-list">
     <div class="talk-row reveal">
@@ -2098,7 +2078,6 @@
 
 <div class="wrap">
 <section id="code">
-  <div class="section-num reveal" data-en="08 · Code" data-de="08 · Kodex" data-fr="08 · Code">08 · Code</div>
   <h2 class="section-h reveal"
       data-en="What I <em>stand by</em>"
       data-de="Wofür ich <em>stehe</em>"
@@ -2107,8 +2086,6 @@
   </h2>
   <div class="code-list">
     <div class="code-item reveal">
-      <div class="code-num">i.</div>
-      <span class="code-latin">praecisio</span>
       <h3 data-en="Precision" data-de="Präzision" data-fr="Précision">Precision</h3>
       <p data-en="The right word in the right place. A clause that survives litigation. A number that ties out."
          data-de="Das richtige Wort am richtigen Ort. Eine Klausel, die einen Prozess übersteht. Eine Zahl, die stimmt."
@@ -2117,8 +2094,6 @@
       </p>
     </div>
     <div class="code-item reveal">
-      <div class="code-num">ii.</div>
-      <span class="code-latin">discretio</span>
       <h3 data-en="Discretion" data-de="Diskretion" data-fr="Discrétion">Discretion</h3>
       <p data-en="What is shared in confidence stays in confidence. As a default. Not on request."
          data-de="Was im Vertrauen besprochen wird, bleibt im Vertrauen. Standardmässig. Nicht auf Anfrage."
@@ -2127,8 +2102,6 @@
       </p>
     </div>
     <div class="code-item reveal">
-      <div class="code-num">iii.</div>
-      <span class="code-latin">applicabilitas</span>
       <h3 data-en="Practicability" data-de="Umsetzbarkeit" data-fr="Praticabilité">Practicability</h3>
       <p data-en="Advice meant to be acted on, not admired."
          data-de="Beratung, die umgesetzt wird, nicht bewundert."
@@ -2137,8 +2110,6 @@
       </p>
     </div>
     <div class="code-item reveal">
-      <div class="code-num">iv.</div>
-      <span class="code-latin">conclusio</span>
       <h3 data-en="Closing" data-de="Abschluss" data-fr="Clôture">Closing</h3>
       <p data-en="A deal that does not close does not exist."
          data-de="Ein Deal, der nicht abgeschlossen wird, existiert nicht."
@@ -2152,16 +2123,14 @@
 
 <div class="wrap">
 <section id="contact">
-  <div class="section-num reveal" data-en="09 · Contact" data-de="09 · Kontakt" data-fr="09 · Contact">09 · Contact</div>
   <h2 class="section-h reveal"
-      data-en="Reach me <em>directly</em>"
-      data-de="Direkt <em>erreichbar</em>"
-      data-fr="<em>Joignable</em> directement">
-    Reach me <em>directly</em>
+      data-en="<em>Contact</em>"
+      data-de="<em>Kontakt</em>"
+      data-fr="<em>Contact</em>">
+    <em>Contact</em>
   </h2>
   <div class="contact-stage">
     <div class="contact-left reveal">
-      <div class="contact-mark" data-en="Write" data-de="Schreiben" data-fr="Écrire">Write</div>
       <h3 class="contact-h" data-en="An email is enough" data-de="Eine E-Mail genügt" data-fr="Un e-mail suffit">An email is enough</h3>
     </div>
     <div class="contact-right reveal">
@@ -2214,7 +2183,6 @@
         </span>
         <span>Daniel Tscheraghsepehr</span>
       </div>
-      <div class="footer-tagline">Made in Switzerland</div>
       <div class="footer-right">
         <div>tscheraghsepehr.ch</div>
       </div>
